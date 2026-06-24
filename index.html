@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OLO · Dashboards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:      #0F1117;
+    --surface: #171B24;
+    --border:  #252A36;
+    --text:    #E8E6E1;
+    --muted:   #7A7F8E;
+    --amber:   #F5A623;
+    --blue:    #6BAED6;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+  }
+
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 52px;
+    letter-spacing: 8px;
+    color: var(--text);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .tagline {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 780px;
+    width: 100%;
+  }
+  @media(max-width: 600px) { .cards { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 32px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 16px 16px 0 0;
+  }
+  .card.daily::before   { background: var(--blue); }
+  .card.strategic::before { background: var(--amber); }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,.4);
+  }
+  .card.daily:hover   { border-color: var(--blue); }
+  .card.strategic:hover { border-color: var(--amber); }
+
+  .card-icon { font-size: 32px; }
+
+  .card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  .card.daily .card-title   { color: var(--blue); }
+  .card.strategic .card-title { color: var(--amber); }
+
+  .card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .card-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .card-features li {
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .card-features li::before {
+    content: '·';
+    font-size: 18px;
+    line-height: 1;
+  }
+  .card.daily .card-features li::before   { color: var(--blue); }
+  .card.strategic .card-features li::before { color: var(--amber); }
+
+  .card-cta {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .card.daily .card-cta   { color: var(--blue); }
+  .card.strategic .card-cta { color: var(--amber); }
+
+  .footer {
+    margin-top: 56px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+  <div class="logo">OLO</div>
+  <div class="tagline">Specialty Coffee &amp; Cycling · Tarragona</div>
+
+  <div class="cards">
+
+    <a class="card daily" href="OLO_Daily.html">
+      <div class="card-icon">☀️</div>
+      <div class="card-title">Dashboard Diari</div>
+      <div class="card-desc">Visió operativa del dia a dia. Vendes en temps real, caixa i activitat del torn.</div>
+      <ul class="card-features">
+        <li>Vendes del dia per hora</li>
+        <li>Caixa i formes de pagament</li>
+        <li>Comparativa amb ahir</li>
+        <li>Activitat per empleat</li>
+      </ul>
+      <div class="card-cta">Obrir <span>→</span></div>
+    </a>
+
+    <a class="card strategic" href="olo_strategic_dashboard.html">
+      <div class="card-icon">📈</div>
+      <div class="card-title">Tauler Estratègic</div>
+      <div class="card-desc">Visió de negoci a mitjà i llarg termini. Tendències, marges i prediccions.</div>
+      <ul class="card-features">
+        <li>P&amp;L acumulat setmanal</li>
+        <li>Rendiment per producte</li>
+        <li>Break-even i projecció</li>
+        <li>Evolució des de l'obertura</li>
+      </ul>
+      <div class="card-cta">Obrir <span>→</span></div>
+    </a>
+
+  </div>
+
+  <div class="footer">OLO · OLOXYZ S.L. · Baixada Roser, Tarragona</div>
+
+</body>
+</html>
