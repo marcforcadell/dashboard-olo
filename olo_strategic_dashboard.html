@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OLO — Tauler Estratègic</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#0F1117; --surface:#171B24; --border:#252A36;
+    --amber:#F5A623; --amber2:#E8941A; --amber-dim:#7A4F0D;
+    --text:#E8E6E1; --muted:#7A7F8E; --green:#2ECC71; --red:#E74C3C; --blue:#5B8DEF;
+  }
+  body { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; font-size:14px; min-height:100vh; }
+
+  header { display:flex; align-items:center; justify-content:space-between; padding:18px 28px;
+    border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100;
+    background:rgba(15,17,23,.96); backdrop-filter:blur(8px); }
+  .logo-olo { font-family:'DM Serif Display',serif; font-size:21px; color:var(--amber); letter-spacing:2px; }
+  .logo-sub { font-size:11px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-left:10px; }
+  .header-actions { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+
+  .tabs { display:flex; padding:0 28px; border-bottom:1px solid var(--border); overflow-x:auto; }
+  .tab { padding:13px 20px; font-size:13px; font-weight:500; color:var(--muted); cursor:pointer;
+    border-bottom:2px solid transparent; white-space:nowrap; transition:all .2s; }
+  .tab:hover { color:var(--text); }
+  .tab.active { color:var(--amber); border-bottom-color:var(--amber); }
+
+  .panel { display:none; padding:24px 28px; }
+  .panel.active { display:block; }
+
+  .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:14px; margin-bottom:24px; }
+  .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
+  .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-bottom:18px; }
+  @media(max-width:860px){.grid-2,.grid-3{grid-template-columns:1fr;}}
+
+  .kpi { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px; }
+  .kpi-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.8px; margin-bottom:7px; }
+  .kpi-value { font-family:'DM Serif Display',serif; font-size:28px; color:var(--text); line-height:1; }
+  .kpi-value.amber { color:var(--amber); }
+  .kpi-delta { font-size:12px; margin-top:5px; }
+  .kpi-delta.up { color:var(--green); } .kpi-delta.down { color:var(--red); } .kpi-delta.neutral { color:var(--muted); }
+
+  .chart-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px; }
+  .chart-card h3 { font-size:12px; font-weight:500; color:var(--muted); text-transform:uppercase; letter-spacing:.7px; margin-bottom:14px; }
+  .chart-wrap { position:relative; }
+
+  .hero-card { background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:22px 22px 14px; margin-bottom:18px; }
+  .hero-card h2 { font-family:'DM Serif Display',serif; font-size:19px; margin-bottom:3px; }
+  .hero-card p { font-size:12px; color:var(--muted); margin-bottom:18px; }
+
+  .data-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .data-table th { text-align:left; padding:9px 11px; font-size:11px; font-weight:500; color:var(--muted);
+    text-transform:uppercase; letter-spacing:.6px; border-bottom:1px solid var(--border); }
+  #productTableScroll thead th { position:sticky; top:0; background:var(--surface); z-index:5; }
+  .data-table td { padding:9px 11px; border-bottom:1px solid var(--border); }
+  .data-table tr:last-child td { border-bottom:none; }
+  .data-table tr:hover td { background:rgba(255,255,255,.02); }
+
+  .bar-bg { background:var(--border); border-radius:3px; height:5px; margin-top:4px; }
+  .bar-fill { height:5px; border-radius:3px; background:var(--amber); }
+
+  .badge { display:inline-block; padding:2px 8px; border-radius:20px; font-size:11px; font-weight:500; }
+  .badge.green { background:rgba(46,204,113,.15); color:var(--green); }
+  .badge.red   { background:rgba(231,76,60,.15);  color:var(--red); }
+  .badge.amber { background:rgba(245,166,35,.15); color:var(--amber); }
+  .badge.blue  { background:rgba(91,141,239,.15); color:var(--blue); }
+
+  .btn { padding:8px 15px; border-radius:7px; font-size:13px; font-weight:500; cursor:pointer; border:none; transition:all .15s; }
+  .btn-amber { background:var(--amber); color:#000; }
+  .btn-amber:hover { background:var(--amber2); }
+  .btn-ghost { background:transparent; border:1px solid var(--border); color:var(--muted); }
+  .btn-ghost:hover { border-color:var(--amber); color:var(--amber); }
+
+  .upload-row { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px; }
+  .upload-box { flex:1; min-width:200px; border:2px dashed var(--border); border-radius:10px;
+    padding:20px; text-align:center; cursor:pointer; transition:border-color .2s; position:relative; }
+  .upload-box:hover,.upload-box.loaded { border-color:var(--amber); }
+  .upload-box.loaded { border-style:solid; }
+  .upload-box p { font-size:12px; color:var(--muted); margin-top:6px; }
+  .upload-box strong { color:var(--amber); font-size:13px; }
+  .upload-box .icon { font-size:26px; }
+  .upload-box input[type=file] { position:absolute; inset:0; opacity:0; cursor:pointer; }
+
+  .progress-wrap { display:flex; align-items:center; gap:12px; }
+  .progress-bar-bg { flex:1; background:var(--border); border-radius:4px; height:8px; }
+  .progress-bar-fill { height:8px; border-radius:4px; background:linear-gradient(90deg,var(--amber2),var(--amber)); transition:width .5s; }
+  .progress-pct { font-size:13px; font-weight:600; color:var(--amber); min-width:42px; text-align:right; }
+
+  .config-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .config-field { display:flex; flex-direction:column; gap:5px; }
+  .config-field label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.6px; }
+  .config-field input { background:var(--bg); border:1px solid var(--border); border-radius:6px;
+    color:var(--text); padding:8px 10px; font-size:13px; font-family:inherit; transition:border-color .15s; }
+  .config-field input:focus { outline:none; border-color:var(--amber); }
+
+  .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:200; align-items:center; justify-content:center; }
+  .modal-overlay.open { display:flex; }
+  .modal { background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:26px; width:500px; max-width:95vw; max-height:90vh; overflow-y:auto; }
+  .modal h2 { font-family:'DM Serif Display',serif; font-size:18px; margin-bottom:5px; }
+  .modal p { font-size:12px; color:var(--muted); margin-bottom:18px; }
+  .modal-footer { display:flex; gap:10px; justify-content:flex-end; margin-top:18px; }
+
+  .pred-card { background:linear-gradient(135deg,rgba(245,166,35,.09),rgba(245,166,35,.02));
+    border:1px solid rgba(245,166,35,.25); border-radius:10px; padding:20px; }
+  .pred-value { font-family:'DM Serif Display',serif; font-size:40px; color:var(--amber); line-height:1; }
+
+  hr { border:none; border-top:1px solid var(--border); margin:18px 0; }
+  select { background:var(--bg); border:1px solid var(--border); border-radius:6px;
+    color:var(--text); padding:7px 10px; font-size:13px; font-family:inherit; cursor:pointer; }
+  select:focus { outline:none; border-color:var(--amber); }
+
+  .flex { display:flex; } .gap-2 { gap:8px; } .items-center { align-items:center; }
+  .justify-between { justify-content:space-between; } .mb-3 { margin-bottom:12px; } .mb-4 { margin-bottom:16px; }
+  .section-title { font-family:'DM Serif Display',serif; font-size:16px; margin-bottom:3px; }
+  .section-sub { font-size:12px; color:var(--muted); margin-bottom:18px; }
+  .tag { font-size:10px; padding:1px 6px; border-radius:3px; background:var(--border); color:var(--muted); }
+  .empty { text-align:center; padding:50px 20px; color:var(--muted); }
+  .empty-icon { font-size:36px; margin-bottom:10px; opacity:.4; }
+  .num { font-variant-numeric:tabular-nums; }
+
+  .api-status { display:flex; align-items:center; gap:6px; font-size:12px; color:var(--muted); }
+  .dot { width:7px; height:7px; border-radius:50%; background:var(--muted); }
+  .dot.ok { background:var(--green); } .dot.err { background:var(--red); }
+
+  /* Margin sparkline colors */
+  .mg-high { color:var(--green); }
+  .mg-mid  { color:var(--amber); }
+  .mg-low  { color:var(--red); }
+
+  .notice { background:rgba(245,166,35,.07); border:1px solid rgba(245,166,35,.2); border-radius:8px;
+    padding:12px 16px; font-size:12px; color:var(--muted); margin-bottom:18px; }
+  .notice strong { color:var(--amber); }
+
+  /* ── OVERVIEW ── */
+  .health-banner {
+    border-radius:12px; padding:24px 28px; margin-bottom:20px;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+    border:1px solid;
+  }
+  .health-banner.green  { background:rgba(46,204,113,.07);  border-color:rgba(46,204,113,.25); }
+  .health-banner.amber  { background:rgba(245,166,35,.07);  border-color:rgba(245,166,35,.25); }
+  .health-banner.red    { background:rgba(231,76,60,.07);   border-color:rgba(231,76,60,.25); }
+  .health-icon   { font-size:40px; flex-shrink:0; }
+  .health-title  { font-family:'DM Serif Display',serif; font-size:22px; margin-bottom:4px; }
+  .health-sub    { font-size:13px; color:var(--muted); line-height:1.5; }
+
+  .ov-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-bottom:20px; }
+
+  .signal-card {
+    background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px;
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .signal-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.7px; }
+  .signal-value { font-family:'DM Serif Display',serif; font-size:26px; line-height:1; }
+  .signal-bar   { height:3px; border-radius:2px; margin-top:2px; }
+  .signal-sub   { font-size:11px; }
+
+  .insights-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+  @media(max-width:700px){.insights-grid{grid-template-columns:1fr;}}
+  .insight-card {
+    background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px;
+  }
+  .insight-card h4 { font-size:12px; font-weight:500; color:var(--muted); text-transform:uppercase;
+    letter-spacing:.7px; margin-bottom:12px; }
+  .insight-row { display:flex; justify-content:space-between; align-items:center;
+    padding:6px 0; border-bottom:1px solid var(--border); font-size:13px; }
+  .insight-row:last-child { border-bottom:none; }
+  .insight-row .name { color:var(--text); }
+  .insight-row .val  { color:var(--muted); font-variant-numeric:tabular-nums; }
+
+  .semafors { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:20px; }
+  @media(max-width:700px){.semafors{grid-template-columns:1fr;}}
+  .semaf {
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:14px 16px; display:flex; align-items:flex-start; gap:12px;
+  }
+  .semaf-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; margin-top:3px; }
+  .semaf-dot.green { background:var(--green); box-shadow:0 0 6px rgba(46,204,113,.5); }
+  .semaf-dot.amber { background:var(--amber); box-shadow:0 0 6px rgba(245,166,35,.5); }
+  .semaf-dot.red   { background:var(--red);   box-shadow:0 0 6px rgba(231,76,60,.5); }
+  .semaf-label { font-size:12px; font-weight:500; color:var(--text); margin-bottom:2px; }
+  .semaf-desc  { font-size:11px; color:var(--muted); line-height:1.4; }
+</style>
+</head>
+<body>
+
+<header>
+  <div style="display:flex;align-items:baseline">
+    <span class="logo-olo">OLO</span>
+    <span class="logo-sub">Tauler Estratègic</span>
+  </div>
+  <div class="header-actions">
+    <div class="api-status" id="apiStatus"><div class="dot" id="apiDot"></div><span id="apiText">Sense dades</span></div>
+    <button class="btn btn-ghost" onclick="openConfig()">⚙ Configuració</button>
+  </div>
+</header>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active"  onclick="showTab('overview',this)">⚡ Resum</div>
+  <div class="tab" onclick="showTab('evolucio',this)">📈 Evolució</div>
+  <div class="tab" onclick="showTab('pl',this)">💰 P&L</div>
+  <div class="tab" onclick="showTab('productes',this)">☕ Productes</div>
+  <div class="tab" onclick="showTab('prediccio',this)">🔮 Predicció</div>
+</div>
+
+<!-- ══ PANEL OVERVIEW ══ -->
+<div id="panel-overview" class="panel active">
+  <div id="ovContent">
+    <div id="fetchStatus" style="background:var(--surface);border:1px solid var(--border);border-radius:10px;
+        padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+      <div style="display:flex;align-items:center;gap:14px">
+        <div id="fetchSpinner" style="font-size:22px">⏳</div>
+        <div>
+          <div style="font-size:13px;font-weight:500;color:var(--text)" id="fetchTitle">Carregant dades de GitHub…</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px" id="fetchSub">informe-ventas.csv · informe-productos.csv</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn btn-ghost" style="font-size:12px;padding:5px 12px" onclick="fetchFromGitHub()">↺ Recarregar</button>
+        <label class="btn btn-ghost" style="font-size:12px;padding:5px 12px;cursor:pointer">
+          ↑ CSV manual
+          <input type="file" accept=".csv" multiple style="display:none" onchange="handleManualFiles(this)">
+        </label>
+      </div>
+    </div>
+    <div id="ovDynamic"></div>
+  </div>
+</div>
+
+<!-- ══ PANEL EVOLUCIÓ ══ -->
+<div id="panel-evolucio" class="panel">
+  <div id="kpiEvolucio" class="kpi-grid"></div>
+  <div class="hero-card" id="heroCard" style="display:none">
+    <h2>Creixement des de l'obertura</h2>
+    <p>Vendes netes setmanals (€) · cada punt és una setmana natural</p>
+    <div class="chart-wrap" style="height:210px"><canvas id="heroChart"></canvas></div>
+  </div>
+  <div class="grid-2" id="gridDowHour" style="display:none">
+    <div class="chart-card">
+      <h3>Vendes per dia de la setmana</h3>
+      <div class="chart-wrap" style="height:175px"><canvas id="dowChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Distribució horària</h3>
+      <div class="chart-wrap" style="height:175px"><canvas id="hourChart"></canvas></div>
+    </div>
+  </div>
+  <div class="chart-card" id="weekBarCard" style="display:none">
+    <div class="flex justify-between items-center mb-4">
+      <h3 style="margin:0">Comparativa setmanal</h3>
+      <select id="weekMetric" onchange="renderWeekBar()">
+        <option value="revenue">Ingressos nets</option>
+        <option value="tickets">Tiquets</option>
+        <option value="avg">Tiquet mitjà</option>
+      </select>
+    </div>
+    <div class="chart-wrap" style="height:170px"><canvas id="weekBarChart"></canvas></div>
+  </div>
+</div>
+
+<!-- ══ PANEL P&L ══ -->
+<div id="panel-pl" class="panel">
+  <div id="kpiPL" class="kpi-grid"></div>
+  <div class="hero-card">
+    <h2>P&L acumulat setmanal</h2>
+    <p>Ingressos nets · marge brut · marge net (després de despeses fixes)</p>
+    <div class="chart-wrap" style="height:210px"><canvas id="plChart"></canvas></div>
+  </div>
+  <div class="grid-2">
+    <div class="chart-card">
+      <h3>% Marge net per setmana</h3>
+      <div class="chart-wrap" style="height:170px"><canvas id="netMarginChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Estructura de costs acumulada</h3>
+      <div class="chart-wrap" style="height:170px"><canvas id="costDonut"></canvas></div>
+    </div>
+  </div>
+  <div class="chart-card">
+    <h3>Resum P&L acumulat</h3>
+    <table class="data-table" id="plTable"></table>
+  </div>
+</div>
+
+<!-- ══ PANEL PRODUCTES ══ -->
+<div id="panel-productes" class="panel">
+  <div class="flex justify-between items-center mb-4">
+    <div>
+      <div class="section-title">Rendiment de productes</div>
+      <div class="section-sub">Dades creuades de vendes + marges reals del catàleg SumUp</div>
+    </div>
+    <select id="productSort" onchange="renderProductTable()">
+      <option value="revenue">Per ingressos</option>
+      <option value="qty">Per unitats</option>
+      <option value="margin_eur">Per marge (€)</option>
+      <option value="margin_pct">Per marge (%)</option>
+    </select>
+  </div>
+  <div class="grid-2">
+    <div class="chart-card">
+      <h3>Top 12 · ingressos nets (€)</h3>
+      <div class="chart-wrap" style="height:280px"><canvas id="prodRevenueChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Top 12 · marge brut (€)</h3>
+      <div class="chart-wrap" style="height:280px"><canvas id="prodMarginChart"></canvas></div>
+    </div>
+  </div>
+  <div class="chart-card">
+    <div class="flex justify-between items-center mb-3">
+      <h3 style="margin:0">Taula completa de rendiment</h3>
+      <div class="flex gap-2 items-center">
+        <div style="position:relative">
+          <input id="prodTableSearch" type="text" placeholder="Cerca producte…"
+            autocomplete="off"
+            style="background:var(--bg);border:1px solid var(--border);border-radius:7px;
+              color:var(--text);padding:7px 12px 7px 30px;font-size:13px;font-family:inherit;
+              width:220px;transition:border-color .15s"
+            oninput="filterProductTable(this.value)">
+          <span style="position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:12px">🔍</span>
+        </div>
+        <span id="selectionCount" style="font-size:12px;color:var(--muted)"></span>
+        <button class="btn btn-ghost" style="font-size:12px;padding:5px 10px" onclick="selectAllProducts(true)">Seleccionar tot</button>
+        <button class="btn btn-ghost" style="font-size:12px;padding:5px 10px" onclick="selectAllProducts(false)">Netejar</button>
+      </div>
+    </div>
+    <div id="productNotice" class="notice" style="display:none">
+      <strong>ℹ Marges estimats:</strong> no has carregat l'informe-productos. S'utilitza el % COGS de la configuració per estimar el marge brut.
+    </div>
+
+    <div id="selectionSummary" style="display:none" class="pred-card mb-4">
+      <div class="flex justify-between items-center" style="flex-wrap:wrap;gap:16px">
+        <div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px" id="selSubtitle"></div>
+          <div style="font-size:13px;color:var(--text)" id="selNames"></div>
+        </div>
+        <div class="flex gap-2" style="flex-wrap:wrap">
+          <div style="text-align:right">
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase">Unitats</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:20px" id="selQty">—</div>
+          </div>
+          <div style="text-align:right;margin-left:18px">
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase">% del total ut.</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:20px" id="selQtyPct">—</div>
+          </div>
+          <div style="text-align:right;margin-left:18px">
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase">Ingressos nets</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:20px;color:var(--amber)" id="selRevenue">—</div>
+          </div>
+          <div style="text-align:right;margin-left:18px">
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase">% del total ingr.</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:20px" id="selRevenuePct">—</div>
+          </div>
+          <div style="text-align:right;margin-left:18px">
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase">Marge brut</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:20px;color:var(--green)" id="selMargin">—</div>
+          </div>
+          <div style="text-align:right;margin-left:18px">
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase">Marge %</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:20px" id="selMarginPct">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto;overflow-y:auto;max-height:640px;border-radius:8px" id="productTableScroll">
+      <table class="data-table" id="productTable" style="position:relative"></table>
+    </div>
+  </div>
+
+  <div class="chart-card" style="margin-top:18px">
+    <div class="flex justify-between items-center mb-3" style="flex-wrap:wrap;gap:10px">
+      <div>
+        <h3 style="margin:0">Evolució setmanal per producte (unitats)</h3>
+        <div style="font-size:11px;color:var(--muted);margin-top:3px">Selecciona un o més productes per comparar la seva tendència en unitats venudes</div>
+      </div>
+      <div class="flex gap-2 items-center" style="position:relative">
+        <div style="position:relative">
+          <input id="prodEvoSearch" type="text" placeholder="Cerca producte…"
+            autocomplete="off"
+            style="background:var(--bg);border:1px solid var(--border);border-radius:7px;
+              color:var(--text);padding:8px 12px 8px 32px;font-size:13px;font-family:inherit;
+              width:260px;transition:border-color .15s"
+            oninput="onProdEvoSearch(this.value)"
+            onfocus="onProdEvoSearch(this.value)"
+            onkeydown="onProdEvoSearchKey(event)"
+          >
+          <span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px">🔍</span>
+        </div>
+        <div id="prodEvoDropdown" style="display:none;position:absolute;top:42px;right:0;z-index:50;
+            background:var(--surface);border:1px solid var(--border);border-radius:8px;
+            max-height:300px;overflow-y:auto;min-width:300px;box-shadow:0 8px 24px rgba(0,0,0,.5)">
+        </div>
+        <div id="prodEvoTags" class="flex gap-2 items-center" style="flex-wrap:wrap;max-width:400px"></div>
+      </div>
+    </div>
+    <div id="prodEvoEmpty" class="empty" style="padding:30px 20px">
+      <div class="empty-icon">📊</div>
+      <p>Selecciona productes del desplegable per veure'n l'evolució setmanal</p>
+    </div>
+    <div class="chart-wrap" id="prodEvoChartWrap" style="height:260px;display:none"><canvas id="prodEvoChart"></canvas></div>
+  </div>
+</div>
+
+<!-- ══ PANEL PREDICCIÓ ══ -->
+<div id="panel-prediccio" class="panel">
+  <div id="kpiPred" class="kpi-grid" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))"></div>
+  <div class="grid-2">
+    <div class="pred-card">
+      <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px">Projecció proper mes (4 setm.)</div>
+      <div class="pred-value" id="predNextMonth">—</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px">Regrés lineal sobre totes les setmanes</div>
+    </div>
+    <div class="chart-card">
+      <h3>Objectiu mensual</h3>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">
+        <span style="font-size:13px;color:var(--muted)">Objectiu configurat</span>
+        <span style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--amber)" id="goalVal">—</span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar-bg"><div class="progress-bar-fill" id="goalBar" style="width:0%"></div></div>
+        <div class="progress-pct" id="goalPct">0%</div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin-top:8px" id="goalSub"></div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <h2>Projecció de creixement</h2>
+    <p>Vendes reals · tendència (regrés lineal) · projecció 4 setmanes</p>
+    <div class="chart-wrap" style="height:210px"><canvas id="forecastChart"></canvas></div>
+  </div>
+  <div class="chart-card" id="breakevenCard">
+    <h3>Break-even tracker</h3>
+    <div id="breakevenContent"></div>
+  </div>
+</div>
+
+<!-- ══ MODAL CONFIG ══ -->
+<div class="modal-overlay" id="configModal">
+  <div class="modal">
+    <h2>Configuració d'OLO</h2>
+    <p>Despeses fixes mensuals i paràmetres financers. Es guarden localment.</p>
+    <div class="config-grid">
+      <div class="config-field"><label>Lloguer local (€/mes)</label><input type="number" id="cfg_rent" placeholder="1200"></div>
+      <div class="config-field"><label>Sous bruts (€/mes)</label><input type="number" id="cfg_salaries" placeholder="4500"></div>
+      <div class="config-field"><label>SS empresa (€/mes)</label><input type="number" id="cfg_ss" placeholder="1200"></div>
+      <div class="config-field"><label>Subministraments (€/mes)</label><input type="number" id="cfg_utilities" placeholder="350"></div>
+      <div class="config-field"><label>Gestoria (€/mes)</label><input type="number" id="cfg_gestor" placeholder="150"></div>
+      <div class="config-field"><label>Assegurances (€/mes)</label><input type="number" id="cfg_insurance" placeholder="80"></div>
+      <div class="config-field"><label>Altres fixes (€/mes)</label><input type="number" id="cfg_other" placeholder="200"></div>
+      <div class="config-field"><label>% COGS estimat (fallback)</label><input type="number" id="cfg_cogs" placeholder="35" min="0" max="100"></div>
+    </div>
+    <hr>
+    <div class="config-grid">
+      <div class="config-field"><label>Objectiu mensual net (€)</label><input type="number" id="cfg_goal" placeholder="18000"></div>
+      <div class="config-field"><label>Data obertura</label><input type="text" id="cfg_opening" placeholder="2026-05-01"></div>
+      <div class="config-field"><label>Token API SumUp</label><input type="text" id="cfg_token" placeholder="sup-sk-…"></div>
+      <div class="config-field"><label>Merchant ID SumUp</label><input type="text" id="cfg_merchant" placeholder="M..."></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeConfig()">Cancel·lar</button>
+      <button class="btn btn-amber" onclick="saveConfig()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════ STATE ═══════════════
+let vendesRows   = [];   // parsed vendes CSV rows (net)
+let productCosts = {};   // { nomProducte: { cost, margin_pct } } from productos CSV
+let weeklyData   = [];
+let charts       = {};
+let config       = {};
+let hasCostData  = false;
+
+// ═══════════════ GITHUB CONFIG ═══════════════
+const GITHUB_USER = 'GITHUB_USER';       // ← canvia per el teu usuari de GitHub
+const GITHUB_REPO = 'olo-dashboard';
+const GITHUB_BRANCH = 'main';
+const RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}`;
+
+// ═══════════════ INIT ═══════════════
+window.addEventListener('DOMContentLoaded', () => {
+  loadConfig();
+  fetchFromGitHub();
+  // drag & drop com a fallback
+  document.addEventListener('dragover', e => e.preventDefault());
+  document.addEventListener('drop', e => {
+    e.preventDefault();
+    const files = [...e.dataTransfer.files].filter(f => f.name.endsWith('.csv'));
+    if (files.length) handleManualFilesList(files);
+  });
+});
+
+async function fetchFromGitHub() {
+  setFetchStatus('loading', 'Carregant dades de GitHub…', 'informe-ventas.csv · informe-productos.csv');
+  try {
+    const [vendesText, productesText] = await Promise.all([
+      fetchCSV(`${RAW_BASE}/informe-ventas.csv`),
+      fetchCSV(`${RAW_BASE}/informe-productos.csv`).catch(() => null)
+    ]);
+
+    const vendesParsed = Papa.parse(vendesText, { header:true, skipEmptyLines:true });
+    vendesRows = parseVendes(vendesParsed.data);
+
+    if (productesText) {
+      const prodParsed = Papa.parse(productesText, { header:true, skipEmptyLines:true });
+      productCosts = parseProductes(prodParsed.data);
+      hasCostData  = Object.keys(productCosts).length > 0;
+    }
+
+    const lastDate = vendesRows.length ? vendesRows[vendesRows.length-1].date.toLocaleDateString('ca-ES') : '—';
+    setFetchStatus('ok',
+      `Dades actualitzades · ${vendesRows.length} línies`,
+      `Última venda: ${lastDate}${hasCostData ? ' · Marges reals ✓' : ''}`
+    );
+    processAndRender();
+  } catch(e) {
+    setFetchStatus('error',
+      'No s\'han pogut carregar les dades de GitHub',
+      e.message.includes('GITHUB_USER') || GITHUB_USER === 'GITHUB_USER'
+        ? 'Configura el teu usuari de GitHub al codi (GITHUB_USER)'
+        : 'Comprova que els fitxers existeixen al repositori · O carrega\'ls manualment'
+    );
+  }
+}
+
+async function fetchCSV(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`);
+  return res.text();
+}
+
+function setFetchStatus(state, title, sub) {
+  const icons = { loading:'⏳', ok:'✅', error:'❌' };
+  document.getElementById('fetchSpinner').textContent = icons[state] || '⏳';
+  document.getElementById('fetchTitle').textContent   = title;
+  document.getElementById('fetchSub').textContent     = sub;
+}
+
+// ═══════════════ FILE HANDLERS (fallback manual) ═══════════════
+function handleManualFiles(input) {
+  if (input.files.length) handleManualFilesList([...input.files]);
+}
+function handleManualFilesList(files) {
+  files.forEach(f => {
+    if (f.name.includes('ventas') || f.name.includes('vendes')) {
+      Papa.parse(f, { header:true, skipEmptyLines:true, complete:({data}) => {
+        vendesRows = parseVendes(data);
+        setFetchStatus('ok', `Manual · ${f.name}`, `${vendesRows.length} línies`);
+        processAndRender();
+      }});
+    } else if (f.name.includes('producto') || f.name.includes('producte')) {
+      Papa.parse(f, { header:true, skipEmptyLines:true, complete:({data}) => {
+        productCosts = parseProductes(data);
+        hasCostData  = Object.keys(productCosts).length > 0;
+        if (vendesRows.length) processAndRender();
+      }});
+    }
+  });
+}
+function markLoaded() {} // ja no cal, es manté per compatibilitat
+function loadConfig() {
+  const s = localStorage.getItem('olo_strat_v2');
+  config = s ? JSON.parse(s) : {
+    rent:1200, salaries:4500, ss:1200, utilities:350,
+    gestor:150, insurance:80, other:200, cogs:35,
+    goal:18000, opening:'2026-05-01', token:'', merchant:''
+  };
+}
+function saveConfig() {
+  ['rent','salaries','ss','utilities','gestor','insurance','other','cogs','goal']
+    .forEach(k => { const v = +document.getElementById('cfg_'+k).value; if(v) config[k]=v; });
+  ['opening','token','merchant'].forEach(k => {
+    const v = document.getElementById('cfg_'+k).value; if(v) config[k]=v;
+  });
+  localStorage.setItem('olo_strat_v2', JSON.stringify(config));
+  closeConfig();
+  if (vendesRows.length) processAndRender();
+}
+function openConfig() {
+  ['rent','salaries','ss','utilities','gestor','insurance','other','cogs','goal']
+    .forEach(k => document.getElementById('cfg_'+k).value = config[k]||'');
+  ['opening','token','merchant'].forEach(k => document.getElementById('cfg_'+k).value = config[k]||'');
+  document.getElementById('configModal').classList.add('open');
+}
+function closeConfig() { document.getElementById('configModal').classList.remove('open'); }
+
+// ═══════════════ TABS ═══════════════
+function showTab(id, el) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  el.classList.add('active');
+}
+
+// ═══════════════ PARSERS ═══════════════
+const MONTH_ES = {
+  'ene':0,'feb':1,'mar':2,'abr':3,'may':4,'jun':5,
+  'jul':6,'ago':7,'sep':8,'oct':9,'nov':10,'dic':11
+};
+function parseDate(str) {
+  // "15 jun 2026, 13:24"
+  const m = str.trim().match(/(\d+)\s+(\w+)\s+(\d{4}),?\s+(\d+):(\d+)/);
+  if (!m) return null;
+  const mon = MONTH_ES[m[2].toLowerCase().slice(0,3)];
+  if (mon === undefined) return null;
+  return new Date(+m[3], mon, +m[1], +m[4], +m[5]);
+}
+function parseNum(s) {
+  if (!s && s !== 0) return null;
+  return parseFloat(String(s).replace(/\./g,'').replace(',','.')) || 0;
+}
+
+// Agrupacions de productes equivalents
+const PRODUCT_ALIASES = {
+  'Capuccino':               'Cafè amb llet / Capuccino',
+  'Capuccino Estándar':      'Cafè amb llet / Capuccino',
+  'Capuccino Capuccino':     'Cafè amb llet / Capuccino',
+  'Cafè amb llet':                'Cafè amb llet / Capuccino',
+  'Cafè amb llet Cafè amb llet': 'Cafè amb llet / Capuccino',
+  'Cafè amb llet Estándar':      'Cafè amb llet / Capuccino',
+};
+function normalizeDesc(desc) {
+  return PRODUCT_ALIASES[desc] || desc;
+}
+
+function parseVendes(rows) {
+  const out = [];
+  rows.forEach(r => {
+    const tipo = (r['Tipo']||'').toLowerCase();
+    if (!tipo.includes('venta')) return;
+    const rawDesc = (r['Descripción']||'').trim();
+    if (!rawDesc || rawDesc.toLowerCase() === 'propina') return;
+    const desc = normalizeDesc(rawDesc);
+    const netLine = parseNum(r['Precio (neto)']);  // import NET de la línia sencera
+    if (!netLine || netLine <= 0) return;
+    const dt = parseDate(r['Fecha']||'');
+    if (!dt) return;
+    const units = Math.max(1, Math.round(parseNum(r['Unidades']) || 1));
+    out.push({
+      date: dt,
+      net: netLine,            // import total de la línia (per sumar ingressos)
+      netUnit: netLine/units,  // preu net per unitat real
+      units,                   // quantitat real d'unitats venudes en aquesta línia
+      gross: parseNum(r['Precio (bruto)']) || netLine,
+      desc,
+      cat: r['Categoría']||'',
+      txId: r['ID de transacción']||'',
+      pay: r['Forma de pago']||''
+    });
+  });
+  return out;
+}
+
+function parseProductes(rows) {
+  const out = {};
+  rows.forEach(r => {
+    const nom     = (r['Nombre del producto']||'').trim();
+    const variant = (r['Nombre de la variante']||'').trim();
+    const cost    = parseNum(r['Precio de coste']);
+    const margStr = (r['Margen']||'').replace('%','').trim();
+    const marg    = parseFloat(margStr.replace(',','.')) || null;
+    if (!nom) return;
+    // key: "Nom Variant" (com apareix a vendes) o "Nom" sol
+    const key = variant ? nom + ' ' + variant : nom;
+    out[key] = { cost, margin_pct: marg };
+    // also store just nom as fallback
+    if (!out[nom]) out[nom] = { cost, margin_pct: marg };
+  });
+  return out;
+}
+
+function lookupCost(desc) {
+  if (productCosts[desc]) return productCosts[desc];
+  // try prefix match
+  const keys = Object.keys(productCosts);
+  for (const k of keys) {
+    if (desc.startsWith(k) || k.startsWith(desc)) return productCosts[k];
+  }
+  return null;
+}
+
+// ═══════════════ WEEK KEY ═══════════════
+function getWeekKey(date) {
+  const d = new Date(date); d.setHours(0,0,0,0);
+  const day = d.getDay() || 7;
+  d.setDate(d.getDate() - day + 1);
+  return d.toISOString().slice(0,10);
+}
+
+// ═══════════════ PROCESS ═══════════════
+function processAndRender() {
+  if (!vendesRows.length) return;
+  setApiStatus('ok', vendesRows.length + ' línies carregades');
+
+  const weekMap = {};
+  const prodMap = {};
+  const dowMap  = [0,0,0,0,0,0,0];
+  const hourMap = new Array(24).fill(0);
+  const txSet   = {};
+
+  vendesRows.forEach(r => {
+    const wk = getWeekKey(r.date);
+    if (!weekMap[wk]) weekMap[wk] = { revenue:0, txIds:new Set(), grossMargin:0 };
+    weekMap[wk].revenue += r.net;
+    weekMap[wk].txIds.add(r.txId || (r.date.toISOString()+r.net));
+
+    // cost lookup (el cost del catàleg és per UNITAT)
+    const costInfo = lookupCost(r.desc);
+    let cogs = 0;
+    if (costInfo && costInfo.cost != null) {
+      cogs = costInfo.cost * r.units;
+    } else {
+      cogs = r.net * (config.cogs/100);
+    }
+    weekMap[wk].grossMargin += (r.net - cogs);
+
+    // product
+    if (!prodMap[r.desc]) prodMap[r.desc] = { revenue:0, qty:0, grossMargin:0, costInfo:null };
+    prodMap[r.desc].revenue    += r.net;
+    prodMap[r.desc].qty        += r.units;
+    prodMap[r.desc].grossMargin+= (r.net - cogs);
+    if (!prodMap[r.desc].costInfo && costInfo) prodMap[r.desc].costInfo = costInfo;
+
+    const dow = (r.date.getDay()+6)%7;
+    dowMap[dow] += r.net;
+    hourMap[r.date.getHours()] += r.net;
+  });
+
+  weeklyData = Object.entries(weekMap)
+    .sort(([a],[b]) => a.localeCompare(b))
+    .slice(2)   // ignorem les 2 primeres setmanes de rodatge
+    .map(([wk,d]) => ({
+      week: wk,
+      revenue: d.revenue,
+      tickets: d.txIds.size,
+      avg: d.txIds.size ? d.revenue/d.txIds.size : 0,
+      grossMargin: d.grossMargin,
+      grossPct: d.revenue ? d.grossMargin/d.revenue*100 : 0
+    }));
+
+  renderEvolucio(dowMap, hourMap);
+  renderPL();
+  renderProductes(prodMap);
+  renderPrediccio();
+  renderOverview(prodMap);
+}
+
+// ═══════════════ OVERVIEW ═══════════════
+function renderOverview(prodMap) {
+  const n = weeklyData.length;
+  if (!n) return;
+
+  const fixedM = config.rent+config.salaries+config.ss+config.utilities+config.gestor+config.insurance+config.other;
+  const fixedW = fixedM/(52/12);
+
+  const totRev   = weeklyData.reduce((s,w)=>s+w.revenue,0);
+  const totGM    = weeklyData.reduce((s,w)=>s+w.grossMargin,0);
+  const totFixed = fixedW*n;
+  const totNet   = totGM - totFixed;
+  const netPct   = totRev ? totNet/totRev*100 : 0;
+  const gmPct    = totRev ? totGM/totRev*100  : 0;
+
+  const last  = weeklyData[n-1];
+  const prev  = n>1 ? weeklyData[n-2] : null;
+  const growth= prev&&prev.revenue ? (last.revenue-prev.revenue)/prev.revenue*100 : 0;
+
+  // break-even
+  const beWeek = gmPct>0 ? fixedW/(gmPct/100) : 0;
+  const beOk   = last.revenue >= beWeek;
+
+  // avg last 4 weeks
+  const last4  = weeklyData.slice(-4);
+  const avg4   = last4.reduce((s,w)=>s+w.revenue,0)/last4.length;
+
+  // lin reg slope
+  const xs = weeklyData.map((_,i)=>i+1);
+  const ys = weeklyData.map(w=>w.revenue);
+  const {slope} = linReg(xs,ys);
+
+  // health score
+  let healthColor = 'green', healthIcon = '✅', healthTitle, healthSub;
+  if (netPct >= 15 && beOk && slope > 0) {
+    healthTitle = 'OLO va bé';
+    healthSub   = `Marge net del ${pct(netPct)}, per sobre del break-even i amb tendència creixent de ${eur(slope)}/setmana.`;
+  } else if (netPct >= 5 && slope > 0) {
+    healthColor = 'amber'; healthIcon = '⚠️';
+    healthTitle = 'OLO va bé, amb marge de millora';
+    healthSub   = `Marge net del ${pct(netPct)}. Tendència positiva però el marge net té recorregut per créixer.`;
+  } else if (netPct < 0) {
+    healthColor = 'red'; healthIcon = '🔴';
+    healthTitle = 'Per sota del break-even';
+    healthSub   = `Marge net negatiu (${pct(netPct)}). Cal augmentar volum o revisar despeses fixes.`;
+  } else {
+    healthColor = 'amber'; healthIcon = '🟡';
+    healthTitle = 'En zona de vigilància';
+    healthSub   = `Marge net del ${pct(netPct)}. Proper al break-even — mantenir el volum és clau.`;
+  }
+
+  // top 3 per marge brut €
+  const topProd = Object.entries(prodMap)
+    .map(([name,d])=>({name,gm:d.grossMargin,rev:d.revenue,qty:d.qty}))
+    .sort((a,b)=>b.gm-a.gm).slice(0,5);
+
+  // worst margin %
+  const worstProd = Object.entries(prodMap)
+    .filter(([,d])=>d.revenue>50)
+    .map(([name,d])=>({name,mgPct:d.revenue?d.grossMargin/d.revenue*100:0,rev:d.revenue}))
+    .sort((a,b)=>a.mgPct-b.mgPct).slice(0,5);
+
+  // semàfors
+  const semafors = [
+    {
+      color: beOk?'green':'red',
+      label: 'Break-even setmanal',
+      desc: beOk
+        ? `Última setm: ${eur(last.revenue)} · BE: ${eur(beWeek)} ✓`
+        : `Última setm: ${eur(last.revenue)} · BE: ${eur(beWeek)} — cal ${eur(beWeek-last.revenue)} més`
+    },
+    {
+      color: slope>200?'green':slope>0?'amber':'red',
+      label: 'Tendència de creixement',
+      desc: `${eur(slope)}/setmana · Projecció mes: ${eur(avg4*4.33)}`
+    },
+    {
+      color: gmPct>=65?'green':gmPct>=55?'amber':'red',
+      label: 'Marge brut',
+      desc: `${pct(gmPct)} acumulat · Referència: >65%`
+    },
+    {
+      color: netPct>=12?'green':netPct>=5?'amber':'red',
+      label: 'Marge net',
+      desc: `${pct(netPct)} acumulat · Referència: >10%`
+    },
+    {
+      color: last.avg>=5?'green':last.avg>=4?'amber':'red',
+      label: 'Tiquet mitjà',
+      desc: `${eur(last.avg)} última setm. · Referència: >5€`
+    },
+    {
+      color: growth>=0?'green':'red',
+      label: 'Creixement setmanal',
+      desc: `${growth>=0?'+':''}${pct(growth)} vs setmana anterior`
+    },
+  ];
+
+  document.getElementById('ovDynamic').innerHTML = `
+    <div class="health-banner ${healthColor}">
+      <div>
+        <div class="health-title">${healthIcon} ${healthTitle}</div>
+        <div class="health-sub">${healthSub}</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px">Marge net acumulat</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:36px;color:${totNet>=0?'var(--green)':'var(--red)'}">${eur(totNet)}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">${n} setmanes · ${pct(netPct)}</div>
+      </div>
+    </div>
+
+    <div class="ov-grid">
+      ${ovKpi('Ingressos acumulats', eur(totRev), '', 'var(--amber)')}
+      ${ovKpi('Última setmana', eur(last.revenue), delta(growth), growth>=0?'var(--green)':'var(--red)')}
+      ${ovKpi('Projecció/mes', eur(avg4*4.33), 'mitjana últimes 4 set.', 'var(--text)')}
+      ${ovKpi('Marge brut', pct(gmPct), hasCostData?'costos reals':'estimat', gmPct>=65?'var(--green)':'var(--amber)')}
+      ${ovKpi('Tiquet mitjà', eur(last.avg), 'última setmana', 'var(--text)')}
+      ${ovKpi('Break-even set.', eur(beWeek), beOk?'✓ cobert':'✗ no cobert', beOk?'var(--green)':'var(--red)')}
+    </div>
+
+    <div class="semafors">
+      ${semafors.map(s=>`
+        <div class="semaf">
+          <div class="semaf-dot ${s.color}"></div>
+          <div>
+            <div class="semaf-label">${s.label}</div>
+            <div class="semaf-desc">${s.desc}</div>
+          </div>
+        </div>`).join('')}
+    </div>
+
+    <div class="insights-grid">
+      <div class="insight-card">
+        <h4>⭐ Top 5 · marge brut generat</h4>
+        ${topProd.map(p=>`
+          <div class="insight-row">
+            <span class="name">${p.name}</span>
+            <span class="val">${eur(p.gm)} <span style="color:var(--muted);font-size:11px">(${p.qty} ut.)</span></span>
+          </div>`).join('')}
+      </div>
+      <div class="insight-card">
+        <h4>⚠️ Vigilar · marge % més baix (>50€ vendes)</h4>
+        ${worstProd.map(p=>`
+          <div class="insight-row">
+            <span class="name">${p.name}</span>
+            <span class="val"><span class="badge ${p.mgPct>=60?'amber':'red'}">${pct(p.mgPct)}</span></span>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h2>Evolució setmanal</h2>
+      <p>Ingressos nets per setmana des de l'obertura</p>
+      <div class="chart-wrap" style="height:160px"><canvas id="ovMiniChart"></canvas></div>
+    </div>
+  `;
+
+  // mini chart
+  destroyChart('ovMiniChart');
+  const labels = weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10));
+  const revs   = weeklyData.map(w=>+w.revenue.toFixed(2));
+  const ctx    = document.getElementById('ovMiniChart').getContext('2d');
+  const grad   = ctx.createLinearGradient(0,0,0,160);
+  grad.addColorStop(0,'rgba(245,166,35,.28)'); grad.addColorStop(1,'rgba(245,166,35,0)');
+  charts.ovMiniChart = new Chart(ctx,{type:'line',data:{labels,datasets:[{
+    label:'€ nets',data:revs,borderColor:'#F5A623',backgroundColor:grad,
+    borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#F5A623',tension:.38,fill:true
+  }]},options:chartOpts({yLabel:'€'})});
+}
+
+function ovKpi(label,value,sub,color) {
+  return `<div class="signal-card">
+    <div class="signal-label">${label}</div>
+    <div class="signal-value" style="color:${color}">${value}</div>
+    ${sub?`<div class="signal-sub" style="color:var(--muted)">${sub}</div>`:''}
+  </div>`;
+}
+
+// ═══════════════ HELPERS ═══════════════
+function eur(n) { return (Math.round(n*100)/100).toLocaleString('ca-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €'; }
+function pct(n) { return (Math.round(n*10)/10)+'%'; }
+function kpiCard(label,value,sub,style) {
+  const vc = style==='amber'?'kpi-value amber':'kpi-value';
+  const sc = style==='up'?'kpi-delta up':style==='down'?'kpi-delta down':'kpi-delta neutral';
+  return `<div class="kpi"><div class="kpi-label">${label}</div><div class="${vc}">${value}</div>${sub?`<div class="${sc}">${sub}</div>`:''}</div>`;
+}
+function delta(n,suffix='% vs setm. ant.') { return (n>=0?'↑ +':'↓ ')+Math.abs(n).toFixed(1)+suffix; }
+function destroyChart(id) { if(charts[id]){charts[id].destroy();delete charts[id];} }
+function setApiStatus(s,txt) {
+  document.getElementById('apiDot').className='dot '+(s==='ok'?'ok':s==='err'?'err':'');
+  document.getElementById('apiText').textContent=txt||'';
+}
+function chartOpts({yLabel='',legend=false}={}) {
+  return {
+    responsive:true, maintainAspectRatio:false,
+    interaction:{mode:'index',intersect:false},
+    plugins:{
+      legend:{display:legend,labels:{color:'#7A7F8E',font:{size:11},boxWidth:12,padding:10}},
+      tooltip:{backgroundColor:'#171B24',borderColor:'#252A36',borderWidth:1,
+        titleColor:'#E8E6E1',bodyColor:'#7A7F8E',padding:10,
+        callbacks:{label:ctx=>` ${ctx.dataset.label}: ${yLabel==='%'?ctx.parsed.y.toFixed(1)+'%':eur(ctx.parsed.y)}`}}
+    },
+    scales:{
+      x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#7A7F8E',font:{size:11},maxRotation:45}},
+      y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#7A7F8E',font:{size:11},
+        callback:v=>yLabel==='%'?v+'%':v.toLocaleString('ca-ES')}}
+    }
+  };
+}
+function linReg(xs,ys) {
+  const n=xs.length,sx=xs.reduce((a,b)=>a+b,0),sy=ys.reduce((a,b)=>a+b,0);
+  const sxy=xs.reduce((s,x,i)=>s+x*ys[i],0),sx2=xs.reduce((s,x)=>s+x*x,0);
+  const slope=(n*sxy-sx*sy)/(n*sx2-sx*sx);
+  return{slope,intercept:(sy-slope*sx)/n};
+}
+
+// ═══════════════ EVOLUCIÓ ═══════════════
+function renderEvolucio(dowMap, hourMap) {
+  const n = weeklyData.length;
+  if (!n) return;
+  const total = weeklyData.reduce((s,w)=>s+w.revenue,0);
+  const avg   = total/n;
+  const last  = weeklyData[n-1];
+  const prev  = n>1?weeklyData[n-2]:null;
+  const growth= prev&&prev.revenue?((last.revenue-prev.revenue)/prev.revenue)*100:0;
+  const best  = [...weeklyData].sort((a,b)=>b.revenue-a.revenue)[0];
+
+  document.getElementById('kpiEvolucio').innerHTML =
+    kpiCard('Ingressos acumulats',eur(total),'','amber')+
+    kpiCard('Setmana actual',eur(last.revenue),delta(growth),growth>=0?'up':'down')+
+    kpiCard('Mitjana setmanal',eur(avg),n+' setmanes','neutral')+
+    kpiCard('Millor setmana',eur(best.revenue),best.week,'neutral')+
+    kpiCard('Tiquet mitjà',eur(last.avg),'','neutral');
+
+  ['heroCard','gridDowHour','weekBarCard'].forEach(id=>document.getElementById(id).style.display='');
+
+  const labels = weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10));
+  const revs   = weeklyData.map(w=>+w.revenue.toFixed(2));
+
+  destroyChart('heroChart');
+  const ctx = document.getElementById('heroChart').getContext('2d');
+  const grad = ctx.createLinearGradient(0,0,0,210);
+  grad.addColorStop(0,'rgba(245,166,35,.32)'); grad.addColorStop(1,'rgba(245,166,35,0)');
+  charts.heroChart = new Chart(ctx,{type:'line',data:{labels,datasets:[{
+    label:'Vendes netes (€)',data:revs,borderColor:'#F5A623',backgroundColor:grad,
+    borderWidth:2.5,pointRadius:5,pointBackgroundColor:'#F5A623',tension:.38,fill:true
+  }]},options:chartOpts({yLabel:'€'})});
+
+  destroyChart('dowChart');
+  charts.dowChart = new Chart(document.getElementById('dowChart').getContext('2d'),{
+    type:'bar',data:{labels:['Dl','Dt','Dc','Dj','Dv','Ds','Dg'],datasets:[{
+      label:'€ nets',data:dowMap.map(v=>+v.toFixed(2)),
+      backgroundColor:'rgba(245,166,35,.6)',borderColor:'#F5A623',borderWidth:1,borderRadius:4
+    }]},options:chartOpts({yLabel:'€'})
+  });
+
+  destroyChart('hourChart');
+  charts.hourChart = new Chart(document.getElementById('hourChart').getContext('2d'),{
+    type:'bar',data:{labels:Array.from({length:24},(_,i)=>i+':00'),datasets:[{
+      label:'€ nets',data:hourMap.map(v=>+v.toFixed(2)),
+      backgroundColor:'rgba(91,141,239,.5)',borderColor:'#5B8DEF',borderWidth:1,borderRadius:3
+    }]},options:chartOpts({yLabel:'€'})
+  });
+
+  renderWeekBar();
+}
+function renderWeekBar() {
+  const m  = document.getElementById('weekMetric').value;
+  const labels = weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10));
+  const data   = weeklyData.map(w=>+(m==='revenue'?w.revenue:m==='tickets'?w.tickets:w.avg).toFixed(2));
+  const colors = data.map((_,i)=>i===data.length-1?'#F5A623':'rgba(245,166,35,.4)');
+  destroyChart('weekBarChart');
+  charts.weekBarChart = new Chart(document.getElementById('weekBarChart').getContext('2d'),{
+    type:'bar',data:{labels,datasets:[{label:m,data,backgroundColor:colors,borderRadius:4}]},
+    options:chartOpts({yLabel:m==='tickets'?'#':'€'})
+  });
+}
+
+// ═══════════════ P&L ═══════════════
+function renderPL() {
+  const fixedM = config.rent+config.salaries+config.ss+config.utilities+config.gestor+config.insurance+config.other;
+  const fixedW = fixedM/(52/12);
+  const n = weeklyData.length;
+  const totRev  = weeklyData.reduce((s,w)=>s+w.revenue,0);
+  const totGM   = weeklyData.reduce((s,w)=>s+w.grossMargin,0);
+  const totFixed= fixedW*n;
+  const totNet  = totGM-totFixed;
+  const gmPct   = totRev?totGM/totRev*100:0;
+  const netPct  = totRev?totNet/totRev*100:0;
+  const totCogs = totRev-totGM;
+
+  document.getElementById('kpiPL').innerHTML =
+    kpiCard('Ingressos nets acum.',eur(totRev),'','amber')+
+    kpiCard('COGS acumulat',eur(totCogs),pct(totRev?totCogs/totRev*100:0)+(hasCostData?' · costos reals':' · estimat'),'neutral')+
+    kpiCard('Marge brut',eur(totGM),pct(gmPct),gmPct>=65?'up':'neutral')+
+    kpiCard('Despeses fixes acum.',eur(totFixed),eur(fixedM)+'/mes','neutral')+
+    kpiCard('Marge net acumulat',eur(totNet),pct(netPct),totNet>=0?'up':'down');
+
+  const labels=weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10));
+  let cR=0,cGM=0,cN=0;
+  const cRevA=[],cGMA=[],cNA=[];
+  weeklyData.forEach(w=>{
+    cR+=w.revenue; cGM+=w.grossMargin; cN+=w.grossMargin-fixedW;
+    cRevA.push(+cR.toFixed(2)); cGMA.push(+cGM.toFixed(2)); cNA.push(+cN.toFixed(2));
+  });
+
+  destroyChart('plChart');
+  charts.plChart = new Chart(document.getElementById('plChart').getContext('2d'),{type:'line',
+    data:{labels,datasets:[
+      {label:'Ingressos nets',data:cRevA,borderColor:'#F5A623',borderWidth:2,tension:.35,pointRadius:3,fill:false},
+      {label:'Marge brut',data:cGMA,borderColor:'#2ECC71',borderWidth:2,tension:.35,pointRadius:3,fill:false},
+      {label:'Marge net',data:cNA,borderColor:'#5B8DEF',borderWidth:2,tension:.35,pointRadius:3,fill:false},
+    ]},options:chartOpts({yLabel:'€',legend:true})
+  });
+
+  const netPcts=weeklyData.map(w=>{
+    const net=w.grossMargin-fixedW;
+    return w.revenue?+(net/w.revenue*100).toFixed(1):0;
+  });
+  destroyChart('netMarginChart');
+  charts.netMarginChart = new Chart(document.getElementById('netMarginChart').getContext('2d'),{type:'bar',
+    data:{labels,datasets:[{label:'Marge net %',data:netPcts,
+      backgroundColor:netPcts.map(v=>v>=0?'rgba(46,204,113,.6)':'rgba(231,76,60,.6)'),
+      borderColor:netPcts.map(v=>v>=0?'#2ECC71':'#E74C3C'),borderWidth:1,borderRadius:4
+    }]},options:chartOpts({yLabel:'%'})
+  });
+
+  destroyChart('costDonut');
+  charts.costDonut = new Chart(document.getElementById('costDonut').getContext('2d'),{type:'doughnut',
+    data:{labels:['COGS','Sous+SS','Lloguer','Submin.','Gestoria','Altres'],
+      datasets:[{data:[totCogs,(config.salaries+config.ss)*n/4.33,config.rent*n/4.33,
+        config.utilities*n/4.33,config.gestor*n/4.33,(config.insurance+config.other)*n/4.33],
+        backgroundColor:['#F5A623','#5B8DEF','#2ECC71','#E74C3C','#9B59B6','#7A7F8E'],
+        borderWidth:0,hoverOffset:4}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'right',labels:{color:'#7A7F8E',font:{size:11},boxWidth:12,padding:8}}}}
+  });
+
+  const rows=[
+    ['Ingressos bruts (IVA incl.)',eur(totRev*1.10),'',''],
+    ['IVA (10%)', '− '+eur(totRev*0.10),'',''],
+    ['Ingressos nets',eur(totRev),'100%','amber'],
+    ['Cost mercaderies'+(hasCostData?' (real SumUp)':" (estim. "+config.cogs+"%)"),'− '+eur(totCogs),pct(totRev?totCogs/totRev*100:0),''],
+    ['Marge brut',eur(totGM),pct(gmPct),gmPct>=65?'green':'amber'],
+    ['Despeses fixes totals','− '+eur(totFixed),pct(totRev?totFixed/totRev*100:0),''],
+    ['Marge net',eur(totNet),pct(netPct),totNet>=0?'green':'red'],
+  ];
+  document.getElementById('plTable').innerHTML=
+    '<thead><tr><th>Concepte</th><th style="text-align:right">Import</th><th style="text-align:right">%</th></tr></thead><tbody>'+
+    rows.map(([l,v,p,c])=>`<tr><td>${l}</td>
+      <td style="text-align:right;font-variant-numeric:tabular-nums;color:${c==='amber'?'var(--amber)':c==='green'?'var(--green)':c==='red'?'var(--red)':'var(--text)'}">${v}</td>
+      <td style="text-align:right;color:var(--muted)">${p}</td></tr>`).join('')+'</tbody>';
+}
+
+// ═══════════════ PRODUCTES ═══════════════
+function renderProductes(prodMap) {
+  document.getElementById('productNotice').style.display = hasCostData?'none':'block';
+
+  window._prodData = Object.entries(prodMap).map(([name,d])=>{
+    const mp = d.costInfo?.margin_pct ?? (d.revenue? d.grossMargin/d.revenue*100 : 0);
+    return { name, revenue:d.revenue, qty:d.qty, grossMargin:d.grossMargin,
+      margin_pct: mp, unitPrice: d.qty?d.revenue/d.qty:0,
+      hasCost: !!d.costInfo };
+  });
+
+  const byRev = [...window._prodData].sort((a,b)=>b.revenue-a.revenue).slice(0,12);
+  const byMg  = [...window._prodData].sort((a,b)=>b.grossMargin-a.grossMargin).slice(0,12);
+
+  destroyChart('prodRevenueChart');
+  charts.prodRevenueChart = new Chart(document.getElementById('prodRevenueChart').getContext('2d'),{
+    type:'bar',data:{labels:byRev.map(p=>p.name),datasets:[{label:'€ nets',
+      data:byRev.map(p=>+p.revenue.toFixed(2)),
+      backgroundColor:'rgba(245,166,35,.65)',borderColor:'#F5A623',borderWidth:1,borderRadius:4}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{x:{grid:{color:'rgba(255,255,255,.05)'},ticks:{color:'#7A7F8E',font:{size:11}}},
+              y:{grid:{display:false},ticks:{color:'#E8E6E1',font:{size:11}}}}}
+  });
+  destroyChart('prodMarginChart');
+  charts.prodMarginChart = new Chart(document.getElementById('prodMarginChart').getContext('2d'),{
+    type:'bar',data:{labels:byMg.map(p=>p.name),datasets:[{label:'Marge brut €',
+      data:byMg.map(p=>+p.grossMargin.toFixed(2)),
+      backgroundColor:'rgba(46,204,113,.55)',borderColor:'#2ECC71',borderWidth:1,borderRadius:4}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{x:{grid:{color:'rgba(255,255,255,.05)'},ticks:{color:'#7A7F8E',font:{size:11}}},
+              y:{grid:{display:false},ticks:{color:'#E8E6E1',font:{size:11}}}}}
+  });
+
+  renderProductTable();
+  renderProdEvoChart();
+  updateProdEvoLabel();
+}
+function renderProductTable() {
+  const key = document.getElementById('productSort').value;
+  const sorted = [...(window._prodData||[])].sort((a,b)=>b[key]-a[key]);
+  const maxRev   = sorted[0]?.revenue||1;
+  const totalQty = sorted.reduce((s,p)=>s+p.qty,0);
+  const mgClass  = p => p>=70?'green':p>=50?'amber':'red';
+
+  document.getElementById('productTable').innerHTML=
+    `<thead><tr>
+      <th style="width:30px"><input type="checkbox" id="selectAllCheckbox" onchange="selectAllProducts(this.checked)"></th>
+      <th>Producte</th>
+      <th style="text-align:right">Ut.</th>
+      <th style="text-align:right">% ut.</th>
+      <th style="text-align:right">Ingressos nets</th>
+      <th style="text-align:right">Preu mig net</th>
+      <th style="text-align:right">Marge brut (€)</th>
+      <th style="text-align:right">Marge %</th>
+      <th style="min-width:80px">Vol.</th>
+    </tr></thead><tbody>`+
+    sorted.map(p=>`<tr>
+      <td><input type="checkbox" class="prod-checkbox" data-name="${p.name.replace(/"/g,'&quot;')}"
+            ${selectedProducts.has(p.name)?'checked':''} onchange="toggleProductSelection('${p.name.replace(/'/g,"\\'")}',this.checked)"></td>
+      <td>${p.name}${p.hasCost?'':' <span class="tag">estim.</span>'}</td>
+      <td style="text-align:right;color:var(--muted)">${p.qty}</td>
+      <td style="text-align:right;color:var(--muted)">${pct(totalQty?p.qty/totalQty*100:0)}</td>
+      <td style="text-align:right" class="num">${eur(p.revenue)}</td>
+      <td style="text-align:right;color:var(--muted)" class="num">${eur(p.unitPrice)}</td>
+      <td style="text-align:right;color:var(--green)" class="num">${eur(p.grossMargin)}</td>
+      <td style="text-align:right"><span class="badge ${mgClass(p.margin_pct)}">${pct(p.margin_pct)}</span></td>
+      <td><div class="bar-bg"><div class="bar-fill" style="width:${Math.min(100,p.revenue/maxRev*100).toFixed(1)}%"></div></div></td>
+    </tr>`).join('')+'</tbody>';
+
+  updateSelectionSummary();
+}
+
+// ═══════════════ SELECCIÓ DE PRODUCTES ═══════════════
+let selectedProducts = new Set();
+
+function toggleProductSelection(name, checked) {
+  if (checked) selectedProducts.add(name);
+  else selectedProducts.delete(name);
+  updateSelectionSummary();
+}
+
+function selectAllProducts(checked) {
+  const all = window._prodData || [];
+  if (checked) all.forEach(p => selectedProducts.add(p.name));
+  else selectedProducts.clear();
+  document.querySelectorAll('.prod-checkbox').forEach(cb => cb.checked = checked);
+  const selAll = document.getElementById('selectAllCheckbox');
+  if (selAll) selAll.checked = checked;
+  updateSelectionSummary();
+}
+
+function updateSelectionSummary() {
+  const all = window._prodData || [];
+  const countEl = document.getElementById('selectionCount');
+  const summaryEl = document.getElementById('selectionSummary');
+  if (!countEl || !summaryEl) return;
+
+  if (selectedProducts.size === 0) {
+    countEl.textContent = '';
+    summaryEl.style.display = 'none';
+    return;
+  }
+
+  const selected = all.filter(p => selectedProducts.has(p.name));
+  const totalQtyAll = all.reduce((s,p)=>s+p.qty,0);
+  const totalRevAll = all.reduce((s,p)=>s+p.revenue,0);
+
+  const selQty = selected.reduce((s,p)=>s+p.qty,0);
+  const selRev = selected.reduce((s,p)=>s+p.revenue,0);
+  const selMg  = selected.reduce((s,p)=>s+p.grossMargin,0);
+  const selMgPct = selRev ? selMg/selRev*100 : 0;
+
+  countEl.textContent = `${selected.length} producte${selected.length>1?'s':''} seleccionat${selected.length>1?'s':''}`;
+  summaryEl.style.display = '';
+
+  document.getElementById('selSubtitle').textContent = 'Impacte de la selecció';
+  document.getElementById('selNames').textContent = selected.map(p=>p.name).join(' · ');
+  document.getElementById('selQty').textContent = selQty;
+  document.getElementById('selQtyPct').textContent = pct(totalQtyAll?selQty/totalQtyAll*100:0);
+  document.getElementById('selRevenue').textContent = eur(selRev);
+  document.getElementById('selRevenuePct').textContent = pct(totalRevAll?selRev/totalRevAll*100:0);
+  document.getElementById('selMargin').textContent = eur(selMg);
+  document.getElementById('selMarginPct').textContent = pct(selMgPct);
+}
+
+// ═══════════════ EVOLUCIÓ PER PRODUCTE ═══════════════
+let prodEvoSelected = new Set();
+const PROD_EVO_COLORS = ['#F5A623','#5B8DEF','#2ECC71','#E74C3C','#9B59B6','#F39C12','#1ABC9C','#E91E63'];
+
+function onProdEvoSearch(val) {
+  const dd  = document.getElementById('prodEvoDropdown');
+  const all = [...(window._prodData||[])].sort((a,b)=>b.revenue-a.revenue);
+  const q   = val.trim().toLowerCase();
+  const filtered = q ? all.filter(p => p.name.toLowerCase().includes(q)) : all;
+
+  if (!filtered.length) { dd.style.display='none'; return; }
+
+  dd.innerHTML = filtered.slice(0,20).map((p,i) => `
+    <label data-idx="${i}" style="display:flex;align-items:center;gap:8px;padding:9px 12px;cursor:pointer;
+      font-size:13px;border-bottom:1px solid var(--border);transition:background .1s"
+      onmouseover="this.style.background='rgba(255,255,255,.04)'"
+      onmouseout="this.style.background='transparent'">
+      <input type="checkbox" ${prodEvoSelected.has(p.name)?'checked':''}
+        onchange="toggleProdEvoSelection('${p.name.replace(/'/g,"\\'")}',this.checked)">
+      <span style="flex:1">${highlightMatch(p.name, q)}</span>
+      <span style="color:var(--muted);font-size:11px">${p.qty} ut.</span>
+    </label>`).join('');
+  dd.style.display = 'block';
+}
+
+function highlightMatch(name, q) {
+  if (!q) return name;
+  const i = name.toLowerCase().indexOf(q);
+  if (i < 0) return name;
+  return name.slice(0,i) + `<strong style="color:var(--amber)">${name.slice(i,i+q.length)}</strong>` + name.slice(i+q.length);
+}
+
+function onProdEvoSearchKey(e) {
+  if (e.key === 'Escape') {
+    document.getElementById('prodEvoDropdown').style.display = 'none';
+    document.getElementById('prodEvoSearch').blur();
+  }
+}
+
+document.addEventListener('click', e => {
+  const dd     = document.getElementById('prodEvoDropdown');
+  const search = document.getElementById('prodEvoSearch');
+  if (!dd || dd.style.display==='none') return;
+  if (!dd.contains(e.target) && e.target !== search) dd.style.display = 'none';
+});
+
+function toggleProdEvoSelection(name, checked) {
+  if (checked) prodEvoSelected.add(name);
+  else prodEvoSelected.delete(name);
+  renderProdEvoTags();
+  renderProdEvoChart();
+  // keep dropdown open, refresh it
+  const search = document.getElementById('prodEvoSearch');
+  if (search) onProdEvoSearch(search.value);
+}
+
+function removeProdEvoTag(name) {
+  prodEvoSelected.delete(name);
+  renderProdEvoTags();
+  renderProdEvoChart();
+  const search = document.getElementById('prodEvoSearch');
+  if (search) onProdEvoSearch(search.value);
+}
+
+function renderProdEvoTags() {
+  const el = document.getElementById('prodEvoTags');
+  if (!el) return;
+  el.innerHTML = [...prodEvoSelected].map((name,i) => {
+    const color = PROD_EVO_COLORS[i % PROD_EVO_COLORS.length];
+    return `<span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;
+      border-radius:20px;font-size:12px;border:1px solid ${color}44;background:${color}18;color:${color}">
+      ${name}
+      <span onclick="removeProdEvoTag('${name.replace(/'/g,"\\'")}\')" style="cursor:pointer;opacity:.7;font-size:11px">✕</span>
+    </span>`;
+  }).join('');
+}
+
+function updateProdEvoLabel() {} // no longer needed but keep to avoid errors
+
+function filterProductTable(val) {
+  const q = val.trim().toLowerCase();
+  document.querySelectorAll('#productTable tbody tr').forEach(row => {
+    const name = row.querySelector('td:nth-child(2)')?.textContent.toLowerCase() || '';
+    row.style.display = (!q || name.includes(q)) ? '' : 'none';
+  });
+}
+
+function renderProdEvoChart() {
+  const empty = document.getElementById('prodEvoEmpty');
+  const wrap  = document.getElementById('prodEvoChartWrap');
+
+  if (prodEvoSelected.size === 0 || !vendesRows.length) {
+    empty.style.display = '';
+    wrap.style.display  = 'none';
+    destroyChart('prodEvoChart');
+    return;
+  }
+  empty.style.display = 'none';
+  wrap.style.display  = '';
+
+  const validWeeks = new Set(weeklyData.map(w=>w.week));
+  const weekLabels = weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10));
+
+  const seriesByProduct = {};
+  [...prodEvoSelected].forEach(name => { seriesByProduct[name] = {}; });
+
+  vendesRows.forEach(r => {
+    if (!prodEvoSelected.has(r.desc)) return;
+    const wk = getWeekKey(r.date);
+    if (!validWeeks.has(wk)) return;
+    if (!seriesByProduct[r.desc][wk]) seriesByProduct[r.desc][wk] = { qty:0 };
+    seriesByProduct[r.desc][wk].qty += r.units;
+  });
+
+  const selectedArr = [...prodEvoSelected];
+  const datasets = selectedArr.map((name,i) => {
+    const color = PROD_EVO_COLORS[i % PROD_EVO_COLORS.length];
+    const data  = weeklyData.map(w => seriesByProduct[name][w.week]?.qty || 0);
+    return {
+      label: name, data, borderColor: color,
+      backgroundColor: color+'22', borderWidth: 2.5,
+      pointRadius: 4, pointBackgroundColor: color,
+      tension: .35, fill: false
+    };
+  });
+
+  destroyChart('prodEvoChart');
+  charts.prodEvoChart = new Chart(document.getElementById('prodEvoChart').getContext('2d'), {
+    type:'line',
+    data:{ labels: weekLabels, datasets },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      interaction:{mode:'index',intersect:false},
+      plugins:{
+        legend:{display:true,labels:{color:'#7A7F8E',font:{size:11},boxWidth:12,padding:10}},
+        tooltip:{backgroundColor:'#171B24',borderColor:'#252A36',borderWidth:1,
+          titleColor:'#E8E6E1',bodyColor:'#7A7F8E',padding:10,
+          callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.parsed.y} ut.`}}
+      },
+      scales:{
+        x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#7A7F8E',font:{size:11},maxRotation:45}},
+        y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#7A7F8E',font:{size:11},stepSize:1},
+           title:{display:true,text:'Unitats',color:'#7A7F8E',font:{size:11}}}
+      }
+    }
+  });
+}
+
+
+function renderPrediccio() {
+  const n = weeklyData.length;
+  if (n<2) return;
+  const fixedM = config.rent+config.salaries+config.ss+config.utilities+config.gestor+config.insurance+config.other;
+  const fixedW = fixedM/(52/12);
+
+  const xs = weeklyData.map((_,i)=>i+1);
+  const ys = weeklyData.map(w=>w.revenue);
+  const {slope,intercept} = linReg(xs,ys);
+  const proj = [n+1,n+2,n+3,n+4].map(x=>Math.max(0,slope*x+intercept));
+  const projTotal = proj.reduce((s,v)=>s+v,0);
+
+  document.getElementById('predNextMonth').textContent = eur(projTotal);
+
+  const last5Rev = weeklyData.slice(-5).reduce((s,w)=>s+w.revenue,0);
+  const gPct = config.goal ? Math.min(200,last5Rev/config.goal*100) : 0;
+  document.getElementById('goalVal').textContent = eur(config.goal);
+  document.getElementById('goalBar').style.width = gPct+'%';
+  document.getElementById('goalPct').textContent = pct(gPct);
+  document.getElementById('goalSub').textContent =
+    'Últimes 5 setmanes: '+eur(last5Rev)+' · Objectiu: '+eur(config.goal);
+
+  const allLabels=[...weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10)),...['+S1','+S2','+S3','+S4']];
+  const realData = weeklyData.map(w=>+w.revenue.toFixed(2));
+  const trendAll = [...xs,...[n+1,n+2,n+3,n+4]].map(x=>+(slope*x+intercept).toFixed(2));
+  const forecastData = new Array(n).fill(null).concat(proj.map(v=>+v.toFixed(2)));
+
+  destroyChart('forecastChart');
+  charts.forecastChart = new Chart(document.getElementById('forecastChart').getContext('2d'),{type:'line',
+    data:{labels:allLabels,datasets:[
+      {label:'Vendes reals',data:realData,borderColor:'#F5A623',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#F5A623',tension:.35},
+      {label:'Tendència',data:trendAll,borderColor:'rgba(245,166,35,.3)',borderWidth:1.5,borderDash:[6,4],pointRadius:0,tension:.35},
+      {label:'Projecció',data:forecastData,borderColor:'#5B8DEF',borderWidth:2,pointRadius:4,pointBackgroundColor:'#5B8DEF',borderDash:[5,3],tension:.35},
+    ]},options:chartOpts({yLabel:'€',legend:true})
+  });
+
+  const avgGMpct = weeklyData.reduce((s,w)=>s+w.grossPct,0)/n;
+  const contribRatio = avgGMpct/100;
+  const beWeek = contribRatio>0 ? fixedW/contribRatio : 0;
+  const lastRev = weeklyData[n-1].revenue;
+  const beOk = lastRev>=beWeek;
+
+  document.getElementById('breakevenContent').innerHTML=`
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:14px">
+      <div>
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px">Break-even setmanal</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:24px">${eur(beWeek)}</div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px">Última setmana</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:24px;color:${beOk?'var(--green)':'var(--red)'}">${eur(lastRev)}</div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px">Estat</div>
+        <div style="margin-top:4px"><span class="badge ${beOk?'green':'red'}" style="font-size:13px;padding:4px 12px">${beOk?'✓ Sobre el BE':'✗ Sota el BE'}</span></div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--muted)">
+      Ràtio contribució: <strong style="color:var(--text)">${pct(avgGMpct)}</strong> ·
+      Fixes mensuals: <strong style="color:var(--text)">${eur(fixedM)}</strong> ·
+      Break-even mensual: <strong style="color:var(--amber)">${eur(beWeek*4.33)}</strong>
+    </div>`;
+
+  const avgLast4 = weeklyData.slice(-4).reduce((s,w)=>s+w.revenue,0)/Math.min(4,n);
+  const growthTotal = n>=2?(ys[n-1]-ys[0])/ys[0]*100:0;
+  document.getElementById('kpiPred').innerHTML=
+    kpiCard('Projecció 4 setmanes',eur(projTotal),'regrés lineal','amber')+
+    kpiCard('Mitjana últimes 4 set.',eur(avgLast4),'','neutral')+
+    kpiCard('Creixement total',pct(growthTotal),"des de l'obertura",growthTotal>=0?'up':'down')+
+    kpiCard('Slope setmanal',eur(slope),'€/setmana addicionals',slope>=0?'up':'down')+
+    kpiCard('Break-even setmanal',eur(beWeek),'','neutral');
+}
+</script>
+</body>
+</html>
