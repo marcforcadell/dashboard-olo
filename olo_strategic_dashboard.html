@@ -503,9 +503,12 @@ window.addEventListener('DOMContentLoaded', () => {
 async function fetchFromGitHub() {
   setFetchStatus('loading', 'Carregant dades de GitHub…', 'informe-ventas.csv · informe-productos.csv');
   try {
-    const [vendesText, productesText] = await Promise.all([
+    // Fetch file dates from GitHub API + CSV content in parallel
+    const [vendesText, productesText, vendesInfo, productesInfo] = await Promise.all([
       fetchCSV(`${RAW_BASE}/informe-ventas.csv`),
-      fetchCSV(`${RAW_BASE}/informe-productos.csv`).catch(() => null)
+      fetchCSV(`${RAW_BASE}/informe-productos.csv`).catch(() => null),
+      fetchGitHubFileInfo('informe-ventas.csv').catch(() => null),
+      fetchGitHubFileInfo('informe-productos.csv').catch(() => null),
     ]);
 
     const vendesParsed = Papa.parse(vendesText, { header:true, skipEmptyLines:true });
@@ -517,20 +520,31 @@ async function fetchFromGitHub() {
       hasCostData  = Object.keys(productCosts).length > 0;
     }
 
-    const lastDate = vendesRows.length ? vendesRows[vendesRows.length-1].date.toLocaleDateString('ca-ES') : '—';
+    const fmtDate = iso => iso ? new Date(iso).toLocaleString('ca-ES',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}) : '—';
+    const vendesDate    = fmtDate(vendesInfo?.commit?.committer?.date);
+    const productesDate = fmtDate(productesInfo?.commit?.committer?.date);
+
     setFetchStatus('ok',
-      `Dades actualitzades · ${vendesRows.length} línies`,
-      `Última venda: ${lastDate}${hasCostData ? ' · Marges reals ✓' : ''}`
+      `Dades carregades · ${vendesRows.length} línies`,
+      `ventas: ${vendesDate} · productos: ${productesDate}${hasCostData ? ' · Marges reals ✓' : ''}`
     );
     processAndRender();
   } catch(e) {
     setFetchStatus('error',
       'No s\'han pogut carregar les dades de GitHub',
-      e.message.includes('GITHUB_USER') || GITHUB_USER === 'GITHUB_USER'
+      GITHUB_USER === 'GITHUB_USER'
         ? 'Configura el teu usuari de GitHub al codi (GITHUB_USER)'
         : 'Comprova que els fitxers existeixen al repositori · O carrega\'ls manualment'
     );
   }
+}
+
+async function fetchGitHubFileInfo(filename) {
+  const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/commits?path=${filename}&per_page=1&sha=${GITHUB_BRANCH}`;
+  const res = await fetch(url, { headers: { 'Accept': 'application/vnd.github+json' } });
+  if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+  const data = await res.json();
+  return data[0] || null;
 }
 
 async function fetchCSV(url) {
