@@ -65,8 +65,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "19 may 2026, 11:02",Venta,TAAA26Y7MHV,Visa - Débito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "19 may 2026, 11:02",Venta,TAAA26Y7MHV,Visa - Débito,1,Entrepà Pesto Vermell,Menjar,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,holo@olo.cafe
 "19 may 2026, 11:03",Venta,TAAA26Y77TA,Mastercard - Débito,1,Propina,,,EUR,"0,20",,"0,20","0,20","0,00",,holo@olo.cafe
-"19 may 2026, 11:04",Venta,TAAA26Y77TA,Mastercard - Débito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
 "19 may 2026, 11:04",Venta,TAAA26Y77TA,Mastercard - Débito,1,Espresso Espresso,Cafes,,EUR,"2,10","0,00","2,10","1,91","0,19",10 %,holo@olo.cafe
+"19 may 2026, 11:04",Venta,TAAA26Y77TA,Mastercard - Débito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
 "19 may 2026, 11:05",Venta,TAAA26Y9KBN,Visa - Débito,2,Espresso Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,holo@olo.cafe
 "19 may 2026, 11:05",Venta,TAAA26Y9KBN,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
 "19 may 2026, 11:05",Venta,TAAA26Y9KBN,Visa - Débito,1,Tallat Estándar,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
@@ -559,8 +559,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "22 may 2026, 11:23",Venta,TAAA29BFLY7,Mastercard - Débito,1,Flat white Estándar,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
 "22 may 2026, 11:23",Venta,TAAA29BFP4H,Visa - Débito,1,Latte M,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
 "22 may 2026, 11:27",Venta,TAAA29BHDYN,Mastercard - Débito,1,Entrepà Gorgonzola,Menjar,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,holo@olo.cafe
-"22 may 2026, 11:27",Venta,TAAA29BHDYN,Mastercard - Débito,1,Importe personalizado,,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
 "22 may 2026, 11:27",Venta,TAAA29BHDYN,Mastercard - Débito,1,Importe personalizado,,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,holo@olo.cafe
+"22 may 2026, 11:27",Venta,TAAA29BHDYN,Mastercard - Débito,1,Importe personalizado,,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
 "22 may 2026, 11:27",Venta,TAAA29BHDYN,Mastercard - Débito,1,Lemon Pie,Menjar,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "22 may 2026, 11:27",Venta,TAAA29BHPBA,Mastercard - Débito,1,Capuccino Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "22 may 2026, 11:28",Venta,TAAA29BH3PH,Mastercard - Débito,1,Capuccino Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
@@ -2880,8 +2880,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,2,Entrepà Pastrami,Menjar,,EUR,"10,00","0,00","10,00","9,09","0,91",10 %,Caixer
 "2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
 "2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,1,Lemonade Honey Cold Brew,Especials,,EUR,"3,70","0,00","3,70","3,36","0,34",10 %,Caixer
-"2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
 "2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
 "2 jun 2026, 9:51",Venta,TAAA3E6ESR4,Visa - Crédito,2,Flat white Estándar,Cafes,,EUR,"5,80","0,00","5,80","5,27","0,53",10 %,Caixer
 "2 jun 2026, 9:55",Venta,TAAA3E6FPGH,Visa - Débito,1,Propina,,,EUR,"0,11",,"0,11","0,11","0,00",,treballador1@olo.com
 "2 jun 2026, 9:55",Venta,TAAA3E6FPGH,Visa - Débito,1,Americano  Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
@@ -4805,8 +4805,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "11 jun 2026, 11:20",Venta,TAAA3LHAA4F,Visa - Débito,1,Capuccino Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "11 jun 2026, 11:20",Venta,TAAA3LHAA4F,Visa - Débito,1,Coco Matcha Cloud,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,holo@olo.cafe
 "11 jun 2026, 11:21",Venta,TAAA3LHAQSY,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
-"11 jun 2026, 11:21",Venta,TAAA3LHAQSY,Mastercard - Débito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
 "11 jun 2026, 11:21",Venta,TAAA3LHAQSY,Mastercard - Débito,2,Espresso Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,holo@olo.cafe
+"11 jun 2026, 11:21",Venta,TAAA3LHAQSY,Mastercard - Débito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
 "11 jun 2026, 11:21",Venta,TAAA3LHAQSY,Mastercard - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
 "11 jun 2026, 11:22",Venta,TAAA3LHAY7N,Efectivo,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "11 jun 2026, 11:22",Venta,TAAA3LHAY7N,Efectivo,1,Ice Latte,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,holo@olo.cafe
@@ -5629,8 +5629,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
 "14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
-"14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
 "14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Espresso Espresso,Cafes,,EUR,"2,10","0,00","2,10","1,91","0,19",10 %,Caixer
+"14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
 "14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "14 jun 2026, 10:37",Venta,TAAA3M9XQE9,Efectivo,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
 "14 jun 2026, 10:37",Venta,TAAA3M9XQE9,Efectivo,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
@@ -6870,8 +6870,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "21 jun 2026, 10:51",Venta,TAAA3RUC9L3,Mastercard - Débito,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
 "21 jun 2026, 10:51",Venta,TAAA3RUC9L3,Mastercard - Débito,1,Matcha Latte,Te,,EUR,"3,70","0,00","3,70","3,36","0,34",10 %,Caixer
 "21 jun 2026, 10:52",Venta,TAAA3RUDHGX,Mastercard - Débito,1,Tallat Decaf,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
-"21 jun 2026, 11:03",Venta,TAAA3RUG3VE,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,Caixer
 "21 jun 2026, 11:03",Venta,TAAA3RUG3VE,Mastercard - Débito,2,Ice Latte,Cafes,,EUR,"7,20","0,00","7,20","6,55","0,65",10 %,Caixer
+"21 jun 2026, 11:03",Venta,TAAA3RUG3VE,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,Caixer
 "21 jun 2026, 11:04",Venta,TAAA3RUG96R,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "21 jun 2026, 11:06",Venta,TAAA3RUH3RZ,Efectivo,4,Croissant Estandard,Menjar,48,EUR,"8,00","0,00","8,00","7,27","0,73",10 %,Caixer
 "21 jun 2026, 11:08",Venta,TAAA3RUKMRY,Visa - Crédito,2,Cafè amb llet Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
@@ -7129,8 +7129,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "23 jun 2026, 13:54",Venta,TAAA3STGKSY,Mastercard - Débito,1,Propina,,,EUR,"0,45",,"0,45","0,45","0,00",,treballador1@olo.com
 "23 jun 2026, 13:54",Venta,TAAA3STGKSY,Mastercard - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
 "23 jun 2026, 13:58",Venta,TAAA3STH7ST,Efectivo,1,Doble expresso Doble Espresso,Cafes,,EUR,"2,40","0,00","2,40","2,18","0,22",10 %,Caixer
-"23 jun 2026, 14:02",Venta,TAAA3STLK3Y,Visa - Débito,2,Cafè amb llet Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "23 jun 2026, 14:02",Venta,TAAA3STLK3Y,Visa - Débito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"23 jun 2026, 14:02",Venta,TAAA3STLK3Y,Visa - Débito,2,Cafè amb llet Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "23 jun 2026, 14:58",Venta,TAAA3SUC9LG,Visa - Débito,1,Aigua Gas,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "23 jun 2026, 14:58",Venta,TAAA3SUC9LG,Visa - Débito,2,Espresso Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,Caixer
 "23 jun 2026, 15:29",Venta,TAAA3SURF6X,Visa - Crédito,1,Cold Brew Ice Strawberry,Especials,,EUR,"4,70","0,00","4,70","4,27","0,43",10 %,Caixer
@@ -7648,8 +7648,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "27 jun 2026, 9:56",Venta,TAAA3UP4DSQ,Mastercard - Débito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
 "27 jun 2026, 9:56",Venta,TAAA3UP4DSQ,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,Caixer
 "27 jun 2026, 10:02",Venta,TAAA3UP7MCZ,Mastercard - Débito,1,Aigua Gas,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
-"27 jun 2026, 10:02",Venta,TAAA3UP7MCZ,Mastercard - Débito,2,Cafè amb llet Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "27 jun 2026, 10:02",Venta,TAAA3UP7MCZ,Mastercard - Débito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"27 jun 2026, 10:02",Venta,TAAA3UP7MCZ,Mastercard - Débito,2,Cafè amb llet Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "27 jun 2026, 10:02",Venta,TAAA3UP7MCZ,Mastercard - Débito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "27 jun 2026, 10:02",Venta,TAAA3UP7MCZ,Mastercard - Débito,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
 "27 jun 2026, 10:02",Venta,TAAA3UP7MCZ,Mastercard - Débito,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
