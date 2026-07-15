@@ -1180,7 +1180,7 @@
         fetchTransactions(sd4.fromISO, sd4.toISO),
       ]);
 
-      // Filtrar dilluns de totes les llistes
+      // Tots els dies inclòs dilluns (OLO obre dilluns des de juny 2026)
       const thisWeekTxnsNoMon = filterNoMonday(thisWeekTxns);
       const lastWeekTxnsNoMon = filterNoMonday(lastWeekTxns);
 
@@ -1207,11 +1207,11 @@
           `${todayTxns.length} transacci${todayTxns.length === 1 ? 'ó' : 'ons'}`;
       }
 
-      // ── KPI: this week (sense dilluns)
+      // ── KPI: this week
       const thisWeekTotal = sumTransactions(thisWeekTxnsNoMon);
       document.getElementById('val-week').textContent = fmt(thisWeekTotal);
 
-      // Comparació equitativa: mateixos dies de la setmana passada (sense dilluns)
+      // Comparació equitativa: mateixos dies de la setmana passada
       const todayKey = localDateKey(new Date());
       const daysElapsed = thisWeek.days.findIndex(d => d.key === todayKey) + 1;
       const lastWeekSameDays = lastWeekTxnsNoMon.filter(t => {
@@ -1239,11 +1239,11 @@
         deltaEl.className = 'kpi-delta neutral';
       }
 
-      // ── KPI: avg ticket (sense dilluns) + comparació últimes 4 setmanes
+      // ── KPI: avg ticket + comparació últimes 4 setmanes
       const avgVal = thisWeekTxnsNoMon.length > 0 ? thisWeekTotal / thisWeekTxnsNoMon.length : 0;
       document.getElementById('val-avg').textContent = fmt(avgVal);
 
-      // Referència: tiquet mitjà de les últimes 4 setmanes (sense dilluns)
+      // Referència: tiquet mitjà de les últimes 4 setmanes
       const ref4Txns = filterNoMonday([...lastWeekTxns, ...w2Txns, ...w3Txns, ...w4Txns]);
       const ref4Total = sumTransactions(ref4Txns);
       const ref4Avg = ref4Txns.length > 0 ? ref4Total / ref4Txns.length : 0;
@@ -1256,16 +1256,16 @@
           `${thisWeekTxnsNoMon.length} tiquets · ref. 4 set. <span class="kpi-delta ${cls}" style="display:inline">${sign}${pct}%</span> (€${fmt(ref4Avg)})`;
       } else {
         document.getElementById('sub-avg').textContent =
-          `${thisWeekTxnsNoMon.length} transaccions (sense dilluns)`;
+          `${thisWeekTxnsNoMon.length} transaccions`;
       }
 
-      // ── Chart: daily breakdown (hora local, sense dilluns)
+      // ── Chart: daily breakdown (hora local)
       const thisWeekByDay = groupByDay(thisWeekTxnsNoMon);
       const lastWeekByDay = groupByDay(lastWeekTxnsNoMon);
 
-      // Eliminar dilluns del gràfic (índex 0)
-      const chartDays = thisWeek.days.filter(d => new Date(d.key + 'T12:00:00').getDay() !== 1);
-      const chartDaysLast = lastWeek.days.filter(d => new Date(d.key + 'T12:00:00').getDay() !== 1);
+      // Tots els dies al gràfic
+      const chartDays = thisWeek.days;
+      const chartDaysLast = lastWeek.days;
       const thisWeekCountByDay = groupByDayCount(thisWeekTxnsNoMon);
       const lastWeekCountByDay = groupByDayCount(lastWeekTxnsNoMon);
 
@@ -1277,14 +1277,14 @@
 
       renderChart(labels, dataThis, dataLast, countThis, countLast);
 
-      // ── Hora punta (mitjana setmanal vs 4 set. anteriors, sense dilluns)
+      // ── Hora punta (mitjana setmanal vs 4 set. anteriors)
       const ref4TxnsNoMon = filterNoMonday([...lastWeekTxns, ...w2Txns, ...w3Txns, ...w4Txns]);
       renderHeatChart(thisWeekTxnsNoMon, ref4TxnsNoMon);
 
-      // ── Tiquet mitjà per dia (sense dilluns)
+      // ── Tiquet mitjà per dia
       renderAvgDayChart(thisWeekTxnsNoMon, lastWeekTxnsNoMon);
 
-      // ── Millor dia setmana (sense dilluns)
+      // ── Millor dia setmana
       const bestDayIdx = dataThis.indexOf(Math.max(...dataThis));
       document.getElementById('val-bestday').textContent = chartDays[bestDayIdx]?.label || '—';
       document.getElementById('sub-bestday').textContent = `€${fmt(dataThis[bestDayIdx] || 0)}`;
@@ -1558,16 +1558,16 @@
     return sums.map((s, i) => counts[i] > 0 ? s / counts[i] : null);
   }
 
-  // Filtra dilluns de qualsevol llista de transaccions
+  // Retorna totes les transaccions (OLO obre dilluns des de juny 2026)
   function filterNoMonday(txns) {
     return txns.filter(t => {
       const key = localDateKey(new Date(t.timestamp));
       const d = new Date(key + 'T12:00:00');
-      return d.getDay() !== 1; // 1 = dilluns
+      return true; // tots els dies inclòs dilluns
     });
   }
 
-  // Fetch tendència: últimes N setmanes completes + setmana actual (ignora dilluns)
+  // Fetch tendència: últimes N setmanes completes + setmana actual
   async function fetchWeeklyTrend(numWeeks = 6) {
     const results = [];
     for (let w = numWeeks; w >= 0; w--) {
@@ -1584,7 +1584,7 @@
     return results;
   }
 
-  // Projecció mensual (ignora dilluns)
+  // Projecció mensual
   async function fetchMonthProjection() {
     const now = new Date();
     const y = now.getFullYear();
@@ -1598,14 +1598,14 @@
     const txnsNoMon = filterNoMonday(monthTxns);
     const accumulated = sumTransactions(txnsNoMon);
 
-    // Calcular dies oberts fins avui (excloent dilluns i futur)
+    // Calcular dies oberts fins avui (excloent futur)
     const todayKey = localDateKey(now);
     let daysOpen = 0;
     let daysOpenTotal = 0; // dies oberts tot el mes
     for (let d = 1; d <= totalDaysInMonth; d++) {
       const dateKey = `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
       const dow = new Date(dateKey + 'T12:00:00').getDay();
-      if (dow !== 1) { // no dilluns
+      if (true) { // tots els dies inclòs dilluns
         daysOpenTotal++;
         if (dateKey <= todayKey) daysOpen++;
       }
@@ -1886,7 +1886,7 @@
     document.getElementById('proj-actual').textContent = fmt(accumulated);
     document.getElementById('proj-total').textContent = fmt(projection);
     document.getElementById('proj-daily').textContent = fmt(dailyAvg);
-    document.getElementById('proj-sub').textContent = `${daysRemaining} dies laborables restants (sense dilluns)`;
+    document.getElementById('proj-sub').textContent = `${daysRemaining} dies laborables restants`;
 
     // Chart: barres reals + barres projeccions
     const ctx = document.getElementById('monthChart').getContext('2d');
@@ -1897,7 +1897,7 @@
     for (let d = 1; d <= totalDaysInMonth; d++) {
       const dateKey = `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
       const dow = new Date(dateKey + 'T12:00:00').getDay();
-      if (dow === 1) continue; // salta dilluns
+      // dilluns inclòs des de juny 2026
       labels.push(String(d));
       if (dateKey <= todayKey) {
         dataReal.push(byDay[dateKey] || 0);
