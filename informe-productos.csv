@@ -1,124 +1,129 @@
 Nombre del producto,Nombre de la variante,Categoría,SKU,Unidades,Moneda,Importe,Precio de coste,Beneficio,Margen
-Affogato,,Especials,,16,EUR,"72,00","1,00","49,44","75,55 %"
-"Aigua 0,5L",,Begudes Envasades,,702,EUR,"1404,00","0,31","1059,68","82,962 %"
+Affogato,,Especials,,17,EUR,"76,50","1,00","52,53","75,55 %"
+"Aigua 0,5L",,Begudes Envasades,,835,EUR,"1670,00","0,31","1260,44","82,962 %"
 Aigua amb gas,,Begudes,,2,EUR,"4,00",,,
 Aigua amb gas,,Begudes Envasades,,4,EUR,"8,00",,,
-Aigua Gas,,Begudes Envasades,,46,EUR,"115,00","0,64","75,03","71,819 %"
-Amaroza,,Granel,,3,EUR,"48,00","11,91","7,92","18,144 %"
-Americano,,Cafes,,22,EUR,"48,70","0,35","36,57","82,606 %"
+Aigua Gas,,Begudes Envasades,,61,EUR,"152,50","0,64","99,50","71,82 %"
+Amaroza,,Granel,,4,EUR,"64,00","11,91","10,56","18,144 %"
+Americano,,Cafes,,45,EUR,"99,60","0,35","74,79","82,604 %"
 Americano,Americano,Cafes,,186,EUR,"411,60","0,32","314,65","84,092 %"
 Americano,Decaf,Cafes,,9,EUR,"19,80","0,32","15,12",84 %
 Ametlles torrades,,Menjar,,1,EUR,"2,20",,,
-Banana Bread,,Menjar,,128,EUR,"438,90","1,00","270,79","67,902 %"
 Banana Bread,,,,1,EUR,"-3,50",,,
+Banana Bread,,Menjar,,144,EUR,"494,90","1,00","305,67","67,976 %"
 Banana Bread,Estandard,Menjar,,19,EUR,"41,80","0,65","25,65","67,5 %"
 Banana Bread,OLO,Menjar,,43,EUR,"150,15","0,95","95,22","69,978 %"
-Batch Coffee,,Filtrats,,179,EUR,"625,40","0,40","495,21","87,367 %"
+Batch Coffee,,Filtrats,,201,EUR,"698,90","0,40","549,69","87,239 %"
+Batch Coffee,,,,1,EUR,"-3,50",,,
 Bitter,,Begudes Envasades,,8,EUR,"20,00","0,66","12,89","70,941 %"
 Blanc,,Vi,,11,EUR,"38,50",,,
-Cafè amb llet,,Cafes,,275,EUR,"689,60","0,60","461,57","73,666 %"
+Cafè amb llet,,Cafes,,411,EUR,"1029,55","0,60","687,64","73,604 %"
 Cafè amb llet,Cafè amb llet,Cafes,,1.079,EUR,"2702,70","0,51","1904,66","77,584 %"
 Cafè amb llet,Cafè amb llet,,,2,EUR,"-5,00",,,
 Cafè amb llet,Decaf,Cafes,,65,EUR,"162,50","0,51","114,41","77,534 %"
-Capuccino,,Cafes,,120,EUR,"300,00","0,60","200,54","73,581 %"
+Capuccino,,Cafes,,169,EUR,"422,50","0,60","282,42","73,581 %"
 Capuccino,Capuccino,Cafes,,334,EUR,"836,80","0,51","589,87","77,593 %"
 Capuccino,Decaf,Cafes,,17,EUR,"42,50","0,51","29,92","77,533 %"
-Carrot Cake,,Menjar,,120,EUR,"420,00","1,00","261,61","68,554 %"
+Carrot Cake,,Menjar,,131,EUR,"458,50","1,00","285,59","68,554 %"
 Carrot Cake,,Menjar,,16,EUR,"40,00",,,
 Carrot Cake,Estandard,Menjar,,12,EUR,"30,00","1,00","15,25","55,963 %"
 Carrot Cake,OLO,Menjar,,18,EUR,"63,00","1,00","39,24","68,553 %"
 Cervesa,,Cervesa,,1,EUR,"2,50",,,
-Chai Latte,,Cafes,,14,EUR,"51,00","1,30","28,14","60,725 %"
+Chai Latte,,Cafes,,16,EUR,"60,00","1,30","33,72","61,848 %"
 Chai Latte,S,Cafes,,84,EUR,"294,00","1,16","169,68","63,522 %"
 Chemex,,Filtrats,,2,EUR,"16,00","1,65","11,24","77,303 %"
 Cinammon Orange Cold Brew,,Especials,,30,EUR,"130,00","1,00","88,11","74,599 %"
-Coco Matcha Cloud,,Especials,,61,EUR,"335,50",,,
-Cold Brew,,Filtrats,,275,EUR,"823,80","0,85","514,42","68,757 %"
-Cold Brew Cinammon Orange,,Especials,,38,EUR,"178,60","1,00","124,26","76,58 %"
-Cold Brew Ice Strawberry,,Especials,,19,EUR,"89,30","1,00","62,15","76,586 %"
-Cold Brew Lemonade Honey,,Especials,,26,EUR,"122,20","1,00","85,02","76,58 %"
-Cookie 3 xoco,,Menjar,,35,EUR,"77,00","0,75","43,75","62,5 %"
+Coco Matcha Cloud,,Especials,,72,EUR,"396,00",,,
+Cold Brew,,Filtrats,,357,EUR,"1067,70","0,85","664,53","68,651 %"
+Cold Brew Cinammon Orange,,Especials,,45,EUR,"209,15","1,00","142,66","76,02 %"
+Cold Brew Ice Strawberry,,Especials,,24,EUR,"112,80","1,00","78,51","76,587 %"
+Cold Brew Lemonade Honey,,Especials,,30,EUR,"141,00","1,00","98,10","76,58 %"
+Cookie 3 xoco,,Menjar,,47,EUR,"102,30","0,75","56,65","61,643 %"
 Croissant,,Menjar,48,6,EUR,"10,80","0,72","5,51","56,052 %"
-Croissant,Estandard,Menjar,48,817,EUR,"1611,64","0,72","877,85","59,876 %"
 Croissant,Estandard,,,1,EUR,"-2,00",,,
+Croissant,Estandard,Menjar,48,963,EUR,"1903,64","0,72","1038,41","59,962 %"
+Croissant,Farcit,Menjar,,216,EUR,"707,65","0,95","437,70","68,082 %"
 Croissant,Farcit,,,1,EUR,"-3,50",,,
-Croissant,Farcit,Menjar,,174,EUR,"561,00","0,95","344,71","67,588 %"
+Croissant,Moratdel·la,Menjar,,1,EUR,"4,00","1,20","2,44","67,032 %"
 Croissant,Nutella,Menjar,,1,EUR,"2,90","0,95","1,69","64,015 %"
-Dirty Chai Latte,,Cafes,,10,EUR,"42,90","1,55","23,51","60,266 %"
-Doble expresso,,Cafes,,37,EUR,"89,10","0,70","55,03","67,997 %"
+Croissant,Pistacho,Menjar,,3,EUR,"11,40","1,00","7,35","71,014 %"
+Croissant,Xoco,Menjar,,2,EUR,"7,60","1,00","4,90","71,014 %"
+Dirty Chai Latte,,Cafes,,15,EUR,"63,15","1,55","31,91","57,849 %"
+Doble expresso,,Cafes,,68,EUR,"164,40","0,70","101,72","68,122 %"
 Doble expresso,Doble Espresso,,,1,EUR,"-2,40",,,
 Doble expresso,Doble Espresso,Cafes,,113,EUR,"273,06","0,68","170,93","68,987 %"
 El Nido 250,,Granel,,1,EUR,"14,00",,,
 Entrepa Gorgonzola,,Menjar,,4,EUR,"18,00",,,
 Entrepa Pastrami,,Menjar,,10,EUR,"49,00",,,
+Entrepà Gorgonzola,,Entrepans,,180,EUR,"810,00","2,20","340,20","46,21 %"
 Entrepà Gorgonzola,,Menjar,,61,EUR,"273,37","1,80","137,53","55,605 %"
-Entrepà Gorgonzola,,Entrepans,,160,EUR,"720,00","2,20","302,40","46,21 %"
-Entrepà Mortadela Trufa,,Entrepans,,149,EUR,"818,95","2,65","349,10","46,925 %"
 Entrepà Mortadela Trufa,,,,1,EUR,"-5,50",,,
+Entrepà Mortadela Trufa,,Entrepans,,183,EUR,"1003,20","2,65","423,75","46,632 %"
 Entrepà Pastrami,,,,1,EUR,"-5,00",,,
-Entrepà Pastrami,,Entrepans,,222,EUR,"1110,00","2,30","499,30","49,44 %"
+Entrepà Pastrami,,Entrepans,,258,EUR,"1287,50","2,30","575,51","49,234 %"
 Entrepà Pastrami,,Menjar,,90,EUR,"448,50","2,00","226,47","55,716 %"
 Entrepà Pesto Vermell,,Menjar,,56,EUR,"252,00","1,35","153,44","66,992 %"
-Espresso,,Cafes,,99,EUR,"178,20","0,35","127,64","78,649 %"
+Espresso,,,,1,EUR,"-1,80",,,
+Espresso,,Cafes,,155,EUR,"278,40","0,35","198,36","78,524 %"
 Espresso,Decaf,Cafes,,21,EUR,"37,80","0,34","27,29","79,262 %"
-Espresso,Espresso,Cafes,,386,EUR,"698,25","0,34","503,72","79,33 %"
 Espresso,Espresso,,,1,EUR,"-1,80",,,
+Espresso,Espresso,Cafes,,386,EUR,"698,25","0,34","503,72","79,33 %"
 Espresso Tonic,,,,1,EUR,"-3,00",,,
-Espresso Tonic,,Especials,,111,EUR,"339,00","0,92","206,23","66,881 %"
-Flat white,,Cafes,,136,EUR,"396,20","0,90","238,05","66,042 %"
+Espresso Tonic,,Especials,,119,EUR,"367,00","0,92","224,31","67,2 %"
+Flat white,,Cafes,,208,EUR,"600,65","0,90","354,95","65,47 %"
 Flat white,Decaf,Cafes,,6,EUR,"17,40","0,82","10,92","68,939 %"
 Flat white,Estándar,Cafes,,482,EUR,"1400,50","0,82","879,05","68,983 %"
 Flat white,Estándar,,,1,EUR,"-2,90",,,
 Frappe,,Especials,,1,EUR,"6,00",,,
-Free IPA Brebel,,Cervesa,,29,EUR,"101,15","1,82","30,42","36,562 %"
+Free IPA Brebel,,Cervesa,,31,EUR,"108,15","1,82","33,14","37,003 %"
 Fritz Cola,,Begudes Envasades,,38,EUR,"113,70",,,
-Fritz Kola,,Begudes Envasades,,45,EUR,"134,40","1,20","67,64","55,606 %"
-Fritz Kola Zero,,Begudes Envasades,,32,EUR,"95,40","1,20","47,79","55,447 %"
-Fritz Llimona,,Begudes Envasades,,42,EUR,"126,00","1,20","64,22","56,028 %"
-Fritz Taronja,,Begudes Envasades,,25,EUR,"75,00","1,20","38,23","56,031 %"
+Fritz Kola,,Begudes Envasades,,54,EUR,"161,40","1,20","81,40","55,677 %"
+Fritz Kola Zero,,Begudes Envasades,,36,EUR,"107,40","1,20","53,91","55,514 %"
+Fritz Llimona,,Begudes Envasades,,52,EUR,"155,70","1,20","78,94","55,851 %"
+Fritz Taronja,,Begudes Envasades,,32,EUR,"95,70","1,20","48,37","55,745 %"
 Fritzcola Zero,,Begudes Envasades,,6,EUR,"18,00",,,
-Got Llet,,Cafes,,3,EUR,"3,00",,,
-Granja Paraíso 250,,Granel,,4,EUR,"84,00","13,35","16,04","23,099 %"
+Got Llet,,Cafes,,4,EUR,"4,00",,,
+Granja Paraíso 250,,Granel,,7,EUR,"142,80","13,35","25,24","21,265 %"
 Ice Latte,,,,2,EUR,"-7,20",,,
-Ice Latte,,Cafes,,750,EUR,"2739,00","1,25","1550,83","62,324 %"
+Ice Latte,,Cafes,,945,EUR,"3461,60","1,25","1944,23","62,205 %"
 Ice Latte,Decaf,Cafes,,13,EUR,"46,80",,,
-Ice Matcha Latte,,Te,,178,EUR,"682,90","0,60","513,46","82,781 %"
+Ice Matcha Latte,,Te,,209,EUR,"832,00","1,10","525,79","69,577 %"
 Ice Strawberry Cold Brew,,Especials,,43,EUR,"180,16","1,00","119,73","73,575 %"
-Ice Strawberry Matcha Latte,,Especials,,77,EUR,"424,10","1,78","248,48","64,449 %"
-Iced Chai Latte,,Cafes,,2,EUR,"9,60","1,50","5,72","65,596 %"
-In solem Twins,,Cervesa,,52,EUR,"179,90","1,85","59,22","38,103 %"
-Isp Facto Twins,,Cervesa,,79,EUR,"273,00","1,85","98,42","40,242 %"
+Ice Strawberry Matcha Latte,,Especials,,96,EUR,"528,60","1,78","309,66","64,44 %"
+Iced Chai Latte,,Cafes,,14,EUR,"67,20","1,50","40,04","65,596 %"
+In solem Twins,,Cervesa,,61,EUR,"209,30","1,85","67,18","37,316 %"
+Isp Facto Twins,,Cervesa,,81,EUR,"280,00","1,85","101,08","40,282 %"
 Kombucha Llimona/gingebre,,Begudes Envasades,,6,EUR,"23,40","2,50","6,30","29,577 %"
 La Caro 250,,Granel,,5,EUR,"72,50","8,92","15,30","25,542 %"
 La Cima,,Granel,,3,EUR,"37,50","8,05","8,90","26,928 %"
 La Esperanza 250,,Granel,,3,EUR,"58,50","12,68","10,32","21,339 %"
-La Leona,,Granel,,1,EUR,"13,50",,,
-La Tribu,,Granel,,8,EUR,"100,00","8,05","24,42","27,493 %"
-Latte,,Cafes,,51,EUR,"148,20","0,75","96,63","71,641 %"
+La Leona,,Granel,,2,EUR,"27,00","9,68","5,18","21,108 %"
+La Tribu,,Granel,,9,EUR,"110,00","8,05","22,96","24,064 %"
+Latte,,Cafes,,78,EUR,"226,50","0,75","147,64","71,621 %"
 Latte,L,Cafes,,12,EUR,"36,00","1,04","20,28","61,904 %"
 Latte,M,,,1,EUR,"-2,90",,,
 Latte,M,Cafes,,279,EUR,"814,21","0,60","573,19","77,396 %"
-Lemon Pie,,Menjar,,93,EUR,"325,50","1,00","202,76","68,555 %"
+Lemon Pie,,Menjar,,111,EUR,"388,50","1,00","242,00","68,555 %"
 Lemon Pie,,Menjar,,23,EUR,"57,00",,,
 Lemon Pie,Estandard,Menjar,,12,EUR,"30,00","0,90","16,44","60,352 %"
 Lemon Pie,OLO,Menjar,,29,EUR,"101,50","1,00","63,22","68,553 %"
 Lemonade Honey Cold Brew,,Especials,,19,EUR,"81,30","1,00","54,85","74,272 %"
-Limonada Menta,,Begudes,,3,EUR,"11,10",,,
-Llimonada,,Begudes,,104,EUR,"315,20","0,60","224,01","78,213 %"
+Limonada Menta,,Begudes,,11,EUR,"40,70",,,
+Llimonada,,Begudes,,124,EUR,"385,20","0,60","275,61","78,743 %"
 Marzen Twins,,Cervesa,,14,EUR,"48,30","1,85","17,29","40,032 %"
 Matcha Latte,,,,1,EUR,"-3,70",,,
-Matcha Latte,,Te,,59,EUR,"220,40","1,09","135,86","67,872 %"
+Matcha Latte,,Te,,64,EUR,"241,77","1,09","149,41","68,17 %"
 Matcha Latte,L,Te,,1,EUR,"4,20","1,46","2,36","61,78 %"
 Matcha Latte,M,Te,,3,EUR,"11,10","1,09","6,81","67,559 %"
-Moka,,Cafes,,27,EUR,"108,00","2,30","36,17","36,806 %"
-Montblanc,,Especials,,4,EUR,"22,00",,,
+Moka,,Cafes,,31,EUR,"124,00","2,30","41,53","36,807 %"
+Montblanc,,Especials,,7,EUR,"38,50",,,
 Pain au chocolat,,,,1,EUR,"-2,20",,,
-Pain au chocolat,,Menjar,52,886,EUR,"1919,89","0,94","912,63","52,285 %"
+Pain au chocolat,,Menjar,52,1.011,EUR,"2193,79","0,94","1043,03","52,324 %"
 Patates bossa,,Menjar,,3,EUR,"4,50","0,55","2,43","59,558 %"
-Red Matcha Coco,,Especials,,59,EUR,"269,28",,,
+Red Matcha Coco,,Especials,,67,EUR,"313,28",,,
 Refresc Llimona,,Begudes Envasades,,7,EUR,"17,50",,,
 Refresc Taronja,,Begudes Envasades,,5,EUR,"12,50",,,
-Revista Mirades,,Otros,,4,EUR,"36,00",,,
+Revista Mirades,,Otros,,5,EUR,"45,00",,,
 San Pedro 250,,Granel,,3,EUR,"57,00","12,13","10,71","22,738 %"
 Seweda 250,,Granel,,5,EUR,"78,40","10,28","13,11","20,322 %"
 Sodas / Refresc amb gust,,Begudes,,2,EUR,"6,00",,,
@@ -126,24 +131,27 @@ Sta Sofia 250,,Granel,,2,EUR,"31,00","10,23","5,16","20,14 %"
 Strawberry Matcha Latte,,Especials,,13,EUR,"71,50","1,78","41,86","64,4 %"
 Strawberry Matcha Latte,,Begudes,,1,EUR,"5,50",,,
 Suc Linda,,Begudes Envasades,,18,EUR,"48,60","1,35","19,81","44,91 %"
-Suc Poma Cal Valls,,Begudes Envasades,,18,EUR,"45,00","0,70","28,29","69,185 %"
+Suc Poma Cal Valls,,Begudes Envasades,,20,EUR,"50,00","0,70","31,43","69,183 %"
+Suc Raïm-Pressec Cal Valls,,Begudes Envasades,,11,EUR,"27,50","0,84","15,73","62,995 %"
 Suc Raïm-Pressec Cal Valls,,,,1,EUR,"-2,50",,,
-Suc Raïm-Pressec Cal Valls,,Begudes Envasades,,8,EUR,"20,00","0,84","11,44","62,995 %"
-Suc Taronja,,Begudes,,151,EUR,"462,00","1,00","269,17","64,062 %"
+Suc Taronja,,Begudes,,179,EUR,"560,00","1,00","330,21","64,847 %"
 Suc Taronja,M,Begudes,,8,EUR,"24,00",,,
-Sunrise,,Begudes,,19,EUR,"76,00",,,
-Tallat,,Cafes,,97,EUR,"214,60","0,50","146,58","75,138 %"
+Sunrise,,Begudes,,30,EUR,"120,00",,,
+Tallat,,,,1,EUR,"-2,20",,,
+Tallat,,Cafes,,149,EUR,"329,90","0,50","225,39","75,157 %"
 Tallat,Decaf,Cafes,,27,EUR,"59,40","0,80","32,40",60 %
-Tallat,Estándar,,,1,EUR,"-2,20",,,
 Tallat,Estándar,Cafes,,348,EUR,"767,10","0,40","558,15","80,038 %"
-Te,,Te,,25,EUR,"74,50",,,
-TOTE BAG Tour,,MERCH,,2,EUR,"24,00","6,00","7,84","39,516 %"
+Tallat,Estándar,,,1,EUR,"-2,20",,,
+Te,,Te,,27,EUR,"80,50",,,
+TOTE BAG Tour,,MERCH,,4,EUR,"48,00","6,00","15,68","39,516 %"
 Tònica,,Begudes Envasades,,5,EUR,"12,50",,,
 Tònica Schweppes,,Begudes Envasades,,4,EUR,"10,00","0,75","6,08","66,96 %"
-V60,,Filtrats,,83,EUR,"414,00","0,95","296,88","79,014 %"
+V60,,Filtrats,,86,EUR,"429,00","0,95","307,68","79,017 %"
+V60,Estàndard,Filtrats,,3,EUR,"15,00",,,
+V60,Extra,Filtrats,,1,EUR,"8,00",,,
 Vermut,,Vi,,2,EUR,"7,80",,,
-Vichy Catalan,,Begudes Envasades,,45,EUR,"115,90","0,82","68,34","64,937 %"
-Xocolata,,Cafes,,28,EUR,"74,00",,,
-ZTAFF ABOVE 3€,,STAFF,,5,EUR,"12,50",,,
-ZTAFF OATLY UNITAT,,STAFF,,2,EUR,"4,60","2,09","0,00",0 %
-ZTAFF UNDER 3€,,STAFF,,5,EUR,"7,50",,,
+Vichy Catalan,,Begudes Envasades,,56,EUR,"144,50","0,82","85,30","65,005 %"
+Xocolata,,Cafes,,35,EUR,"95,00",,,
+ZTAFF ABOVE 3€,,STAFF,,6,EUR,"15,00",,,
+ZTAFF OATLY UNITAT,,STAFF,,4,EUR,"9,20","2,09","0,00",0 %
+ZTAFF UNDER 3€,,STAFF,,7,EUR,"10,50",,,
