@@ -125,6 +125,30 @@
   .empty-icon { font-size:36px; margin-bottom:10px; opacity:.4; }
   .num { font-variant-numeric:tabular-nums; }
 
+  /* ── RÈCORDS ── */
+  .rec-list { display:flex; flex-direction:column; gap:0; }
+  .rec-row {
+    display:flex; align-items:center; gap:14px;
+    padding:12px 4px; border-bottom:1px solid var(--border);
+  }
+  .rec-row:last-child { border-bottom:none; }
+  .rec-pos {
+    font-family:'DM Serif Display',serif; font-size:22px;
+    color:var(--border); min-width:28px; text-align:center; flex-shrink:0;
+  }
+  .rec-pos.gold   { color:#F5A623; }
+  .rec-pos.silver { color:#A0A8B8; }
+  .rec-pos.bronze { color:#A0724A; }
+  .rec-main { flex:1; min-width:0; }
+  .rec-date { font-size:13px; color:var(--text); font-weight:500; }
+  .rec-sub  { font-size:11px; color:var(--muted); margin-top:2px; }
+  .rec-val  {
+    font-family:'DM Serif Display',serif; font-size:24px;
+    color:var(--amber); text-align:right; flex-shrink:0;
+  }
+  .rec-bar-wrap { width:120px; flex-shrink:0; }
+  @media(max-width:600px){ .rec-bar-wrap { display:none; } }
+
   .api-status { display:flex; align-items:center; gap:6px; font-size:12px; color:var(--muted); }
   .dot { width:7px; height:7px; border-radius:50%; background:var(--muted); }
   .dot.ok { background:var(--green); } .dot.err { background:var(--red); }
@@ -209,6 +233,7 @@
   <div class="tab" onclick="showTab('pl',this)">💰 P&L</div>
   <div class="tab" onclick="showTab('productes',this)">☕ Productes</div>
   <div class="tab" onclick="showTab('prediccio',this)">🔮 Predicció</div>
+  <div class="tab" onclick="showTab('records',this)">🏆 Rècords</div>
 </div>
 
 <!-- ══ PANEL OVERVIEW ══ -->
@@ -440,6 +465,39 @@
   <div class="chart-card" id="breakevenCard">
     <h3>Break-even tracker</h3>
     <div id="breakevenContent"></div>
+  </div>
+</div>
+
+<!-- ══ PANEL RÈCORDS ══ -->
+<div id="panel-records" class="panel">
+  <div style="margin-bottom:24px">
+    <div class="section-title">🏆 Rècords d'OLO</div>
+    <div class="section-sub">Els millors moments des de l'obertura · exclou les 2 primeres setmanes de rodatge</div>
+  </div>
+
+  <!-- Top 3 Millors Setmanes -->
+  <div class="chart-card" style="margin-bottom:18px">
+    <h3>🗓 Top 3 · Millors setmanes</h3>
+    <div id="recSetmanes"></div>
+  </div>
+
+  <!-- Top 5 Millors Dies -->
+  <div class="chart-card" style="margin-bottom:18px">
+    <h3>📅 Top 5 · Millors dies</h3>
+    <div id="recDies"></div>
+  </div>
+
+  <div class="grid-2">
+    <!-- Top 5 Millors 60 minuts -->
+    <div class="chart-card">
+      <h3>⏱ Top 5 · Millors 60 minuts consecutius</h3>
+      <div id="rec60min"></div>
+    </div>
+    <!-- Top 5 Millors 30 minuts -->
+    <div class="chart-card">
+      <h3>⚡ Top 5 · Millors 30 minuts consecutius</h3>
+      <div id="rec30min"></div>
+    </div>
   </div>
 </div>
 
@@ -766,6 +824,7 @@ function processAndRender() {
   renderPL();
   renderProductes(prodMap);
   renderPrediccio();
+  renderRecords();
   renderOverview(prodMap);
 }
 
@@ -1471,6 +1530,111 @@ function renderPrediccio() {
     kpiCard('Slope setmanal',eur(slope),'€/setmana addicionals',slope>=0?'up':'down')+
     kpiCard('Break-even setmanal',eur(beWeek),'','neutral');
 }
+// ═══════════════ RÈCORDS ═══════════════
+function renderRecords() {
+  if (!vendesRows.length) return;
+  const validWeeks = new Set(weeklyData.map(w => w.week));
+  const validRows  = vendesRows.filter(r => validWeeks.has(getWeekKey(r.date)));
+
+  // ── TOP 3 MILLORS SETMANES ──
+  const top3Setmanes = [...weeklyData]
+    .sort((a, b) => b.revenue - a.revenue).slice(0, 3)
+    .map((w, i) => ({
+      pos: i+1,
+      date: formatWeekLabel(w.week),
+      sub: `${w.tickets} tiquets · tiquet mitjà ${eur(w.avg)}`,
+      val: w.revenue,
+    }));
+  renderRecList('recSetmanes', top3Setmanes);
+
+  // ── TOP 5 MILLORS DIES ──
+  const dayMap = {};
+  validRows.forEach(r => {
+    const dk = r.date.toISOString().slice(0,10);
+    if (!dayMap[dk]) dayMap[dk] = { revenue:0, txIds:new Set() };
+    dayMap[dk].revenue += r.net;
+    dayMap[dk].txIds.add(r.txId || (r.date.toISOString()+r.net));
+  });
+  const top5Dies = Object.entries(dayMap)
+    .sort((a,b) => b[1].revenue - a[1].revenue).slice(0,5)
+    .map(([dk,d],i) => ({
+      pos: i+1,
+      date: formatDayLabel(dk),
+      sub: `${d.txIds.size} tiquets`,
+      val: d.revenue,
+    }));
+  renderRecList('recDies', top5Dies);
+
+  // ── FINESTRA LLISCANT ──
+  function topWindows(minutes, n) {
+    const ms = minutes * 60 * 1000;
+    const sorted = [...validRows].sort((a,b) => a.date - b.date);
+    if (!sorted.length) return [];
+    const results = [];
+    const queue = [];
+    let windowRev = 0;
+    for (let i = 0; i < sorted.length; i++) {
+      queue.push(sorted[i]);
+      windowRev += sorted[i].net;
+      while (queue.length && sorted[i].date - queue[0].date >= ms) {
+        windowRev -= queue[0].net;
+        queue.shift();
+      }
+      results.push({ revenue: windowRev, start: queue[0].date, end: sorted[i].date, txs: queue.length });
+    }
+    return results.sort((a,b) => b.revenue - a.revenue).slice(0,n);
+  }
+
+  renderRecList('rec60min', topWindows(60,5).map((w,i) => ({
+    pos: i+1,
+    date: formatDateTime(w.start) + ' – ' + formatTime(w.end),
+    sub: `${w.txs} transaccions en 60 min`,
+    val: w.revenue,
+  })));
+
+  renderRecList('rec30min', topWindows(30,5).map((w,i) => ({
+    pos: i+1,
+    date: formatDateTime(w.start) + ' – ' + formatTime(w.end),
+    sub: `${w.txs} transaccions en 30 min`,
+    val: w.revenue,
+  })));
+}
+
+function renderRecList(elId, items) {
+  const maxVal = items[0]?.val || 1;
+  const medals = ['🥇','🥈','🥉'];
+  const posClass = i => i===1?'gold':i===2?'silver':i===3?'bronze':'';
+  document.getElementById(elId).innerHTML = `<div class="rec-list">` +
+    items.map(item => `
+      <div class="rec-row">
+        <div class="rec-pos ${posClass(item.pos)}">${medals[item.pos-1]||item.pos}</div>
+        <div class="rec-main">
+          <div class="rec-date">${item.date}</div>
+          <div class="rec-sub">${item.sub}</div>
+        </div>
+        <div class="rec-bar-wrap">
+          <div class="bar-bg"><div class="bar-fill" style="width:${(item.val/maxVal*100).toFixed(1)}%"></div></div>
+        </div>
+        <div class="rec-val">${eur(item.val)}</div>
+      </div>`).join('') + `</div>`;
+}
+
+function formatWeekLabel(wk) {
+  const d = new Date(wk+'T12:00:00');
+  const end = new Date(d); end.setDate(end.getDate()+6);
+  const fmt = dt => dt.toLocaleDateString('ca-ES',{day:'2-digit',month:'short'});
+  return `Setmana del ${fmt(d)} al ${fmt(end)}`;
+}
+function formatDayLabel(dk) {
+  return new Date(dk+'T12:00:00').toLocaleDateString('ca-ES',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+}
+function formatDateTime(dt) {
+  return dt.toLocaleDateString('ca-ES',{day:'2-digit',month:'short'})+' '+formatTime(dt);
+}
+function formatTime(dt) {
+  return dt.toLocaleTimeString('ca-ES',{hour:'2-digit',minute:'2-digit'});
+}
+
 </script>
 </body>
 </html>
