@@ -810,7 +810,7 @@ function processAndRender() {
 
   weeklyData = Object.entries(weekMap)
     .sort(([a],[b]) => a.localeCompare(b))
-    .slice(2)   // ignorem les 2 primeres setmanes de rodatge
+    .slice(3)   // ignorem les 3 primeres setmanes (S18 parcial + S19 i S20 de rodatge)
     .map(([wk,d]) => ({
       week: wk,
       revenue: d.revenue,
@@ -987,7 +987,7 @@ function renderOverview(prodMap) {
 
   // mini chart
   destroyChart('ovMiniChart');
-  const labels = weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10));
+  const labels = weeklyData.map(w=>weekLabel(w.week));
   const revs   = weeklyData.map(w=>+w.revenue.toFixed(2));
   const ctx    = document.getElementById('ovMiniChart').getContext('2d');
   const grad   = ctx.createLinearGradient(0,0,0,160);
@@ -1064,7 +1064,7 @@ function renderEvolucio(dowMap, hourMap) {
 
   ['heroCard','gridDowHour','weekBarCard'].forEach(id=>document.getElementById(id).style.display='');
 
-  const labels = weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10));
+  const labels = weeklyData.map(w=>weekLabel(w.week));
   const revs   = weeklyData.map(w=>+w.revenue.toFixed(2));
 
   destroyChart('heroChart');
@@ -1096,7 +1096,7 @@ function renderEvolucio(dowMap, hourMap) {
 }
 function renderWeekBar() {
   const m  = document.getElementById('weekMetric').value;
-  const labels = weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10));
+  const labels = weeklyData.map(w=>weekLabel(w.week));
   const data   = weeklyData.map(w=>+(m==='revenue'?w.revenue:m==='tickets'?w.tickets:w.avg).toFixed(2));
   const colors = data.map((_,i)=>i===data.length-1?'#F5A623':'rgba(245,166,35,.4)');
   destroyChart('weekBarChart');
@@ -1126,7 +1126,7 @@ function renderPL() {
     kpiCard('Despeses fixes acum.',eur(totFixed),eur(fixedM)+'/mes','neutral')+
     kpiCard('Marge net acumulat',eur(totNet),pct(netPct),totNet>=0?'up':'down');
 
-  const labels=weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10));
+  const labels=weeklyData.map(w=>weekLabel(w.week));
   let cR=0,cGM=0,cN=0;
   const cRevA=[],cGMA=[],cNA=[];
   weeklyData.forEach(w=>{
@@ -1410,7 +1410,7 @@ function renderProdEvoChart() {
   wrap.style.display  = '';
 
   const validWeeks = new Set(weeklyData.map(w=>w.week));
-  const weekLabels = weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10));
+  const weekLabels = weeklyData.map(w=>weekLabel(w.week));
 
   const seriesByProduct = {};
   [...prodEvoSelected].forEach(name => { seriesByProduct[name] = {}; });
@@ -1480,7 +1480,7 @@ function renderPrediccio() {
   document.getElementById('goalSub').textContent =
     'Últimes 5 setmanes: '+eur(last5Rev)+' · Objectiu: '+eur(config.goal);
 
-  const allLabels=[...weeklyData.map(w=>'S'+w.week.slice(5,7)+'/'+w.week.slice(8,10)),...['+S1','+S2','+S3','+S4']];
+  const allLabels=[...weeklyData.map(w=>weekLabel(w.week)),...['+S1','+S2','+S3','+S4']];
   const realData = weeklyData.map(w=>+w.revenue.toFixed(2));
   const trendAll = [...xs,...[n+1,n+2,n+3,n+4]].map(x=>+(slope*x+intercept).toFixed(2));
   const forecastData = new Array(n).fill(null).concat(proj.map(v=>+v.toFixed(2)));
@@ -1619,11 +1619,29 @@ function renderRecList(elId, items) {
       </div>`).join('') + `</div>`;
 }
 
+function getISOWeek(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  const tmp = new Date(d);
+  tmp.setHours(0,0,0,0);
+  tmp.setDate(tmp.getDate() + 3 - (tmp.getDay()+6)%7);
+  const week1 = new Date(tmp.getFullYear(), 0, 4);
+  return 1 + Math.round(((tmp-week1)/86400000 - 3 + (week1.getDay()+6)%7) / 7);
+}
+
+function weekLabel(wk) {
+  // wk = "2026-05-18" (Monday of the week)
+  const isoWeek = getISOWeek(wk);
+  const year    = new Date(wk+'T12:00:00').getFullYear();
+  return `S${isoWeek} · ${year}`;
+}
+
 function formatWeekLabel(wk) {
   const d = new Date(wk+'T12:00:00');
   const end = new Date(d); end.setDate(end.getDate()+6);
   const fmt = dt => dt.toLocaleDateString('ca-ES',{day:'2-digit',month:'short'});
-  return `Setmana del ${fmt(d)} al ${fmt(end)}`;
+  const isoWeek = getISOWeek(wk);
+  const year = d.getFullYear();
+  return `S${isoWeek} · ${year} &nbsp;·&nbsp; ${fmt(d)} – ${fmt(end)}`;
 }
 function formatDayLabel(dk) {
   return new Date(dk+'T12:00:00').toLocaleDateString('ca-ES',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
