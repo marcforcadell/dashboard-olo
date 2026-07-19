@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makro - Evolucio de preus</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f5f4f0;
+    --card: #ffffff;
+    --border: #e2e0d8;
+    --text: #1c1c1a;
+    --text-sec: #6b6a63;
+    --accent: #185fa5;
+    --up: #a32d2d;
+    --down: #3b6d11;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px;
+  }
+  h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
+  .subtitle { color: var(--text-sec); font-size: 13px; margin: 0 0 20px; }
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat-label { font-size: 12px; color: var(--text-sec); }
+  .stat-value { font-size: 20px; font-weight: 600; margin-top: 2px; }
+  .controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    background: var(--card);
+    color: var(--text);
+  }
+  select {
+    padding: 9px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    background: var(--card);
+    color: var(--text);
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  @media (max-width: 800px) {
+    .content { grid-template-columns: 1fr; }
+  }
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead th {
+    text-align: left;
+    padding: 10px 12px;
+    background: #eeece5;
+    font-weight: 600;
+    color: var(--text-sec);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  thead th:hover { color: var(--text); }
+  tbody tr {
+    border-top: 1px solid var(--border);
+    cursor: pointer;
+  }
+  tbody tr:hover { background: #f2f1eb; }
+  tbody tr.active { background: #e6f1fb; }
+  td { padding: 9px 12px; }
+  .desc-cell { white-space: normal; word-break: break-word; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .up { color: var(--up); font-weight: 600; }
+  .down { color: var(--down); font-weight: 600; }
+  .flat { color: var(--text-sec); }
+  .table-wrap { max-height: 620px; overflow-y: auto; }
+  .detail-panel { padding: 16px; position: sticky; top: 16px; }
+  .detail-title { font-size: 15px; font-weight: 600; margin: 0 0 2px; }
+  .detail-code { font-size: 12px; color: var(--text-sec); margin: 0 0 14px; }
+  .chart-box { position: relative; height: 240px; margin-bottom: 14px; }
+  .detail-empty { color: var(--text-sec); font-size: 13px; padding: 40px 0; text-align: center; }
+  .purchase-list { font-size: 12px; }
+  .purchase-list table td { padding: 5px 6px; }
+  .purchase-list thead th { padding: 6px; font-size: 10px; }
+  .count-badge {
+    display: inline-block;
+    background: #eeece5;
+    color: var(--text-sec);
+    font-size: 11px;
+    padding: 1px 7px;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Compres a Makro</h1>
+<p class="subtitle" id="subtitle">Evolucio de preus per producte</p>
+
+<div class="layout">
+  <div class="stats" id="stats"></div>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Cerca un producte...">
+    <select id="filter">
+      <option value="all">Tots els productes</option>
+      <option value="changed">Nomes amb canvi de preu</option>
+      <option value="multi">Comprats mes d'un cop</option>
+    </select>
+    <select id="sort">
+      <option value="name">Ordena: Nom</option>
+      <option value="n_desc">Ordena: Mes comprats</option>
+      <option value="change_desc">Ordena: Pujada de preu</option>
+      <option value="change_asc">Ordena: Baixada de preu</option>
+    </select>
+  </div>
+
+  <div class="content">
+    <div class="panel">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Producte</th>
+              <th class="num">Compres</th>
+              <th class="num">Preu inicial</th>
+              <th class="num">Preu actual</th>
+              <th class="num">Variacio</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel detail-panel" id="detailPanel">
+      <div class="detail-empty">Selecciona un producte de la llista per veure la seva evolucio de preu</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const RAW = [{"code": "4337182323396", "desc": "ABREBOTELLAS PLANO ARO 11CM", "n": 1, "purchases": [["08/05/2026", 1.95]]}, {"code": "8414892348881", "desc": "ACT OLIVA 0,4º MC 5L", "n": 3, "purchases": [["04/06/2026", 17.98], ["22/06/2026", 17.9], ["13/07/2026", 17.98]]}, {"code": "8414892313315", "desc": "ACT.RELL.ANCHOA MC LT.600GNE", "n": 1, "purchases": [["22/04/2026", 3.91]]}, {"code": "8414892320962", "desc": "ACTNA ALIÑO SUR MC LT 750GNE", "n": 3, "purchases": [["22/04/2026", 6.25], ["25/05/2026", 6.25], ["01/06/2026", 6.25]]}, {"code": "8410055026016", "desc": "AGUA CG FONTER 50CL", "n": 3, "purchases": [["18/05/2026", 0.638], ["26/05/2026", 0.638], ["02/07/2026", 0.658]]}, {"code": "08410749400146", "desc": "AGUA CG VICHY CATALAN 30CL", "n": 7, "purchases": [["22/04/2026", 0.808], ["26/05/2026", 0.808], ["26/05/2026", 0.808], ["02/07/2026", 0.808], ["02/07/2026", 0.808], ["02/07/2026", 0.808], ["02/07/2026", 0.808]]}, {"code": "28436048723063", "desc": "AGUA DE COCO AMAZONIA PT1L", "n": 1, "purchases": [["05/06/2026", 2.599]]}, {"code": "8410739066000", "desc": "AGUA FONT D'OR PT 0,5L", "n": 1, "purchases": [["08/05/2026", 0.315]]}, {"code": "08410739600006", "desc": "AGUA FONT D'OR PT 0,5L", "n": 34, "purchases": [["12/05/2026", 0.315], ["12/05/2026", 0.315], ["18/05/2026", 0.315], ["25/05/2026", 0.315], ["25/05/2026", 0.315], ["25/05/2026", 0.315], ["25/05/2026", 0.315], ["25/05/2026", 0.315], ["19/06/2026", 0.315], ["19/06/2026", 0.315], ["19/06/2026", 0.315], ["19/06/2026", 0.315], ["19/06/2026", 0.315], ["19/06/2026", 0.315], ["19/06/2026", 0.315], ["19/06/2026", 0.315], ["22/06/2026", 0.315], ["22/06/2026", 0.315], ["22/06/2026", 0.315], ["22/06/2026", 0.315], ["22/06/2026", 0.315], ["22/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315], ["27/06/2026", 0.315]]}, {"code": "8410055033359", "desc": "AGUA FONTVELLA 33CL", "n": 1, "purchases": [["27/06/2026", 0.307]]}, {"code": "8410055050240", "desc": "AGUA FONTVELLA 50CL", "n": 1, "purchases": [["01/06/2026", 0.37]]}, {"code": "08414892316231", "desc": "AJO MORADO MC MALLA 500G", "n": 1, "purchases": [["26/05/2026", 3.75]]}, {"code": "8420063130049", "desc": "ALMENDRA FRIT REP ITAC 500 G", "n": 3, "purchases": [["18/05/2026", 7.65], ["25/05/2026", 7.65], ["15/06/2026", 7.65]]}, {"code": "8436044755293", "desc": "ALMENDRA HARINA ITAC 1 KG", "n": 1, "purchases": [["25/05/2026", 14.99]]}, {"code": "8436044755804", "desc": "ALMENDRA LAMINADA BL ITAC 1KG", "n": 1, "purchases": [["04/06/2026", 13.35]]}, {"code": "8411109005384", "desc": "ALMENDRA LARG TOST SAL MC 1KG", "n": 1, "purchases": [["12/05/2026", 18.59]]}, {"code": "8414892314923", "desc": "ALMENDRA MARC TOST SAL MC 500G", "n": 1, "purchases": [["22/04/2026", 9.99]]}, {"code": "8410836219224", "desc": "AMBIENT AMBIPL 750ML FRESCOR", "n": 1, "purchases": [["03/07/2026", 4.15]]}, {"code": "8410158000937", "desc": "AOVE CAPICUA 500ML", "n": 1, "purchases": [["12/05/2026", 3.89]]}, {"code": "8414892313742", "desc": "ARANDANOS MC TA 125G", "n": 1, "purchases": [["20/05/2026", 1.49]]}, {"code": "8410219640188", "desc": "AROMA VAINILLA VAHINE 200 ML", "n": 1, "purchases": [["09/06/2026", 3.53]]}, {"code": "8410946000026", "desc": "AZUCAR BCO ACOR 1KG", "n": 1, "purchases": [["08/05/2026", 0.99]]}, {"code": "8410946000606", "desc": "AZUCAR BCO ACOR 6X1KG", "n": 1, "purchases": [["27/06/2026", 5.45]]}, {"code": "4337182142133", "desc": "AZUCAR BCO ARO 10X1KG", "n": 1, "purchases": [["30/06/2026", 8.55]]}, {"code": "4337182222224", "desc": "AZUCAR BCO ARO 5KG", "n": 1, "purchases": [["25/05/2026", 4.75]]}, {"code": "8414892329460", "desc": "AZUCAR BCO SOBRE RIOBA 1000X6G", "n": 1, "purchases": [["01/06/2026", 12.37]]}, {"code": "8410946000118", "desc": "AZUCAR GLACE ACOR 500G", "n": 2, "purchases": [["25/05/2026", 1.89], ["04/06/2026", 1.89]]}, {"code": "8414892329477", "desc": "AZUCAR MNO SOBRE RIOBA 600X6G", "n": 1, "purchases": [["01/06/2026", 10.33]]}, {"code": "8410946771773", "desc": "AZUCAR MORENO ACOR 1KG", "n": 4, "purchases": [["20/05/2026", 1.65], ["15/06/2026", 1.65], ["25/06/2026", 1.65], ["10/07/2026", 1.65]]}, {"code": "8414892817936", "desc": "B.BAS ASEO BCA MPRO 10L 40UD", "n": 4, "purchases": [["08/05/2026", 2.35], ["20/05/2026", 2.35], ["09/06/2026", 2.35], ["15/06/2026", 2.35]]}, {"code": "8414892817875", "desc": "B.BAS AZU AUT MPRO 30L 4X15UD", "n": 2, "purchases": [["23/05/2026", 3.95], ["09/06/2026", 3.95]]}, {"code": "8414892817905", "desc": "B.BAS AZU AUT MPRO 50L 4X15UD", "n": 4, "purchases": [["08/05/2026", 7.69], ["14/05/2026", 7.69], ["23/05/2026", 7.69], ["09/06/2026", 7.69]]}, {"code": "8414892817929", "desc": "B.BAS NEG ARO 70X75 50L 4X15UD", "n": 1, "purchases": [["23/05/2026", 5.95]]}, {"code": "4337147790584", "desc": "BANDEJA RDA ANTIDESL MPRO 40.5", "n": 1, "purchases": [["25/04/2026", 6.95]]}, {"code": "8414892321198", "desc": "BAYETA MF COLOR MPRO32X32 12UD", "n": 1, "purchases": [["08/05/2026", 5.95]]}, {"code": "4067373119926", "desc": "BAYETA MF COLORES ARO30X30 12U", "n": 2, "purchases": [["22/04/2026", 3.95], ["12/05/2026", 3.95]]}, {"code": "8414892818193", "desc": "BAYETA VISCOSA AMAR MPRO 10U", "n": 2, "purchases": [["22/04/2026", 2.75], ["12/05/2026", 2.75]]}, {"code": "5411188138396", "desc": "BEBIDA ALMENDRA S/AZU ALPRO 1L", "n": 1, "purchases": [["13/07/2026", 1.95]]}, {"code": "8410297162527", "desc": "BEBIDA ALMENDRA VEGETANEA 1L", "n": 1, "purchases": [["30/06/2026", 1.75]]}, {"code": "8410408067369", "desc": "BITTER KAS BT 20CL", "n": 1, "purchases": [["25/04/2026", 0.658]]}, {"code": "8410408640364", "desc": "BITTER KAS BT 20CL", "n": 1, "purchases": [["01/06/2026", 0.637]]}, {"code": "8410494300845", "desc": "BITTER KAS SLEEK 33CL", "n": 1, "purchases": [["22/04/2026", 0.79]]}, {"code": "8423473813601", "desc": "BLOC SIGMA 16º LISO", "n": 1, "purchases": [["21/05/2026", 0.599]]}, {"code": "4337182228103", "desc": "BOLSA CONGELA ARO 3LT 75UDX3", "n": 1, "purchases": [["13/07/2026", 7.59]]}, {"code": "8421849000044", "desc": "BOLSA HIELO PILÉ 2KG", "n": 1, "purchases": [["27/06/2026", 0.99]]}, {"code": "8414892300032", "desc": "BOLSA MPRO CHURRERIA 100UD", "n": 1, "purchases": [["06/07/2026", 5.09]]}, {"code": "8414892365284", "desc": "BOLSA MPRO PAPEL BURGER 100U", "n": 2, "purchases": [["18/05/2026", 4.25], ["04/06/2026", 4.25]]}, {"code": "8414892367042", "desc": "BOLSA PAP BOLLERIA MPRO 250UD", "n": 1, "purchases": [["08/05/2026", 9.65]]}, {"code": "4337182180654", "desc": "BOLSA ZIP MPRO 1L 20UD", "n": 1, "purchases": [["22/04/2026", 2.15]]}, {"code": "4004133931459", "desc": "BOTELLA COCTEL PLASTCO 1L ROJO", "n": 1, "purchases": [["22/06/2026", 7.95]]}, {"code": "4337147817663", "desc": "BOWL CONICO INOX MPRO 24 CM", "n": 1, "purchases": [["25/05/2026", 7.95]]}, {"code": "8410109113129", "desc": "CACAO PURO DESGRA VALOR 750G", "n": 1, "purchases": [["10/07/2026", 19.15]]}, {"code": "4337182191810", "desc": "CANELA MOLIDA MC 150G", "n": 1, "purchases": [["08/05/2026", 2.59]]}, {"code": "4337182191803", "desc": "CANELA MOLIDA MC 450G", "n": 1, "purchases": [["25/05/2026", 3.89]]}, {"code": "4067373664259", "desc": "CARGA SIFON CREMA MPRO 50PCX50", "n": 3, "purchases": [["08/05/2026", 21.95], ["04/06/2026", 20.95], ["15/06/2026", 20.95]]}, {"code": "4337147839184", "desc": "CAZO INOX S/T MPRO 20CM 3L", "n": 1, "purchases": [["08/05/2026", 18.95]]}, {"code": "4337182493099", "desc": "CAZUELA BARRO RJ RDA MPRO 8CM", "n": 1, "purchases": [["22/04/2026", 0.958]]}, {"code": "8414892700535", "desc": "CAZUELA RDA BARRO MPRO 12CM", "n": 1, "purchases": [["22/04/2026", 0.948]]}, {"code": "4337182167297", "desc": "CEPILLO CON PALO 120CM ARO", "n": 1, "purchases": [["22/04/2026", 8.25]]}, {"code": "8410095500859", "desc": "CEREZ CONF RJ HELIOS CB 1KG", "n": 1, "purchases": [["04/06/2026", 10.29]]}, {"code": "8411777011236", "desc": "CESTO CALADO HONDO GRANDE", "n": 1, "purchases": [["12/05/2026", 4.69]]}, {"code": "08414892315685", "desc": "CHERRY MC PT C-M 2,5KG", "n": 4, "purchases": [["01/06/2026", 8.29], ["15/06/2026", 9.59], ["15/06/2026", 9.59], ["22/06/2026", 8.09]]}, {"code": "08414892315715", "desc": "CHERRY RAMA MC PT C-M 2KG", "n": 9, "purchases": [["18/05/2026", 8.59], ["25/05/2026", 7.19], ["25/05/2026", 7.19], ["02/07/2026", 5.59], ["02/07/2026", 5.59], ["10/07/2026", 6.69], ["10/07/2026", 6.69], ["16/07/2026", 6.45], ["16/07/2026", 6.45]]}, {"code": "4337182091011", "desc": "CIGARETTES RUSSES MC CJ 1KG", "n": 1, "purchases": [["18/05/2026", 7.59]]}, {"code": "4337182235972", "desc": "COBERTURA CHIPS 50% MC 2.5KG", "n": 2, "purchases": [["04/06/2026", 29.05], ["13/07/2026", 29.05]]}, {"code": "4337182236030", "desc": "COBERTURA GOTA BCA 30% MC 2.5K", "n": 1, "purchases": [["30/06/2026", 38.85]]}, {"code": "5449000000279", "desc": "COCACOLA LT 33CL REGULAR", "n": 2, "purchases": [["25/04/2026", 0.64], ["10/07/2026", 0.64]]}, {"code": "4067373120144", "desc": "COCTELERA INOX MPRO 75CL", "n": 1, "purchases": [["22/06/2026", 6.5]]}, {"code": "8414892816274", "desc": "COLLAR ENFRIADOR BOTELLA MPRO", "n": 1, "purchases": [["08/05/2026", 7.95]]}, {"code": "4337182075622", "desc": "COPA VINO CARRE MPRO 38CL", "n": 1, "purchases": [["08/05/2026", 2.758]]}, {"code": "191041", "desc": "COSTE DEL SERVICIO", "n": 1, "purchases": [["24/04/2026", 4.9]]}, {"code": "8410148514765", "desc": "CREMA PISTACHO BORGES 1KG", "n": 2, "purchases": [["18/05/2026", 13.69], ["16/07/2026", 13.69]]}, {"code": "8437014689044", "desc": "CRISTASOL MULTIUSOS 750ML", "n": 1, "purchases": [["12/05/2026", 2.09]]}, {"code": "8414271692154", "desc": "CUBILETE CUBIERTOS 12.5X12.5", "n": 2, "purchases": [["12/05/2026", 5.95], ["20/05/2026", 5.95]]}, {"code": "4337182142935", "desc": "CUBO ECO VERDE ARO 40L", "n": 1, "purchases": [["08/05/2026", 19.95]]}, {"code": "4337182226925", "desc": "CUCHA CAFE BAGUET MPRO18/10X12", "n": 1, "purchases": [["08/05/2026", 6.5]]}, {"code": "4337182226949", "desc": "CUCHA MOKA BAGUET MPRO18/10X12", "n": 3, "purchases": [["08/05/2026", 5.5], ["12/05/2026", 5.5], ["18/05/2026", 5.5]]}, {"code": "4067373120342", "desc": "CUCHARA COCTEL ESPIRAL MPRO27C", "n": 1, "purchases": [["22/06/2026", 3.0]]}, {"code": "4337182209713", "desc": "CUCHARLLA MADER BIO MPRO 100UD", "n": 1, "purchases": [["22/06/2026", 1.69]]}, {"code": "4337147753817", "desc": "CUCHILLO PAN UNIV MPRO 220MM", "n": 1, "purchases": [["21/05/2026", 6.09]]}, {"code": "4337147755521", "desc": "CUCHILLO PESCADO UNIV MPRO 180", "n": 1, "purchases": [["04/06/2026", 3.95]]}, {"code": "4337147755705", "desc": "CUCHILLO SANTOKU UNIV MPRO180M", "n": 2, "purchases": [["08/05/2026", 6.5], ["12/05/2026", 6.5]]}, {"code": "4337182173731", "desc": "CUENCO RED BIO MPRO 400ML 50U", "n": 1, "purchases": [["22/04/2026", 3.89]]}, {"code": "8410793066237", "desc": "CZA FREE DAMM LT 33CL", "n": 1, "purchases": [["25/04/2026", 0.502]]}, {"code": "8420822020406", "desc": "DESENGRASANTE KH-7 5 REGULAR", "n": 1, "purchases": [["15/06/2026", 13.89]]}, {"code": "8420822130396", "desc": "DESENGRASANTE KH-7 RECAM 780ML", "n": 1, "purchases": [["30/05/2026", 2.85]]}, {"code": "8420822130389", "desc": "DESENGRASANTE KH-7 REGUL 780ML", "n": 1, "purchases": [["22/04/2026", 3.39]]}, {"code": "8436556922411", "desc": "DETERGENTE+ABRILLANTA DUAL 5L", "n": 1, "purchases": [["30/04/2026", 12.49]]}, {"code": "4337182177944", "desc": "DISPENSADOR SIROPE 2UD MPRO5ML", "n": 1, "purchases": [["22/06/2026", 5.0]]}, {"code": "8411777013797", "desc": "DOSIFICADOR SALSAS BCO 100CL", "n": 1, "purchases": [["01/06/2026", 2.49]]}, {"code": "4337147812989", "desc": "DOSIFICADOR TRANS MPRO 490CCx6", "n": 1, "purchases": [["21/05/2026", 7.9]]}, {"code": "8414892333269", "desc": "DULCE LECHE TOPPING MC 1,2KG", "n": 1, "purchases": [["18/05/2026", 5.35]]}, {"code": "8410664201248", "desc": "DULCE MEMB S/AZ A QUIJOTE 400G", "n": 1, "purchases": [["20/05/2026", 2.79]]}, {"code": "8414892331234", "desc": "EDULCORANTE RIOBA 150X0.8G", "n": 1, "purchases": [["01/06/2026", 2.05]]}, {"code": "8436568691701", "desc": "ENSALADA CANONIGOS+RUCULA TA 4", "n": 15, "purchases": [["18/05/2026", 4.99], ["25/05/2026", 4.99], ["29/05/2026", 4.99], ["01/06/2026", 4.99], ["06/06/2026", 4.99], ["08/06/2026", 4.99], ["09/06/2026", 4.99], ["13/06/2026", 4.99], ["15/06/2026", 4.99], ["22/06/2026", 4.99], ["27/06/2026", 4.99], ["30/06/2026", 4.99], ["03/07/2026", 4.99], ["06/07/2026", 4.99], ["13/07/2026", 4.99]]}, {"code": "4337182005926", "desc": "ESPATULA SILICONA MPRO 25CM", "n": 2, "purchases": [["12/05/2026", 5.29], ["22/06/2026", 5.29]]}, {"code": "4337182005919", "desc": "ESPATULA SILICONA MPRO 36CM", "n": 2, "purchases": [["12/05/2026", 6.29], ["22/06/2026", 6.29]]}, {"code": "4337182325819", "desc": "ESPOLVOREADOR MALLA MPRO 7X13", "n": 1, "purchases": [["08/05/2026", 6.75]]}, {"code": "8414892365963", "desc": "ESTROPAJO MPRO METALICO 9UD", "n": 1, "purchases": [["14/05/2026", 6.99]]}, {"code": "5449000279309", "desc": "FANTA BT 20CL NARANJA", "n": 1, "purchases": [["22/04/2026", 0.842]]}, {"code": "8414892818247", "desc": "FIBRA AZUL SALVAUÑAS MPRO 4UD", "n": 1, "purchases": [["08/05/2026", 1.95]]}, {"code": "4023103235830", "desc": "FIBRA VERDE C/ESPON VILEDA 4+2", "n": 1, "purchases": [["09/06/2026", 3.79]]}, {"code": "4337182219774", "desc": "FILM TRANSP ARO 30MTX29CM 9MC", "n": 1, "purchases": [["22/04/2026", 0.79]]}, {"code": "08436549710025", "desc": "FLORES MIXTAS TA", "n": 1, "purchases": [["20/05/2026", 5.05]]}, {"code": "4337182105060", "desc": "FREGONA HILO MICROFIBRA MPRO", "n": 3, "purchases": [["22/04/2026", 1.645], ["12/05/2026", 1.645], ["15/06/2026", 1.645]]}, {"code": "04337125008700", "desc": "FRESON MC CJ 1 KG", "n": 16, "purchases": [["08/05/2026", 4.69], ["18/05/2026", 4.59], ["25/05/2026", 4.59], ["25/05/2026", 4.59], ["25/05/2026", 4.59], ["01/06/2026", 4.95], ["04/06/2026", 5.59], ["08/06/2026", 5.59], ["09/06/2026", 5.49], ["15/06/2026", 5.49], ["15/06/2026", 5.49], ["15/06/2026", 5.49], ["30/06/2026", 6.89], ["30/06/2026", 6.89], ["13/07/2026", 7.09], ["13/07/2026", 7.09]]}, {"code": "5410126256109", "desc": "GALLETA CARAMEL LOTUS 1KG", "n": 1, "purchases": [["18/05/2026", 6.31]]}, {"code": "8410313325813", "desc": "GARBANZO NAT.CIDACOS 400GNE", "n": 1, "purchases": [["12/05/2026", 1.29]]}, {"code": "8414892499637", "desc": "GEL WC MARINO MPRO 1L", "n": 3, "purchases": [["22/04/2026", 1.15], ["12/05/2026", 1.15], ["03/07/2026", 1.15]]}, {"code": "8414933012115", "desc": "GELESPESAN GOMA XANT SOSA 500G", "n": 1, "purchases": [["03/07/2026", 10.95]]}, {"code": "08414933012115", "desc": "GELESPESAN GOMA XANT SOSA 500G", "n": 1, "purchases": [["01/06/2026", 10.95]]}, {"code": "8414100962243", "desc": "GINGER ALE SCHWEPPES BT 20CL", "n": 1, "purchases": [["30/06/2026", 0.791]]}, {"code": "3427000154064", "desc": "GUANTE TELA SILICONA", "n": 1, "purchases": [["08/05/2026", 6.5]]}, {"code": "4337182291299", "desc": "GUANTES NIT NGR MPRO TM 100UD", "n": 1, "purchases": [["25/04/2026", 3.25]]}, {"code": "4337182291282", "desc": "GUANTES NIT NGR MPRO TS 100UD", "n": 1, "purchases": [["22/04/2026", 3.25]]}, {"code": "4337182372936", "desc": "GUANTES NITRILO AZUL MEDIANA", "n": 1, "purchases": [["25/06/2026", 4.95]]}, {"code": "4337182372929", "desc": "GUANTES NITRILO AZUL PEQUEÑA", "n": 1, "purchases": [["25/06/2026", 4.95]]}, {"code": "8414892353151", "desc": "HARINA FUERZA MC 5KG", "n": 5, "purchases": [["25/05/2026", 4.35], ["04/06/2026", 4.35], ["22/06/2026", 4.35], ["25/06/2026", 4.35], ["13/07/2026", 4.35]]}, {"code": "4337182274889", "desc": "HELADO COCO MC 2,5L", "n": 1, "purchases": [["08/05/2026", 7.5]]}, {"code": "4337182274803", "desc": "HELADO VAINILLA MC 2,5L", "n": 1, "purchases": [["08/05/2026", 7.5]]}, {"code": "4067373610942", "desc": "HERMETICO MPRO GN1/2 10CM 6,5L", "n": 1, "purchases": [["08/05/2026", 6.49]]}, {"code": "4067373610966", "desc": "HERMETICO MPRO GN1/2 15CM 10L", "n": 2, "purchases": [["08/05/2026", 7.49], ["21/05/2026", 7.49]]}, {"code": "8414892353298", "desc": "HIERBABUENA MC BJ 125G", "n": 2, "purchases": [["08/05/2026", 2.79], ["04/06/2026", 2.79]]}, {"code": "4337182190325", "desc": "HIERBAS PROVENZA MC 230G", "n": 1, "purchases": [["26/05/2026", 2.55]]}, {"code": "8414892819275", "desc": "HIGIENICO MPRO 2C 48M 12R", "n": 2, "purchases": [["08/05/2026", 4.89], ["26/05/2026", 4.89]]}, {"code": "8414892331142", "desc": "HOJAS DE PAN MPM 500G", "n": 1, "purchases": [["22/04/2026", 2.98]]}, {"code": "8414892328470", "desc": "HVO CAMPERO M/L 30UDS MC", "n": 1, "purchases": [["25/05/2026", 9.09]]}, {"code": "8414892328487", "desc": "HVO SUELO M/L MC 30UDS", "n": 6, "purchases": [["01/06/2026", 8.31], ["04/06/2026", 8.31], ["15/06/2026", 8.31], ["22/06/2026", 8.31], ["25/06/2026", 8.31], ["10/07/2026", 8.31]]}, {"code": "8424395141100", "desc": "IOGURT NAT SENSE LACT FAG 125G", "n": 1, "purchases": [["09/06/2026", 0.463]]}, {"code": "8414892360623", "desc": "JABON CREMA DE MANOS MPRO 5L", "n": 1, "purchases": [["15/06/2026", 5.19]]}, {"code": "8414892819169", "desc": "JABON MANOS MPRO AL HIDRATANT", "n": 1, "purchases": [["08/05/2026", 1.35]]}, {"code": "4337147823879", "desc": "JARRA TERMO INOX MPRO 2L", "n": 1, "purchases": [["01/06/2026", 14.95]]}, {"code": "8410408640166", "desc": "KAS BT 20CL LIMON", "n": 1, "purchases": [["22/04/2026", 0.62]]}, {"code": "8437017153801", "desc": "KOMBUCHA KOMVIDA NARANJA B25CL", "n": 1, "purchases": [["27/06/2026", 1.49]]}, {"code": "8719200060753", "desc": "KRONA SPRAY 500ML 28%MG", "n": 2, "purchases": [["18/05/2026", 4.74], ["08/06/2026", 4.75]]}, {"code": "8414892499644", "desc": "LAVAVAJILLAS ARO 1L PINO", "n": 1, "purchases": [["08/05/2026", 1.45]]}, {"code": "8414892366144", "desc": "LAVAVAJILLAS MANO PERF MPRO 5L", "n": 1, "purchases": [["30/05/2026", 6.29]]}, {"code": "8851613101392", "desc": "LECHE COCO 17-19% AROYD 1L", "n": 3, "purchases": [["01/06/2026", 3.45], ["05/06/2026", 3.45], ["30/06/2026", 3.45]]}, {"code": "8851613101385", "desc": "LECHE COCO 17-19% AROYD 500ML", "n": 1, "purchases": [["29/05/2026", 2.25]]}, {"code": "4337182373896", "desc": "LECHE COCO ARO 12%-13% 400ML", "n": 3, "purchases": [["21/05/2026", 1.79], ["23/05/2026", 1.79], ["25/05/2026", 1.79]]}, {"code": "8410297915444", "desc": "LECHE S/LACT ENT ASTURIAN BK1L", "n": 1, "purchases": [["18/05/2026", 1.325]]}, {"code": "8414933006350", "desc": "LECITINA SOJA POLVO SOSA 400GR", "n": 1, "purchases": [["01/06/2026", 26.19]]}, {"code": "8414892366212", "desc": "LEJIA C/DETERGENT LIMON MPRO5L", "n": 2, "purchases": [["05/06/2026", 3.15], ["30/06/2026", 3.15]]}, {"code": "8414892333061", "desc": "LEVADURA POLVO MC 900G", "n": 1, "purchases": [["01/06/2026", 4.95]]}, {"code": "7622210972910", "desc": "LEVADURA ROYAL 5SB", "n": 1, "purchases": [["30/06/2026", 2.09]]}, {"code": "8410000045802", "desc": "LEVADURA ROYAL 900G", "n": 1, "purchases": [["06/07/2026", 6.19]]}, {"code": "08414892316200", "desc": "LIMON 2A C-2/6 CJ 9KG", "n": 2, "purchases": [["01/06/2026", 17.45], ["22/06/2026", 19.99]]}, {"code": "04337125005822", "desc": "LIMON MC C-3/4 CJ 6KG", "n": 6, "purchases": [["25/06/2026", 18.85], ["25/06/2026", 18.85], ["03/07/2026", 16.15], ["03/07/2026", 16.15], ["10/07/2026", 15.79], ["13/07/2026", 14.39]]}, {"code": "04337125000193", "desc": "LIMON MC C-4/5 MA 2KG", "n": 5, "purchases": [["20/05/2026", 5.39], ["20/05/2026", 5.39], ["20/05/2026", 5.39], ["20/05/2026", 5.39], ["20/05/2026", 5.39]]}, {"code": "8411660170224", "desc": "LIMP.BAÑO SANYTOL AE 750ML", "n": 1, "purchases": [["25/06/2026", 2.55]]}, {"code": "8414892366427", "desc": "LIMPIACRISTALES MPRO BD 5L", "n": 1, "purchases": [["15/06/2026", 5.49]]}, {"code": "8411660170231", "desc": "LIMPIADOR MULTIU SANYTOL750ML", "n": 2, "purchases": [["22/04/2026", 2.3], ["30/05/2026", 2.3]]}, {"code": "8414892351737", "desc": "LIMPIADOR MULTIUSOS REC ARO1L", "n": 1, "purchases": [["30/05/2026", 0.92]]}, {"code": "8411660170132", "desc": "LIMPIADOR SUELOS SANYTOL 1,2L", "n": 2, "purchases": [["22/04/2026", 2.45], ["12/05/2026", 2.45]]}, {"code": "8420822113269", "desc": "LIMPIASUELOS INSEC.KH-DESIC 75", "n": 1, "purchases": [["03/07/2026", 3.19]]}, {"code": "8411777428041", "desc": "LOTE 3 HERMETICOS GN 1/6 1.7L", "n": 1, "purchases": [["12/05/2026", 14.65]]}, {"code": "8711200375264", "desc": "MAILLE MOSTAZA ANTIGUA 1 KG", "n": 2, "purchases": [["22/06/2026", 19.79], ["30/06/2026", 19.79]]}, {"code": "8410297132209", "desc": "MANTEQUILLA ASTURIANA TA 250G", "n": 2, "purchases": [["09/06/2026", 3.45], ["13/07/2026", 2.93]]}, {"code": "8414892353304", "desc": "MENTA FRESCA MC BJ 125G", "n": 2, "purchases": [["22/06/2026", 2.79], ["16/07/2026", 2.79]]}, {"code": "8414892328784", "desc": "MIEL DE FLORES MC 1KG", "n": 2, "purchases": [["21/05/2026", 5.45], ["15/06/2026", 5.45]]}, {"code": "8053839570093", "desc": "MINI PINSA 18-27 CM X3 UN", "n": 1, "purchases": [["02/07/2026", 5.95]]}, {"code": "4044935068144", "desc": "MOLDE RECT SATIN 30X10X7", "n": 1, "purchases": [["25/05/2026", 3.99]]}, {"code": "8720182557452", "desc": "MOSTAZA ANTIGUA MAILLE 360G", "n": 4, "purchases": [["12/05/2026", 5.35], ["18/05/2026", 5.35], ["30/06/2026", 5.35], ["16/07/2026", 5.09]]}, {"code": "8711200352524", "desc": "MOSTAZA ANTIGUA MAILLE 845G", "n": 1, "purchases": [["23/05/2026", 15.08]]}, {"code": "8422241802199", "desc": "MOZZ BOCCONCIN FRSCA 125GX2(I)", "n": 1, "purchases": [["09/06/2026", 2.49]]}, {"code": "80461890", "desc": "MOZZ BUFALA 125G NEGRINI (I)", "n": 15, "purchases": [["18/05/2026", 2.07], ["23/05/2026", 2.07], ["26/05/2026", 2.07], ["29/05/2026", 2.07], ["01/06/2026", 2.07], ["04/06/2026", 2.07], ["05/06/2026", 2.07], ["06/06/2026", 2.07], ["13/06/2026", 2.07], ["22/06/2026", 2.07], ["27/06/2026", 2.07], ["02/07/2026", 2.07], ["06/07/2026", 2.07], ["10/07/2026", 2.07], ["13/07/2026", 2.07]]}, {"code": "8000430133035", "desc": "MOZZ MINI 125G GALBANI", "n": 1, "purchases": [["18/05/2026", 1.2]]}, {"code": "8422241805466", "desc": "MOZZ PERLAS LAFUENT 154X6G 1KG", "n": 1, "purchases": [["14/05/2026", 9.39]]}, {"code": "04337125008328", "desc": "NARANJA ZUMO MC C-6/7 CJ12,5KG", "n": 17, "purchases": [["25/05/2026", 11.35], ["25/05/2026", 11.35], ["30/05/2026", 14.85], ["01/06/2026", 14.85], ["04/06/2026", 11.69], ["04/06/2026", 11.69], ["05/06/2026", 11.69], ["13/06/2026", 15.29], ["15/06/2026", 15.29], ["22/06/2026", 15.65], ["30/06/2026", 15.65], ["30/06/2026", 15.65], ["03/07/2026", 15.65], ["03/07/2026", 15.65], ["10/07/2026", 16.89], ["10/07/2026", 16.89], ["13/07/2026", 16.55]]}, {"code": "08414892360135", "desc": "NARANJA ZUMO MC C-6/7 SC 5KG", "n": 5, "purchases": [["08/05/2026", 6.59], ["14/05/2026", 6.69], ["18/05/2026", 6.69], ["20/05/2026", 6.69], ["20/05/2026", 6.69]]}, {"code": "04337125000001", "desc": "NARANJA ZUMO MC C-6/7 SC 5KG", "n": 2, "purchases": [["23/05/2026", 6.69], ["23/05/2026", 6.69]]}, {"code": "8411700020168", "desc": "NATA MONTAR 35% PULEVA BK 1L", "n": 1, "purchases": [["22/06/2026", 4.9]]}, {"code": "8414892315180", "desc": "NUEZ MONDADA CHILE MC 500G", "n": 3, "purchases": [["25/05/2026", 8.99], ["09/06/2026", 8.99], ["15/06/2026", 8.99]]}, {"code": "8414892317078", "desc": "NUEZ MONDADA MC 1KG", "n": 1, "purchases": [["25/06/2026", 11.59]]}, {"code": "8000500082379", "desc": "NUTELLA 1000G", "n": 3, "purchases": [["18/05/2026", 7.75], ["22/06/2026", 7.75], ["16/07/2026", 7.75]]}, {"code": "8410999004590", "desc": "PAJITA PAP RAYA AZUL 20X6 100U", "n": 3, "purchases": [["22/04/2026", 2.19], ["25/05/2026", 2.19], ["06/06/2026", 2.19]]}, {"code": "8435598446534", "desc": "PAJITA PAPL KRAFT 20X6MM 100U", "n": 1, "purchases": [["22/04/2026", 1.25]]}, {"code": "8414892499408", "desc": "PALILLERO RDO 2PUNT RB 12P", "n": 1, "purchases": [["22/04/2026", 0.579]]}, {"code": "8411373000290", "desc": "PALO METALICO TITANIO 140CM", "n": 1, "purchases": [["22/04/2026", 2.25]]}, {"code": "4337182219798", "desc": "PAPEL ALUM ARO 200MX29CM 10MC", "n": 2, "purchases": [["09/06/2026", 16.99], ["16/07/2026", 16.99]]}, {"code": "4337182219934", "desc": "PAPEL ALUM ARO 30MX29CM 10MC", "n": 1, "purchases": [["22/04/2026", 1.95]]}, {"code": "4337182219750", "desc": "PAPEL HORNO ARO 50MX30CM", "n": 3, "purchases": [["08/05/2026", 5.09], ["18/05/2026", 5.09], ["09/06/2026", 5.09]]}, {"code": "8410148120119", "desc": "PASAS CALIF S/P BORGES BL1KG", "n": 1, "purchases": [["25/06/2026", 9.35]]}, {"code": "8413828558059", "desc": "PASTRAMI TERNERA LONCH 500G CU", "n": 1, "purchases": [["18/05/2026", 14.78]]}, {"code": "48410573100142", "desc": "PATAT MARINAS 22X47G PIMIENTA", "n": 1, "purchases": [["22/04/2026", 11.89]]}, {"code": "8414892329484", "desc": "PATATAS FRITAS MC 400G", "n": 1, "purchases": [["22/04/2026", 2.99]]}, {"code": "8414892806268", "desc": "PAÑO SARG MPRO BASI AZL 6U 45X", "n": 1, "purchases": [["22/04/2026", 3.85]]}, {"code": "8414892806183", "desc": "PAÑO SARG MPRO CRISTA 6 UD 70X", "n": 1, "purchases": [["22/04/2026", 12.35]]}, {"code": "8414892818254", "desc": "PAÑO VAJILLA MICROF MPRO AZ 6U", "n": 2, "purchases": [["22/04/2026", 10.95], ["14/05/2026", 10.95]]}, {"code": "8008698023037", "desc": "PICOS CRISTAL DR.SCHAR 60G", "n": 1, "purchases": [["22/04/2026", 1.39]]}, {"code": "8414892320610", "desc": "PICOS SELECCIÓN GOURMET MPM 50", "n": 1, "purchases": [["22/04/2026", 3.08]]}, {"code": "4337255285569", "desc": "PILA ALKALINE AA ARO X12", "n": 1, "purchases": [["23/05/2026", 3.2]]}, {"code": "4337182325543", "desc": "PINCEL SILICONA MPRO21/4CM", "n": 1, "purchases": [["01/06/2026", 3.95]]}, {"code": "8414271629303", "desc": "PINZA JUMBO INOX 30CM", "n": 1, "purchases": [["15/06/2026", 5.59]]}, {"code": "8414271680083", "desc": "PINZA PASTELERA ANILLAS INOX 1", "n": 3, "purchases": [["08/05/2026", 4.95], ["01/06/2026", 4.89], ["13/07/2026", 4.89]]}, {"code": "8425957142276", "desc": "PLATANO EXT MAD 3/4 CJ 2,5 KG", "n": 4, "purchases": [["22/06/2026", 8.79], ["25/06/2026", 8.79], ["30/06/2026", 7.59], ["10/07/2026", 7.59]]}, {"code": "4337255234123", "desc": "PLATO PIZARRA ARO 20X20CM X2", "n": 1, "purchases": [["25/04/2026", 2.75]]}, {"code": "4337255209527", "desc": "PORTA COMANDAS INOX MPRO 50CM", "n": 1, "purchases": [["18/05/2026", 4.95]]}, {"code": "8414892819749", "desc": "PORTAVASOS CART 4VASO MPRO 50U", "n": 1, "purchases": [["13/07/2026", 12.25]]}, {"code": "8435180013298", "desc": "PORTAVASOS CARTON 2 VASOS 45U", "n": 3, "purchases": [["22/04/2026", 5.95], ["01/06/2026", 5.95], ["22/06/2026", 5.95]]}, {"code": "8414933006107", "desc": "PROESPUMA FRIO SOSA 700GR", "n": 3, "purchases": [["01/06/2026", 11.79], ["03/07/2026", 11.79], ["13/07/2026", 11.79]]}, {"code": "4337182293583", "desc": "PURE FRAMBUESA MC BL 1KG", "n": 1, "purchases": [["22/06/2026", 10.99]]}, {"code": "4337182293248", "desc": "PURE FRESA MC BL 1KG", "n": 4, "purchases": [["25/06/2026", 8.35], ["03/07/2026", 7.95], ["06/07/2026", 7.95], ["10/07/2026", 7.95]]}, {"code": "3228170890406", "desc": "PURE FRUTAS ROJAS BL 1KG", "n": 1, "purchases": [["22/06/2026", 11.99]]}, {"code": "4337182293460", "desc": "PURE MANGO MC BL1KG", "n": 2, "purchases": [["22/06/2026", 8.75], ["10/07/2026", 8.35]]}, {"code": "3228170863417", "desc": "PURE NARANJA BL 1KG", "n": 1, "purchases": [["27/06/2026", 7.99]]}, {"code": "3228170032622", "desc": "PURE YUZU BL 1 KG", "n": 1, "purchases": [["30/06/2026", 43.15]]}, {"code": "4337182234975", "desc": "QSO GORGONZOLA DO 200G MC (I)", "n": 2, "purchases": [["18/05/2026", 2.39], ["20/05/2026", 2.39]]}, {"code": "4337182235033", "desc": "QSO GORGONZOLA DO 400G MC (I)", "n": 4, "purchases": [["14/05/2026", 4.45], ["18/05/2026", 4.45], ["21/05/2026", 4.45], ["23/05/2026", 4.45]]}, {"code": "8023951002505", "desc": "QSO RICOTTA 250G NEGRINI", "n": 5, "purchases": [["14/05/2026", 2.05], ["20/05/2026", 2.05], ["23/05/2026", 2.05], ["25/05/2026", 2.05], ["29/05/2026", 2.05]]}, {"code": "8000430193015", "desc": "QSO RICOTTA GALBANI 1,5KG (IT)", "n": 5, "purchases": [["01/06/2026", 7.54], ["08/06/2026", 7.54], ["13/06/2026", 7.54], ["22/06/2026", 7.54], ["10/07/2026", 7.54]]}, {"code": "4337182325154", "desc": "RACIONADOR HELADO INOX MPRO5CM", "n": 1, "purchases": [["08/05/2026", 7.95]]}, {"code": "4023103072749", "desc": "RECOGEDOR PLASTICO+PALO VILEDA", "n": 1, "purchases": [["22/04/2026", 4.99]]}, {"code": "4337182209638", "desc": "REMOV MADERA 11CM MPRO 1000U", "n": 1, "purchases": [["22/04/2026", 1.69]]}, {"code": "205393", "desc": "RIOBA azúcar blanco sobre 6 g contiene 1000 unidades (total 6000 g )", "n": 1, "purchases": [["24/04/2026", 12.37]]}, {"code": "205394", "desc": "RIOBA azúcar moreno sobre 6 g contiene 600 unidades (total 3600 g)", "n": 1, "purchases": [["24/04/2026", 10.33]]}, {"code": "212456", "desc": "RIOBA edulcorante paquete 120 g contiene 150 sobres de 0,8g", "n": 1, "purchases": [["24/04/2026", 2.05]]}, {"code": "8414892310666", "desc": "ROLLO COCINA MPRO 2C 12M 8R", "n": 2, "purchases": [["22/04/2026", 3.95], ["08/05/2026", 3.95]]}, {"code": "8414892352871", "desc": "ROLLO COCINA MPRO 2C 60M 2R", "n": 1, "purchases": [["26/05/2026", 2.375]]}, {"code": "4337182178361", "desc": "ROLLO REG. SIG. TER. DATA 57X2", "n": 2, "purchases": [["14/05/2026", 10.95], ["22/06/2026", 10.95]]}, {"code": "4337182178354", "desc": "ROLLO REG.SIGMA TERM.57X30M", "n": 1, "purchases": [["13/06/2026", 1.095]]}, {"code": "4337182178385", "desc": "ROLLO REG.SIGMA TERM.80X76M", "n": 1, "purchases": [["14/05/2026", 2.229]]}, {"code": "8414892360203", "desc": "RUCULA SELVATICA MC TA 450G", "n": 1, "purchases": [["02/07/2026", 5.09]]}, {"code": "4067373120205", "desc": "SACACORCHOS SOMELIER INOX MPRO", "n": 1, "purchases": [["08/05/2026", 2.0]]}, {"code": "8410435030015", "desc": "SALVAUÑAS PLUS VILEDA 2+1UD", "n": 1, "purchases": [["12/05/2026", 1.99]]}, {"code": "8414892817677", "desc": "SERV 30X40 CANGUR BCO MPRO 60U", "n": 2, "purchases": [["22/04/2026", 2.85], ["12/05/2026", 2.85]]}, {"code": "4337182243458", "desc": "SERV AIR MPRO 20X20CM NG 180UD", "n": 1, "purchases": [["23/05/2026", 3.5]]}, {"code": "8414892817226", "desc": "SERV MPRO 20X20CM BLANCO 150UD", "n": 5, "purchases": [["08/05/2026", 1.89], ["12/05/2026", 1.89], ["18/05/2026", 1.89], ["26/05/2026", 1.89], ["04/06/2026", 1.89]]}, {"code": "4337182277132", "desc": "SERV MPRO 2C 33X33 BL 300U", "n": 1, "purchases": [["08/05/2026", 4.5]]}, {"code": "4337182160403", "desc": "SET COLADORES ARO 8,14,20CM", "n": 1, "purchases": [["12/05/2026", 11.95]]}, {"code": "4337255610583", "desc": "SIFON CREMA ALUM MPRO 1L", "n": 2, "purchases": [["15/06/2026", 29.0], ["10/07/2026", 29.0]]}, {"code": "4337255699687", "desc": "SIFON CREMA INOX MPRO 0,5L", "n": 1, "purchases": [["08/05/2026", 49.0]]}, {"code": "4337255699663", "desc": "SIFON CREMA INOX MPRO 1L", "n": 1, "purchases": [["04/06/2026", 59.0]]}, {"code": "8428919600302", "desc": "SIROPE AGAVE SUNNY VIA 450G", "n": 2, "purchases": [["08/05/2026", 5.39], ["10/07/2026", 5.39]]}, {"code": "8414892356305", "desc": "SIROPE MC 1KG #CARAMELO", "n": 1, "purchases": [["10/07/2026", 3.75]]}, {"code": "4337182233527", "desc": "SIROPE RIOBA GRANADINA BT 70CL", "n": 1, "purchases": [["22/06/2026", 3.25]]}, {"code": "8410774001400", "desc": "SIROPE SANZ BT 1L COCO", "n": 2, "purchases": [["21/05/2026", 6.05], ["10/07/2026", 6.05]]}, {"code": "8001830644428", "desc": "SSA PESTO GIA 650G", "n": 1, "purchases": [["02/07/2026", 9.59]]}, {"code": "8003979003326", "desc": "SSA PESTO ROJO NORD SALS 900GR", "n": 1, "purchases": [["21/05/2026", 9.95]]}, {"code": "8032573828165", "desc": "SSA TARTUFATA CLASICA ALIM500G", "n": 2, "purchases": [["02/07/2026", 12.59], ["16/07/2026", 12.59]]}, {"code": "8414892334006", "desc": "SSA TARTUFATA MC 500GR", "n": 5, "purchases": [["01/06/2026", 9.79], ["05/06/2026", 9.79], ["15/06/2026", 9.79], ["22/06/2026", 9.79], ["30/06/2026", 9.79]]}, {"code": "8411457038447", "desc": "TAPA PLAN CRZ 500/600/685 100U", "n": 3, "purchases": [["08/05/2026", 5.25], ["20/05/2026", 5.25], ["26/05/2026", 5.25]]}, {"code": "4337182252719", "desc": "TAPA VASO BAG MPRO 10CL 100U", "n": 1, "purchases": [["14/05/2026", 3.25]]}, {"code": "4002911462805", "desc": "TAPA VASO CAFE 10CL 100UD", "n": 1, "purchases": [["08/05/2026", 3.25]]}, {"code": "8411457105262", "desc": "TAPA VASO NG PLAN 180-220C 100", "n": 3, "purchases": [["22/04/2026", 3.89], ["08/05/2026", 4.39], ["14/05/2026", 4.39]]}, {"code": "8411457152686", "desc": "TAPA VASO NG PLAN� 290CC 100U", "n": 2, "purchases": [["08/05/2026", 5.09], ["15/05/2026", 5.09]]}, {"code": "8411457038935", "desc": "TAPA ZUMO OVAL NUPIK 100U", "n": 6, "purchases": [["13/06/2026", 9.19], ["19/06/2026", 9.19], ["22/06/2026", 9.19], ["25/06/2026", 9.19], ["27/06/2026", 9.19], ["13/07/2026", 9.19]]}, {"code": "4337182325345", "desc": "TAPON BOTELLA VINO MPRO", "n": 1, "purchases": [["08/05/2026", 1.7]]}, {"code": "4337182323532", "desc": "TEMPORIZADOR DIGITAL MPRO", "n": 1, "purchases": [["08/05/2026", 5.95]]}, {"code": "4337182227199", "desc": "TENEDOR MESA STAR MPRO X12", "n": 1, "purchases": [["08/05/2026", 8.95]]}, {"code": "4337182251545", "desc": "TOMATE DESECA TIRA MC FR900GNE", "n": 2, "purchases": [["25/05/2026", 8.55], ["26/05/2026", 8.55]]}, {"code": "8436021661111", "desc": "TOMATE DESECADO ARANC FR600GNE", "n": 2, "purchases": [["12/05/2026", 9.51], ["18/05/2026", 9.51]]}, {"code": "8414100901143", "desc": "TONICA SCHWEPPES 1L NUEVA", "n": 2, "purchases": [["25/05/2026", 1.428], ["22/06/2026", 1.429]]}, {"code": "8414100980803", "desc": "TONICA SCHWEPPES BT 20CL", "n": 2, "purchases": [["22/04/2026", 0.61], ["25/05/2026", 0.66]]}, {"code": "4337182271932", "desc": "TORTILLA CHIPS HOT MC 750G", "n": 1, "purchases": [["27/06/2026", 3.46]]}, {"code": "2301728006007", "desc": "VALE 15 MKT F 10% 6 EU", "n": 1, "purchases": [["22/04/2026", -6.0]]}, {"code": "2301729004507", "desc": "VALE 15 MKT F 21% 4.5 EU", "n": 1, "purchases": [["22/04/2026", -4.5]]}, {"code": "2301727001508", "desc": "VALE 15 MKT F 4% 1.5 EU", "n": 1, "purchases": [["22/04/2026", -1.5]]}, {"code": "2301730003001", "desc": "VALE 15 MKT NF 21% 3 EU", "n": 1, "purchases": [["22/04/2026", -3.0]]}, {"code": "8414892323239", "desc": "VASO CARTON BCO MPRO 100ML 50U", "n": 2, "purchases": [["22/04/2026", 1.69], ["14/05/2026", 1.69]]}, {"code": "8414892323246", "desc": "VASO CARTON BCO MPRO 220ML 50U", "n": 1, "purchases": [["14/05/2026", 2.05]]}, {"code": "4002911328354", "desc": "VASO CARTON BIO ZERO 100ML 80U", "n": 1, "purchases": [["22/04/2026", 4.45]]}, {"code": "4067373120229", "desc": "VASO MEDIDOR INOX MPRO 30/50ML", "n": 2, "purchases": [["12/05/2026", 2.95], ["15/06/2026", 2.95]]}, {"code": "8435598462008", "desc": "VASO PP SIDRA ALTO 600ML 50UD", "n": 1, "purchases": [["19/06/2026", 3.05]]}, {"code": "8435598461995", "desc": "VASO PP TRANS 400ML 50UD", "n": 6, "purchases": [["20/05/2026", 3.19], ["26/05/2026", 3.19], ["01/06/2026", 3.19], ["13/06/2026", 3.19], ["25/06/2026", 3.19], ["27/06/2026", 3.19]]}, {"code": "4337182056409", "desc": "VASO PP TRANS MPRO 500ML 50UD", "n": 1, "purchases": [["08/05/2026", 2.89]]}, {"code": "8420756005197", "desc": "YOGUR 125G REINA NATURAL", "n": 3, "purchases": [["22/06/2026", 0.219], ["25/06/2026", 0.219], ["10/07/2026", 0.219]]}, {"code": "8414892316156", "desc": "ZANAHORIA MC C-25/35MM 2KG", "n": 3, "purchases": [["25/05/2026", 2.49], ["22/06/2026", 2.49], ["30/06/2026", 2.49]]}];
+
+const products = RAW.map(p => {
+  const purchases = p.purchases.map(([d, price]) => {
+    const [dd, mm, yyyy] = d.split('/');
+    return { date: d, sortKey: yyyy + mm + dd, price };
+  }).sort((a, b) => a.sortKey.localeCompare(b.sortKey));
+  const first = purchases[0].price;
+  const last = purchases[purchases.length - 1].price;
+  return {
+    code: p.code,
+    desc: p.desc,
+    n: p.n,
+    purchases,
+    first, last,
+    change: last - first,
+    pct: first ? (last - first) / first * 100 : 0
+  };
+});
+
+let activeCode = null;
+
+function fmtEur(v) {
+  return v.toLocaleString('ca-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
+}
+
+function renderStats() {
+  const totalPurchaseEvents = products.reduce((s, p) => s + p.n, 0);
+  const changed = products.filter(p => Math.abs(p.change) > 0.001).length;
+  const up = products.filter(p => p.change > 0.001).length;
+  const down = products.filter(p => p.change < -0.001).length;
+  const stats = [
+    ['Productes', products.length],
+    ['Compres totals', totalPurchaseEvents],
+    ['Amb canvi de preu', changed],
+    ['Pujades', up],
+    ['Baixades', down],
+  ];
+  document.getElementById('stats').innerHTML = stats.map(([label, val]) =>
+    '<div class="stat-card"><div class="stat-label">' + label + '</div><div class="stat-value">' + val + '</div></div>'
+  ).join('');
+}
+
+function getFiltered() {
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const filter = document.getElementById('filter').value;
+  const sort = document.getElementById('sort').value;
+
+  let list = products.filter(p => p.desc.toLowerCase().includes(q));
+  if (filter === 'changed') list = list.filter(p => Math.abs(p.change) > 0.001);
+  if (filter === 'multi') list = list.filter(p => p.n > 1);
+
+  if (sort === 'name') list.sort((a, b) => a.desc.localeCompare(b.desc));
+  if (sort === 'n_desc') list.sort((a, b) => b.n - a.n);
+  if (sort === 'change_desc') list.sort((a, b) => b.change - a.change);
+  if (sort === 'change_asc') list.sort((a, b) => a.change - b.change);
+
+  return list;
+}
+
+function renderTable() {
+  const list = getFiltered();
+  document.getElementById('subtitle').textContent = list.length + ' de ' + products.length + ' productes';
+  const rows = list.map(p => {
+    const cls = p.change > 0.001 ? 'up' : (p.change < -0.001 ? 'down' : 'flat');
+    const sign = p.change > 0.001 ? '+' : '';
+    const changeTxt = Math.abs(p.change) < 0.001 ? '-' : sign + p.change.toFixed(2) + ' (' + sign + p.pct.toFixed(1) + '%)';
+    const activeCls = p.code === activeCode ? ' active' : '';
+    return '<tr class="' + activeCls + '" data-code="' + p.code + '">' +
+      '<td class="desc-cell" title="' + p.desc.replace(/"/g,'&quot;') + '">' + p.desc + '</td>' +
+      '<td class="num">' + p.n + '</td>' +
+      '<td class="num">' + p.first.toFixed(2) + '</td>' +
+      '<td class="num">' + p.last.toFixed(2) + '</td>' +
+      '<td class="num ' + cls + '">' + changeTxt + '</td>' +
+      '</tr>';
+  }).join('');
+  document.getElementById('tbody').innerHTML = rows || '<tr><td colspan="5" style="padding:20px;text-align:center;color:var(--text-sec)">Cap producte trobat</td></tr>';
+
+  document.querySelectorAll('#tbody tr[data-code]').forEach(tr => {
+    tr.addEventListener('click', () => {
+      activeCode = tr.getAttribute('data-code');
+      renderTable();
+      renderDetail();
+    });
+  });
+}
+
+let chartInstance = null;
+
+function renderDetail() {
+  const panel = document.getElementById('detailPanel');
+  const p = products.find(x => x.code === activeCode);
+  if (!p) {
+    panel.innerHTML = '<div class="detail-empty">Selecciona un producte de la llista per veure la seva evolucio de preu</div>';
+    return;
+  }
+  panel.innerHTML =
+    '<p class="detail-title">' + p.desc + '</p>' +
+    '<p class="detail-code">Codi ' + p.code + ' &middot; <span class="count-badge">' + p.n + ' compres</span></p>' +
+    '<div class="chart-box"><canvas id="priceChart"></canvas></div>' +
+    '<div class="purchase-list"><table><thead><tr><th>Data</th><th class="num">Preu</th></tr></thead><tbody>' +
+    p.purchases.slice().reverse().map(pu => '<tr><td>' + pu.date + '</td><td class="num">' + pu.price.toFixed(2) + ' EUR</td></tr>').join('') +
+    '</tbody></table></div>';
+
+  if (chartInstance) { chartInstance.destroy(); }
+  const ctx = document.getElementById('priceChart').getContext('2d');
+  chartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: p.purchases.map(pu => pu.date),
+      datasets: [{
+        label: 'Preu (EUR)',
+        data: p.purchases.map(pu => pu.price),
+        borderColor: '#185fa5',
+        backgroundColor: 'rgba(24,95,165,0.08)',
+        fill: true,
+        tension: 0.15,
+        pointRadius: 3,
+        pointBackgroundColor: '#185fa5',
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { ticks: { callback: v => v.toFixed(2) + ' EUR' } },
+        x: { ticks: { maxRotation: 45, minRotation: 45, font: { size: 10 } } }
+      }
+    }
+  });
+}
+
+document.getElementById('search').addEventListener('input', renderTable);
+document.getElementById('filter').addEventListener('change', renderTable);
+document.getElementById('sort').addEventListener('change', renderTable);
+
+renderStats();
+renderTable();
+</script>
+
+</body>
+</html>
