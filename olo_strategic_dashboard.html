@@ -1580,9 +1580,21 @@ function renderRecords() {
         windowRev -= queue[0].net;
         queue.shift();
       }
-      results.push({ revenue: windowRev, start: queue[0].date, end: sorted[i].date, txs: queue.length });
+      results.push({ revenue: windowRev, start: new Date(queue[0].date), end: new Date(sorted[i].date), txs: queue.length });
     }
-    return results.sort((a,b) => b.revenue - a.revenue).slice(0,n);
+
+    // Ordena per import i filtra per no solapament: mínim `minutes` de separació entre rècords
+    results.sort((a,b) => b.revenue - a.revenue);
+    const top = [];
+    for (const r of results) {
+      const overlaps = top.some(prev =>
+        Math.abs(r.start - prev.start) < ms &&
+        Math.abs(r.end   - prev.end)   < ms
+      );
+      if (!overlaps) top.push(r);
+      if (top.length >= n) break;
+    }
+    return top;
   }
 
   renderRecList('rec60min', topWindows(60,5).map((w,i) => ({
