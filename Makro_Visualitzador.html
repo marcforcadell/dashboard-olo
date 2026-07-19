@@ -3,29 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Makro - Evolucio de preus</title>
+<title>OLO · Comparativa Makro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
+  *, *::before, *::after { box-sizing: border-box; }
   :root {
-    --bg: #f5f4f0;
-    --card: #ffffff;
-    --border: #e2e0d8;
-    --text: #1c1c1a;
-    --text-sec: #6b6a63;
-    --accent: #185fa5;
-    --up: #a32d2d;
-    --down: #3b6d11;
+    --bg: #0F1117;
+    --surface: #171B24;
+    --border: #252A36;
+    --text: #E8E6E1;
+    --muted: #7A7F8E;
+    --green: #7CBF8E;
+    --up: #E2795F;
+    --down: #7CBF8E;
   }
-  * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--bg);
     color: var(--text);
-    padding: 24px;
+    padding: 32px 20px;
   }
-  h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
-  .subtitle { color: var(--text-sec); font-size: 13px; margin: 0 0 20px; }
+  a { color: inherit; }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+  }
+  .back-link:hover { color: var(--green); }
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0 0 4px;
+    color: var(--text);
+  }
+  .subtitle { color: var(--muted); font-size: 13px; margin: 0 0 24px; }
   .layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -39,13 +59,13 @@
     gap: 10px;
   }
   .stat-card {
-    background: var(--card);
+    background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 14px;
+    border-radius: 12px;
+    padding: 14px 16px;
   }
-  .stat-label { font-size: 12px; color: var(--text-sec); }
-  .stat-value { font-size: 20px; font-weight: 600; margin-top: 2px; }
+  .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .stat-value { font-family: 'DM Serif Display', serif; font-size: 24px; margin-top: 4px; color: var(--green); }
   .controls {
     display: flex;
     gap: 10px;
@@ -55,20 +75,24 @@
   input[type="text"] {
     flex: 1;
     min-width: 200px;
-    padding: 9px 12px;
+    padding: 10px 14px;
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 14px;
-    background: var(--card);
+    background: var(--surface);
     color: var(--text);
+    font-family: 'Inter', sans-serif;
   }
+  input[type="text"]::placeholder { color: var(--muted); }
+  input[type="text"]:focus, select:focus { outline: none; border-color: var(--green); }
   select {
-    padding: 9px 10px;
+    padding: 10px 12px;
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 13px;
-    background: var(--card);
+    background: var(--surface);
     color: var(--text);
+    font-family: 'Inter', sans-serif;
   }
   .content {
     display: grid;
@@ -80,9 +104,9 @@
     .content { grid-template-columns: 1fr; }
   }
   .panel {
-    background: var(--card);
+    background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 16px;
     overflow: hidden;
   }
   table {
@@ -92,52 +116,61 @@
   }
   thead th {
     text-align: left;
-    padding: 10px 12px;
-    background: #eeece5;
-    font-weight: 600;
-    color: var(--text-sec);
+    padding: 12px 14px;
+    background: rgba(124,191,142,0.06);
+    font-weight: 500;
+    color: var(--muted);
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
     cursor: pointer;
     user-select: none;
     white-space: nowrap;
+    border-bottom: 1px solid var(--border);
   }
-  thead th:hover { color: var(--text); }
+  thead th:hover { color: var(--green); }
   tbody tr {
     border-top: 1px solid var(--border);
     cursor: pointer;
   }
-  tbody tr:hover { background: #f2f1eb; }
-  tbody tr.active { background: #e6f1fb; }
-  td { padding: 9px 12px; }
-  .desc-cell { white-space: normal; word-break: break-word; }
+  tbody tr:hover { background: rgba(124,191,142,0.05); }
+  tbody tr.active { background: rgba(124,191,142,0.12); }
+  td { padding: 10px 14px; }
+  .desc-cell { white-space: normal; word-break: break-word; color: var(--text); }
   .num { text-align: right; font-variant-numeric: tabular-nums; }
-  .up { color: var(--up); font-weight: 600; }
-  .down { color: var(--down); font-weight: 600; }
-  .flat { color: var(--text-sec); }
+  .up { color: var(--up); font-weight: 500; }
+  .down { color: var(--down); font-weight: 500; }
+  .flat { color: var(--muted); }
   .table-wrap { max-height: 620px; overflow-y: auto; }
-  .detail-panel { padding: 16px; position: sticky; top: 16px; }
-  .detail-title { font-size: 15px; font-weight: 600; margin: 0 0 2px; }
-  .detail-code { font-size: 12px; color: var(--text-sec); margin: 0 0 14px; }
-  .chart-box { position: relative; height: 240px; margin-bottom: 14px; }
-  .detail-empty { color: var(--text-sec); font-size: 13px; padding: 40px 0; text-align: center; }
+  .detail-panel { padding: 20px; position: sticky; top: 16px; }
+  .detail-title { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400; margin: 0 0 2px; color: var(--green); }
+  .detail-code { font-size: 12px; color: var(--muted); margin: 0 0 16px; }
+  .chart-box { position: relative; height: 240px; margin-bottom: 16px; }
+  .detail-empty { color: var(--muted); font-size: 13px; padding: 40px 0; text-align: center; }
   .purchase-list { font-size: 12px; }
-  .purchase-list table td { padding: 5px 6px; }
-  .purchase-list thead th { padding: 6px; font-size: 10px; }
+  .purchase-list table td { padding: 6px 8px; }
+  .purchase-list thead th { padding: 7px 8px; font-size: 10px; }
   .count-badge {
     display: inline-block;
-    background: #eeece5;
-    color: var(--text-sec);
+    background: rgba(124,191,142,0.12);
+    color: var(--green);
     font-size: 11px;
-    padding: 1px 7px;
+    padding: 2px 9px;
     border-radius: 10px;
+  }
+  .footer {
+    margin-top: 48px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-align: center;
   }
 </style>
 </head>
 <body>
 
-<h1>Compres a Makro</h1>
+<a class="back-link" href="index.html">&larr; OLO Dashboards</a>
+<h1>Comparativa Makro</h1>
 <p class="subtitle" id="subtitle">Evolucio de preus per producte</p>
 
 <div class="layout">
@@ -180,6 +213,8 @@
       <div class="detail-empty">Selecciona un producte de la llista per veure la seva evolucio de preu</div>
     </div>
   </div>
+
+  <div class="footer">OLO · OLOXYZ S.L. · Baixada Roser, Tarragona</div>
 </div>
 
 <script>
@@ -259,7 +294,7 @@ function renderTable() {
       '<td class="num ' + cls + '">' + changeTxt + '</td>' +
       '</tr>';
   }).join('');
-  document.getElementById('tbody').innerHTML = rows || '<tr><td colspan="5" style="padding:20px;text-align:center;color:var(--text-sec)">Cap producte trobat</td></tr>';
+  document.getElementById('tbody').innerHTML = rows || '<tr><td colspan="5" style="padding:20px;text-align:center;color:var(--muted)">Cap producte trobat</td></tr>';
 
   document.querySelectorAll('#tbody tr[data-code]').forEach(tr => {
     tr.addEventListener('click', () => {
@@ -296,12 +331,12 @@ function renderDetail() {
       datasets: [{
         label: 'Preu (EUR)',
         data: p.purchases.map(pu => pu.price),
-        borderColor: '#185fa5',
-        backgroundColor: 'rgba(24,95,165,0.08)',
+        borderColor: '#7CBF8E',
+        backgroundColor: 'rgba(124,191,142,0.12)',
         fill: true,
         tension: 0.15,
         pointRadius: 3,
-        pointBackgroundColor: '#185fa5',
+        pointBackgroundColor: '#7CBF8E',
       }]
     },
     options: {
@@ -309,8 +344,14 @@ function renderDetail() {
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        y: { ticks: { callback: v => v.toFixed(2) + ' EUR' } },
-        x: { ticks: { maxRotation: 45, minRotation: 45, font: { size: 10 } } }
+        y: {
+          ticks: { callback: v => v.toFixed(2) + ' EUR', color: '#7A7F8E' },
+          grid: { color: '#252A36' }
+        },
+        x: {
+          ticks: { maxRotation: 45, minRotation: 45, font: { size: 10 }, color: '#7A7F8E' },
+          grid: { color: '#252A36' }
+        }
       }
     }
   });
