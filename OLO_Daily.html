@@ -741,6 +741,11 @@
 <header>
   <div class="logo">OLO<span> · vendes</span></div>
   <div class="header-right">
+    <div id="shift-selector" style="display:none;gap:4px;margin-right:8px" class="header-right">
+      <button class="btn-refresh" id="btn-shift-all"   onclick="setShift('all')"   style="border-color:var(--accent);color:var(--accent)">DIA</button>
+      <button class="btn-refresh" id="btn-shift-mati"  onclick="setShift('mati')"  style="border-color:var(--muted);color:var(--muted)">MATÍ</button>
+      <button class="btn-refresh" id="btn-shift-tarda" onclick="setShift('tarda')" style="border-color:var(--muted);color:var(--muted)">TARDA</button>
+    </div>
     <span class="status-dot" id="status-dot"></span>
     <span class="last-update" id="last-update">—</span>
     <button class="btn-refresh" id="btn-refresh" onclick="loadData()" disabled>↻ ACTUALITZAR</button>
@@ -926,6 +931,48 @@
   // ── Helpers ──────────────────────────────────────────────────
   const API_BASE = 'https://api.sumup.com';
   const TZ = 'Europe/Madrid'; // OLO és a Tarragona
+
+  // ── Torns ──────────────────────────────────────────────────────
+  // Matí: 00:00–14:59  |  Tarda: 15:00–23:59  |  Tot el dia: sense filtre
+  const SHIFTS = {
+    all:   { label: 'DIA',   openH: 0,  closeH: 24 },
+    mati:  { label: 'MATÍ',  openH: 0,  closeH: 15 },
+    tarda: { label: 'TARDA', openH: 15, closeH: 24 },
+  };
+  let currentShift = 'all';
+
+  function setShift(shift) {
+    currentShift = shift;
+    // Actualitza estils dels botons
+    ['all','mati','tarda'].forEach(s => {
+      const btn = document.getElementById('btn-shift-'+s);
+      const active = s === shift;
+      btn.style.borderColor = active ? 'var(--accent)' : 'var(--muted)';
+      btn.style.color       = active ? 'var(--accent)' : 'var(--muted)';
+    });
+    // Recalcula amb les dades ja carregades
+    if (window._lastTxns) renderWithShift(window._lastTxns);
+  }
+
+  function getLocalHour(timestamp) {
+    const parts = new Intl.DateTimeFormat('ca-ES', {
+      timeZone: TZ, hour: 'numeric', hour12: false
+    }).formatToParts(new Date(timestamp));
+    return parseInt(parts.find(p => p.type === 'hour').value);
+  }
+
+  function filterByShift(txns) {
+    const s = SHIFTS[currentShift];
+    if (s.openH === 0 && s.closeH === 24) return txns;
+    return txns.filter(t => {
+      const h = getLocalHour(t.timestamp);
+      return h >= s.openH && h < s.closeH;
+    });
+  }
+
+  function shiftLabel() {
+    return SHIFTS[currentShift].label;
+  }
   let apiKey = '';
   let chartInstance = null;
   let heatChartInstance = null;
@@ -1148,17 +1195,13 @@
     setDot(false);
 
     try {
-      // Ranges (hora local de Barcelona)
       const today    = todayRange();
       const thisWeek = weekRange(0);
       const lastWeek = weekRange(1);
-
-      // Fetch en paral·lel amb paginació automàtica
       const w2 = weekRange(2), w3 = weekRange(3), w4 = weekRange(4);
 
-      // Per la comparativa d'avui: calcular el mateix dia de les 4 setmanes anteriors
-      const todayDow = new Date(today.key + 'T12:00:00').getDay(); // 0=Dg,1=Dl...
-      const dowOffset = (todayDow + 6) % 7; // offset des del dilluns (0=Dl,6=Dg)
+      const todayDow  = new Date(today.key + 'T12:00:00').getDay();
+      const dowOffset = (todayDow + 6) % 7;
       function sameDayRange(offsetWeeks) {
         const r = weekRange(offsetWeeks);
         const sameDayKey = r.days[dowOffset].key;
@@ -1180,142 +1223,15 @@
         fetchTransactions(sd4.fromISO, sd4.toISO),
       ]);
 
-      // Tots els dies inclòs dilluns (OLO obre dilluns des de juny 2026)
-      const thisWeekTxnsNoMon = filterNoMonday(thisWeekTxns);
-      const lastWeekTxnsNoMon = filterNoMonday(lastWeekTxns);
+      window._lastTxns = { todayTxns, thisWeekTxns, lastWeekTxns, w2Txns, w3Txns, w4Txns,
+        sd1Txns, sd2Txns, sd3Txns, sd4Txns, today, thisWeek, lastWeek, todayDow };
 
-      // ── Objectiu diari
-      updateGoalUI(sumTransactions(todayTxns));
-
-      // ── KPI: today + comparativa últims 4 mateixos dies
-      const todayTotal = sumTransactions(todayTxns);
-      document.getElementById('val-today').textContent = fmt(todayTotal);
-
-      const sdTotals = [sd1Txns, sd2Txns, sd3Txns, sd4Txns].map(sumTransactions).filter(v => v > 0);
-      const sdRef = sdTotals.length > 0 ? sdTotals.reduce((a,b) => a+b, 0) / sdTotals.length : 0;
-      const dowNames = ['Diumenge','Dilluns','Dimarts','Dimecres','Dijous','Divendres','Dissabte'];
-      const dowName = dowNames[todayDow];
-
-      if (sdRef > 0) {
-        const pct = ((todayTotal - sdRef) / sdRef * 100).toFixed(1);
-        const sign = pct >= 0 ? '+' : '';
-        const cls = pct >= 0 ? 'up' : 'down';
-        document.getElementById('sub-today').innerHTML =
-          `${todayTxns.length} tiquets · vs ${dowName.toLowerCase()}s <span class="kpi-delta ${cls}" style="display:inline">${sign}${pct}%</span> (€${fmt(sdRef)})`;
-      } else {
-        document.getElementById('sub-today').textContent =
-          `${todayTxns.length} transacci${todayTxns.length === 1 ? 'ó' : 'ons'}`;
-      }
-
-      // ── KPI: this week
-      const thisWeekTotal = sumTransactions(thisWeekTxnsNoMon);
-      document.getElementById('val-week').textContent = fmt(thisWeekTotal);
-
-      // Comparació equitativa: mateixos dies de la setmana passada
-      const todayKey = localDateKey(new Date());
-      const daysElapsed = thisWeek.days.findIndex(d => d.key === todayKey) + 1;
-      const lastWeekSameDays = lastWeekTxnsNoMon.filter(t => {
-        const key = localDateKey(new Date(t.timestamp));
-        const idx = lastWeek.days.findIndex(d => d.key === key);
-        return idx >= 0 && idx < daysElapsed;
-      });
-      const lastWeekSameTotal = sumTransactions(lastWeekSameDays);
-
-      const deltaEl = document.getElementById('delta-week');
-      const daysLabel = ['', 'dl', 'dl–dt', 'dl–dc', 'dl–dj', 'dl–dv', 'dl–ds', 'dl–dg'][daysElapsed] || `${daysElapsed} dies`;
-      const thisTicketsCount = thisWeekTxnsNoMon.length;
-      const lastTicketsCount = lastWeekSameDays.length;
-
-      if (lastWeekSameTotal > 0) {
-        const pctEuros = ((thisWeekTotal - lastWeekSameTotal) / lastWeekSameTotal * 100).toFixed(1);
-        const pctTix = lastTicketsCount > 0 ? ((thisTicketsCount - lastTicketsCount) / lastTicketsCount * 100).toFixed(1) : null;
-        const sign = pctEuros >= 0 ? '+' : '';
-        const signT = pctTix !== null && pctTix >= 0 ? '+' : '';
-        const tixStr = pctTix !== null ? ` · ${thisTicketsCount} tiquets (${signT}${pctTix}%)` : '';
-        deltaEl.innerHTML = `${sign}${pctEuros}% vs set. passada (${daysLabel} · €${fmt(lastWeekSameTotal)})${tixStr}`;
-        deltaEl.className = 'kpi-delta ' + (pctEuros >= 0 ? 'up' : 'down');
-      } else {
-        deltaEl.textContent = `Sense dades setmana passada`;
-        deltaEl.className = 'kpi-delta neutral';
-      }
-
-      // ── KPI: avg ticket + comparació últimes 4 setmanes
-      const avgVal = thisWeekTxnsNoMon.length > 0 ? thisWeekTotal / thisWeekTxnsNoMon.length : 0;
-      document.getElementById('val-avg').textContent = fmt(avgVal);
-
-      // Referència: tiquet mitjà de les últimes 4 setmanes
-      const ref4Txns = filterNoMonday([...lastWeekTxns, ...w2Txns, ...w3Txns, ...w4Txns]);
-      const ref4Total = sumTransactions(ref4Txns);
-      const ref4Avg = ref4Txns.length > 0 ? ref4Total / ref4Txns.length : 0;
-
-      if (ref4Avg > 0) {
-        const pct = ((avgVal - ref4Avg) / ref4Avg * 100).toFixed(1);
-        const sign = pct >= 0 ? '+' : '';
-        const cls = pct >= 0 ? 'up' : 'down';
-        document.getElementById('sub-avg').innerHTML =
-          `${thisWeekTxnsNoMon.length} tiquets · ref. 4 set. <span class="kpi-delta ${cls}" style="display:inline">${sign}${pct}%</span> (€${fmt(ref4Avg)})`;
-      } else {
-        document.getElementById('sub-avg').textContent =
-          `${thisWeekTxnsNoMon.length} transaccions`;
-      }
-
-      // ── Chart: daily breakdown (hora local)
-      const thisWeekByDay = groupByDay(thisWeekTxnsNoMon);
-      const lastWeekByDay = groupByDay(lastWeekTxnsNoMon);
-
-      // Tots els dies al gràfic
-      const chartDays = thisWeek.days;
-      const chartDaysLast = lastWeek.days;
-      const thisWeekCountByDay = groupByDayCount(thisWeekTxnsNoMon);
-      const lastWeekCountByDay = groupByDayCount(lastWeekTxnsNoMon);
-
-      const labels    = chartDays.map(d => d.label);
-      const dataThis  = chartDays.map(d => thisWeekByDay[d.key] || 0);
-      const dataLast  = chartDaysLast.map(d => lastWeekByDay[d.key] || 0);
-      const countThis = chartDays.map(d => thisWeekCountByDay[d.key] || 0);
-      const countLast = chartDaysLast.map(d => lastWeekCountByDay[d.key] || 0);
-
-      renderChart(labels, dataThis, dataLast, countThis, countLast);
-
-      // ── Hora punta (mitjana setmanal vs 4 set. anteriors)
-      const ref4TxnsNoMon = filterNoMonday([...lastWeekTxns, ...w2Txns, ...w3Txns, ...w4Txns]);
-      renderHeatChart(thisWeekTxnsNoMon, ref4TxnsNoMon);
-
-      // ── Tiquet mitjà per dia
-      renderAvgDayChart(thisWeekTxnsNoMon, lastWeekTxnsNoMon);
-
-      // ── Millor dia setmana
-      const bestDayIdx = dataThis.indexOf(Math.max(...dataThis));
-      document.getElementById('val-bestday').textContent = chartDays[bestDayIdx]?.label || '—';
-      document.getElementById('sub-bestday').textContent = `€${fmt(dataThis[bestDayIdx] || 0)}`;
-
-      // ── Tendència setmanal progressiva (en segon pla)
-      (async () => {
-        try {
-          const weeklyData = await fetchWeeklyTrend(6);
-          renderTrendChart(weeklyData);
-          renderAvgTrendChart(weeklyData);
-          renderTicketsTrendChart(weeklyData);
-        } catch(e) { console.error('Tendència:', e); }
-      })();
-
-      // ── Projecció mensual (en segon pla)
-      (async () => {
-        try {
-          const projData = await fetchMonthProjection();
-          renderMonthChart(projData);
-        } catch(e) { console.error('Projecció:', e); }
-      })();
-
-
-
-      setDot(true);
-      setLastUpdate();
+      document.getElementById('shift-selector').style.display = 'flex';
+      renderWithShift(window._lastTxns);
 
     } catch(e) {
       console.error(e);
       setDot(false);
-      // Show inline error
       const main = document.querySelector('main');
       const existing = main.querySelector('.error-msg');
       if (existing) existing.remove();
@@ -1326,6 +1242,124 @@
     } finally {
       document.getElementById('btn-refresh').disabled = false;
     }
+  }
+
+  function renderWithShift(raw) {
+    const { todayTxns, thisWeekTxns, lastWeekTxns, w2Txns, w3Txns, w4Txns,
+            sd1Txns, sd2Txns, sd3Txns, sd4Txns, today, thisWeek, lastWeek, todayDow } = raw;
+
+    const todayF        = filterByShift(todayTxns);
+    const thisWeekF     = filterByShift(filterNoMonday(thisWeekTxns));
+    const lastWeekF     = filterByShift(filterNoMonday(lastWeekTxns));
+    const ref4F         = filterByShift(filterNoMonday([...lastWeekTxns,...w2Txns,...w3Txns,...w4Txns]));
+    const sd1F = filterByShift(sd1Txns), sd2F = filterByShift(sd2Txns),
+          sd3F = filterByShift(sd3Txns), sd4F = filterByShift(sd4Txns);
+
+    const shiftSuffix = currentShift !== 'all' ? ` (${shiftLabel().toLowerCase()})` : '';
+
+    // ── Objectiu diari
+    updateGoalUI(sumTransactions(todayF));
+
+    // ── KPI: today
+    const todayTotal = sumTransactions(todayF);
+    document.getElementById('val-today').textContent = fmt(todayTotal);
+    const sdTotals = [sd1F, sd2F, sd3F, sd4F].map(sumTransactions).filter(v => v > 0);
+    const sdRef    = sdTotals.length > 0 ? sdTotals.reduce((a,b)=>a+b,0)/sdTotals.length : 0;
+    const dowNames = ['Diumenge','Dilluns','Dimarts','Dimecres','Dijous','Divendres','Dissabte'];
+    const dowName  = dowNames[todayDow];
+    if (sdRef > 0) {
+      const pct = ((todayTotal - sdRef) / sdRef * 100).toFixed(1);
+      const sign = pct >= 0 ? '+' : '';
+      const cls  = pct >= 0 ? 'up' : 'down';
+      document.getElementById('sub-today').innerHTML =
+        `${todayF.length} tiquets${shiftSuffix} · vs ${dowName.toLowerCase()}s <span class="kpi-delta ${cls}" style="display:inline">${sign}${pct}%</span> (€${fmt(sdRef)})`;
+    } else {
+      document.getElementById('sub-today').textContent =
+        `${todayF.length} transacci${todayF.length===1?'ó':'ons'}${shiftSuffix}`;
+    }
+
+    // ── KPI: this week
+    const thisWeekTotal = sumTransactions(thisWeekF);
+    document.getElementById('val-week').textContent = fmt(thisWeekTotal);
+    const todayKey     = localDateKey(new Date());
+    const daysElapsed  = thisWeek.days.findIndex(d => d.key === todayKey) + 1;
+    const lastWeekSameDays = lastWeekF.filter(t => {
+      const key = localDateKey(new Date(t.timestamp));
+      const idx = lastWeek.days.findIndex(d => d.key === key);
+      return idx >= 0 && idx < daysElapsed;
+    });
+    const lastWeekSameTotal = sumTransactions(lastWeekSameDays);
+    const deltaEl  = document.getElementById('delta-week');
+    const daysLabel= ['','dl','dl–dt','dl–dc','dl–dj','dl–dv','dl–ds','dl–dg'][daysElapsed] || `${daysElapsed} dies`;
+    if (lastWeekSameTotal > 0) {
+      const pctE = ((thisWeekTotal-lastWeekSameTotal)/lastWeekSameTotal*100).toFixed(1);
+      const pctT = lastWeekSameDays.length>0?((thisWeekF.length-lastWeekSameDays.length)/lastWeekSameDays.length*100).toFixed(1):null;
+      const sign = pctE>=0?'+':''; const signT = pctT!==null&&pctT>=0?'+':'';
+      const tixStr = pctT!==null?` · ${thisWeekF.length} tiquets (${signT}${pctT}%)`:'';
+      deltaEl.innerHTML = `${sign}${pctE}% vs set. passada (${daysLabel}${shiftSuffix} · €${fmt(lastWeekSameTotal)})${tixStr}`;
+      deltaEl.className = 'kpi-delta '+(pctE>=0?'up':'down');
+    } else {
+      deltaEl.textContent = 'Sense dades setmana passada';
+      deltaEl.className = 'kpi-delta neutral';
+    }
+
+    // ── KPI: avg ticket
+    const avgVal  = thisWeekF.length>0 ? thisWeekTotal/thisWeekF.length : 0;
+    document.getElementById('val-avg').textContent = fmt(avgVal);
+    const ref4Total = sumTransactions(ref4F);
+    const ref4Avg   = ref4F.length>0 ? ref4Total/ref4F.length : 0;
+    if (ref4Avg>0) {
+      const pct = ((avgVal-ref4Avg)/ref4Avg*100).toFixed(1);
+      const sign = pct>=0?'+':''; const cls = pct>=0?'up':'down';
+      document.getElementById('sub-avg').innerHTML =
+        `${thisWeekF.length} tiquets${shiftSuffix} · ref. 4 set. <span class="kpi-delta ${cls}" style="display:inline">${sign}${pct}%</span> (€${fmt(ref4Avg)})`;
+    } else {
+      document.getElementById('sub-avg').textContent = `${thisWeekF.length} transaccions${shiftSuffix}`;
+    }
+
+    // ── Chart vendes per dia
+    const thisWeekByDay      = groupByDay(thisWeekF);
+    const lastWeekByDay      = groupByDay(lastWeekF);
+    const thisWeekCountByDay = groupByDayCount(thisWeekF);
+    const lastWeekCountByDay = groupByDayCount(lastWeekF);
+    const chartDays     = thisWeek.days;
+    const chartDaysLast = lastWeek.days;
+    const labels    = chartDays.map(d => d.label);
+    const dataThis  = chartDays.map(d => thisWeekByDay[d.key]||0);
+    const dataLast  = chartDaysLast.map(d => lastWeekByDay[d.key]||0);
+    const countThis = chartDays.map(d => thisWeekCountByDay[d.key]||0);
+    const countLast = chartDaysLast.map(d => lastWeekCountByDay[d.key]||0);
+    renderChart(labels, dataThis, dataLast, countThis, countLast);
+
+    // ── Hora punta
+    renderHeatChart(thisWeekF, ref4F);
+
+    // ── Tiquet mitjà per dia
+    renderAvgDayChart(thisWeekF, lastWeekF);
+
+    // ── Millor dia
+    const bestDayIdx = dataThis.indexOf(Math.max(...dataThis));
+    document.getElementById('val-bestday').textContent = chartDays[bestDayIdx]?.label || '—';
+    document.getElementById('sub-bestday').textContent = `€${fmt(dataThis[bestDayIdx]||0)}`;
+
+    // ── Tendència i projecció en segon pla
+    (async () => {
+      try {
+        const weeklyData = await fetchWeeklyTrend(6);
+        renderTrendChart(weeklyData);
+        renderAvgTrendChart(weeklyData);
+        renderTicketsTrendChart(weeklyData);
+      } catch(e) { console.error('Tendència:', e); }
+    })();
+    (async () => {
+      try {
+        const projData = await fetchMonthProjection();
+        renderMonthChart(projData);
+      } catch(e) { console.error('Projecció:', e); }
+    })();
+
+    setDot(true);
+    setLastUpdate();
   }
 
   // ── Chart ─────────────────────────────────────────────────────
@@ -1472,9 +1506,10 @@
     const hh = parseInt(localParts.find(p => p.type === 'hour').value);
     const mm = parseInt(localParts.find(p => p.type === 'minute').value);
 
-    // Hores d'obertura: 08:00 a 15:00 = 7 hores = 420 min
-    const openMin = 8 * 60;
-    const closeMin = 15 * 60;
+    // Hores d'obertura segons torn seleccionat
+    const shift    = SHIFTS[currentShift];
+    const openMin  = shift.openH * 60;
+    const closeMin = (shift.closeH === 24 ? 21 : shift.closeH) * 60; // tancament real a les 21h
     const nowMin = hh * 60 + mm;
     const elapsedMin = Math.max(nowMin - openMin, 1);
     const totalMin = closeMin - openMin;
@@ -1624,9 +1659,9 @@
     const ctx = document.getElementById('heatChart').getContext('2d');
     if (heatChartInstance) heatChartInstance.destroy();
 
-    // Genera trams de 07:00 a 15:00
+    // Genera trams de 07:00 a 21:00 (dia complet)
     const slots = [];
-    for (let h = 7; h <= 14; h++) {
+    for (let h = 7; h <= 20; h++) {
       for (let m = 0; m < 60; m += 15) {
         slots.push(`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`);
       }
