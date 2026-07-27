@@ -763,10 +763,16 @@ function lookupCost(desc) {
 
 // ═══════════════ WEEK KEY ═══════════════
 function getWeekKey(date) {
-  const d = new Date(date); d.setHours(0,0,0,0);
-  const day = d.getDay() || 7;
-  d.setDate(d.getDate() - day + 1);
-  return d.toISOString().slice(0,10);
+  const d = new Date(date);
+  // Usem hora local explícitament per evitar desfasament UTC
+  const day = d.getDay() || 7; // Dg=7, Dl=1...Ds=6
+  const monday = new Date(d);
+  monday.setHours(12, 0, 0, 0); // migdia per evitar problemes DST
+  monday.setDate(d.getDate() - day + 1);
+  const y = monday.getFullYear();
+  const m = String(monday.getMonth()+1).padStart(2,'0');
+  const dd = String(monday.getDate()).padStart(2,'0');
+  return `${y}-${m}-${dd}`;
 }
 
 // ═══════════════ PROCESS ═══════════════
@@ -810,7 +816,7 @@ function processAndRender() {
 
   weeklyData = Object.entries(weekMap)
     .sort(([a],[b]) => a.localeCompare(b))
-    .slice(3)   // ignorem les 3 primeres setmanes (S18 parcial + S19 i S20 de rodatge)
+    .filter(([wk]) => wk >= '2026-05-18')  // ignorem les setmanes de rodatge (abans de S21 · 18/05)
     .map(([wk,d]) => ({
       week: wk,
       revenue: d.revenue,
