@@ -71,6 +71,11 @@
   .badge.amber { background:rgba(245,166,35,.15); color:var(--amber); }
   .badge.blue  { background:rgba(91,141,239,.15); color:var(--blue); }
 
+  /* ── TENDÈNCIES ── */
+  .trend-up   { color:var(--green); font-weight:600; }
+  .trend-down { color:var(--red);   font-weight:600; }
+  .trend-flat { color:var(--muted); }
+
   .btn { padding:8px 15px; border-radius:7px; font-size:13px; font-weight:500; cursor:pointer; border:none; transition:all .15s; }
   .btn-amber { background:var(--amber); color:#000; }
   .btn-amber:hover { background:var(--amber2); }
@@ -234,6 +239,7 @@
   <div class="tab" onclick="showTab('productes',this)">☕ Productes</div>
   <div class="tab" onclick="showTab('prediccio',this)">🔮 Predicció</div>
   <div class="tab" onclick="showTab('records',this)">🏆 Rècords</div>
+  <div class="tab" onclick="showTab('tendencies',this)">📊 Tendències</div>
 </div>
 
 <!-- ══ PANEL OVERVIEW ══ -->
@@ -501,6 +507,55 @@
   </div>
 </div>
 
+<!-- ══ PANEL TENDÈNCIES ══ -->
+<div id="panel-tendencies" class="panel">
+  <div style="margin-bottom:20px">
+    <div class="section-title">📊 Tendències de productes</div>
+    <div class="section-sub" id="tendenciesSub">Comparativa d'unitats venudes: últimes 4 setmanes vs les 4 anteriors</div>
+  </div>
+
+  <div id="tendenciesEmpty" class="empty" style="display:none">
+    <div class="empty-icon">📊</div>
+    <p>Calen almenys 8 setmanes de dades per calcular tendències</p>
+  </div>
+
+  <div id="tendenciesContent">
+    <div class="grid-2" style="margin-bottom:20px">
+      <!-- Més creixen -->
+      <div class="chart-card">
+        <h3>🚀 Top 10 · Més creixen</h3>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:14px" id="tendGrowthPeriod"></div>
+        <div class="chart-wrap" style="height:300px"><canvas id="tendGrowthChart"></canvas></div>
+      </div>
+      <!-- Més cauen -->
+      <div class="chart-card">
+        <h3>📉 Top 10 · Més cauen</h3>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:14px" id="tendDeclinePeriod"></div>
+        <div class="chart-wrap" style="height:300px"><canvas id="tendDeclineChart"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Taula detallada -->
+    <div class="chart-card">
+      <div class="flex justify-between items-center mb-3">
+        <h3 style="margin:0">Taula completa de tendències</h3>
+        <div class="flex gap-2 items-center">
+          <select id="tendSort" onchange="renderTendenciesTable()">
+            <option value="pct_desc">Creixement % ↓</option>
+            <option value="pct_asc">Creixement % ↑</option>
+            <option value="abs_desc">Variació absoluta ↓</option>
+            <option value="abs_asc">Variació absoluta ↑</option>
+            <option value="recent_desc">Volum recent ↓</option>
+          </select>
+        </div>
+      </div>
+      <div style="overflow-x:auto;overflow-y:auto;max-height:500px;border-radius:8px">
+        <table class="data-table" id="tendenciesTable" style="position:relative"></table>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ══ MODAL CONFIG ══ -->
 <div class="modal-overlay" id="configModal">
   <div class="modal">
@@ -764,13 +819,11 @@ function lookupCost(desc) {
 // ═══════════════ WEEK KEY ═══════════════
 function getWeekKey(date) {
   const d = new Date(date);
-  // Usem hora local explícitament per evitar desfasament UTC
   const day = d.getDay() || 7; // Dg=7, Dl=1...Ds=6
-  const monday = new Date(d);
-  monday.setHours(12, 0, 0, 0); // migdia per evitar problemes DST
-  monday.setDate(d.getDate() - day + 1);
-  const y = monday.getFullYear();
-  const m = String(monday.getMonth()+1).padStart(2,'0');
+  // Restar dies per arribar al dilluns, tot en hora local
+  const monday = new Date(d.getFullYear(), d.getMonth(), d.getDate() - day + 1);
+  const y  = monday.getFullYear();
+  const m  = String(monday.getMonth()+1).padStart(2,'0');
   const dd = String(monday.getDate()).padStart(2,'0');
   return `${y}-${m}-${dd}`;
 }
@@ -831,6 +884,7 @@ function processAndRender() {
   renderProductes(prodMap);
   renderPrediccio();
   renderRecords();
+  renderTendencies();
   renderOverview(prodMap);
 }
 
@@ -1671,6 +1725,212 @@ function formatTime(dt) {
   return dt.toLocaleTimeString('ca-ES',{hour:'2-digit',minute:'2-digit'});
 }
 
-</script>
+// ═══════════════ TENDÈNCIES ═══════════════
+function renderTendencies() {
+  const n = weeklyData.length;
+  const emptyEl   = document.getElementById('tendenciesEmpty');
+  const contentEl = document.getElementById('tendenciesContent');
+
+  if (n < 8) {
+    emptyEl.style.display   = '';
+    contentEl.style.display = 'none';
+    return;
+  }
+  emptyEl.style.display   = 'none';
+  contentEl.style.display = '';
+
+  // Últimes 4 setmanes vs les 4 anteriors
+  const recent4 = weeklyData.slice(-4).map(w => w.week);
+  const prev4   = weeklyData.slice(-8, -4).map(w => w.week);
+  const recent4Set = new Set(recent4);
+  const prev4Set   = new Set(prev4);
+
+  // Etiquetes dels períodes
+  const fmtWk = wk => `S${getISOWeek(wk)} · ${new Date(wk+'T12:00:00').getFullYear()}`;
+  const recentLabel = `${fmtWk(recent4[0])} – ${fmtWk(recent4[3])}`;
+  const prevLabel   = `${fmtWk(prev4[0])} – ${fmtWk(prev4[3])}`;
+  document.getElementById('tendenciesSub').textContent =
+    `Últimes 4 setmanes (${recentLabel}) vs les 4 anteriors (${prevLabel})`;
+  document.getElementById('tendGrowthPeriod').textContent =
+    `Recent: ${recentLabel} · Anterior: ${prevLabel}`;
+  document.getElementById('tendDeclinePeriod').textContent =
+    `Recent: ${recentLabel} · Anterior: ${prevLabel}`;
+
+  // Agrupa vendes per producte i període
+  const prodRecent = {}, prodPrev = {};
+  vendesRows.forEach(r => {
+    const wk = getWeekKey(r.date);
+    if (recent4Set.has(wk)) {
+      if (!prodRecent[r.desc]) prodRecent[r.desc] = 0;
+      prodRecent[r.desc] += r.units;
+    }
+    if (prev4Set.has(wk)) {
+      if (!prodPrev[r.desc]) prodPrev[r.desc] = 0;
+      prodPrev[r.desc] += r.units;
+    }
+  });
+
+  // Calcula tendència per cada producte
+  const allProds = new Set([...Object.keys(prodRecent), ...Object.keys(prodPrev)]);
+  const trends = [];
+  allProds.forEach(name => {
+    const rec  = prodRecent[name] || 0;
+    const prev = prodPrev[name]   || 0;
+    if (rec + prev < 5) return; // filtra productes marginals
+    const absChange = rec - prev;
+    const pctChange = prev > 0 ? (rec - prev) / prev * 100 : rec > 0 ? 100 : 0;
+    trends.push({ name, rec, prev, absChange, pctChange });
+  });
+
+  // Top 10 creixement i top 10 caiguda
+  const growing  = [...trends].sort((a,b) => b.pctChange - a.pctChange).slice(0,10);
+  const declining= [...trends].sort((a,b) => a.pctChange - b.pctChange).slice(0,10);
+
+  window._tendData = trends;
+
+  // Gràfic creixement
+  destroyChart('tendGrowthChart');
+  charts.tendGrowthChart = new Chart(
+    document.getElementById('tendGrowthChart').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: growing.map(p => p.name),
+      datasets: [
+        { label: 'Període anterior', data: growing.map(p => p.prev),
+          backgroundColor: 'rgba(91,141,239,.4)', borderColor: '#5B8DEF', borderWidth:1, borderRadius:3 },
+        { label: 'Últimes 4 set.', data: growing.map(p => p.rec),
+          backgroundColor: 'rgba(46,204,113,.65)', borderColor: '#2ECC71', borderWidth:1, borderRadius:3 },
+      ]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      interaction: { mode:'index', intersect:false },
+      plugins: {
+        legend: { display:true, labels:{ color:'#7A7F8E', font:{size:11}, boxWidth:12, padding:8 } },
+        tooltip: { backgroundColor:'#171B24', borderColor:'#252A36', borderWidth:1,
+          titleColor:'#E8E6E1', bodyColor:'#7A7F8E', padding:10,
+          callbacks: { afterLabel: ctx => {
+            const p = growing[ctx.dataIndex];
+            return ctx.datasetIndex===1 ? `Δ ${p.pctChange>=0?'+':''}${p.pctChange.toFixed(1)}%  (${p.absChange>=0?'+':''}${p.absChange} ut.)` : '';
+          }}
+        }
+      },
+      scales: {
+        x: { grid:{color:'rgba(255,255,255,.04)'}, ticks:{color:'#7A7F8E',font:{size:11}} },
+        y: { grid:{display:false}, ticks:{color:'#E8E6E1',font:{size:11}} }
+      }
+    }
+  });
+
+  // Gràfic caiguda
+  destroyChart('tendDeclineChart');
+  charts.tendDeclineChart = new Chart(
+    document.getElementById('tendDeclineChart').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: declining.map(p => p.name),
+      datasets: [
+        { label: 'Període anterior', data: declining.map(p => p.prev),
+          backgroundColor: 'rgba(91,141,239,.4)', borderColor: '#5B8DEF', borderWidth:1, borderRadius:3 },
+        { label: 'Últimes 4 set.', data: declining.map(p => p.rec),
+          backgroundColor: 'rgba(231,76,60,.55)', borderColor: '#E74C3C', borderWidth:1, borderRadius:3 },
+      ]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      interaction: { mode:'index', intersect:false },
+      plugins: {
+        legend: { display:true, labels:{ color:'#7A7F8E', font:{size:11}, boxWidth:12, padding:8 } },
+        tooltip: { backgroundColor:'#171B24', borderColor:'#252A36', borderWidth:1,
+          titleColor:'#E8E6E1', bodyColor:'#7A7F8E', padding:10,
+          callbacks: { afterLabel: ctx => {
+            const p = declining[ctx.dataIndex];
+            return ctx.datasetIndex===1 ? `Δ ${p.pctChange>=0?'+':''}${p.pctChange.toFixed(1)}%  (${p.absChange>=0?'+':''}${p.absChange} ut.)` : '';
+          }}
+        }
+      },
+      scales: {
+        x: { grid:{color:'rgba(255,255,255,.04)'}, ticks:{color:'#7A7F8E',font:{size:11}} },
+        y: { grid:{display:false}, ticks:{color:'#E8E6E1',font:{size:11}} }
+      }
+    }
+  });
+
+  renderTendenciesTable();
+}
+
+function renderTendenciesTable() {
+  const sort  = document.getElementById('tendSort')?.value || 'pct_desc';
+  const data  = [...(window._tendData || [])];
+
+  data.sort((a,b) => {
+    if (sort === 'pct_desc')    return b.pctChange - a.pctChange;
+    if (sort === 'pct_asc')     return a.pctChange - b.pctChange;
+    if (sort === 'abs_desc')    return b.absChange - a.absChange;
+    if (sort === 'abs_asc')     return a.absChange - b.absChange;
+    if (sort === 'recent_desc') return b.rec - a.rec;
+    return 0;
+  });
+
+  const trendBadge = p => {
+    if (p.pctChange >=  20) return `<span class="badge green">↑ +${p.pctChange.toFixed(1)}%</span>`;
+    if (p.pctChange >=   5) return `<span class="badge amber">↑ +${p.pctChange.toFixed(1)}%</span>`;
+    if (p.pctChange <= -20) return `<span class="badge red">↓ ${p.pctChange.toFixed(1)}%</span>`;
+    if (p.pctChange <=  -5) return `<span class="badge amber" style="background:rgba(231,76,60,.15);color:var(--red)">↓ ${p.pctChange.toFixed(1)}%</span>`;
+    return `<span class="badge" style="color:var(--muted)">≈ ${p.pctChange.toFixed(1)}%</span>`;
+  };
+
+  const absStr = p => {
+    const s = p.absChange >= 0 ? `+${p.absChange}` : `${p.absChange}`;
+    const cls = p.absChange > 0 ? 'trend-up' : p.absChange < 0 ? 'trend-down' : 'trend-flat';
+    return `<span class="${cls}">${s} ut.</span>`;
+  };
+
+  // Mini sparkline inline: barres de 8 setmanes
+  const n = weeklyData.length;
+  const last8weeks = weeklyData.slice(-8).map(w => w.week);
+
+  document.getElementById('tendenciesTable').innerHTML =
+    `<thead><tr>
+      <th>Producte</th>
+      <th style="text-align:right">Ant. (4 set.)</th>
+      <th style="text-align:right">Recent (4 set.)</th>
+      <th style="text-align:right">Var. ut.</th>
+      <th style="text-align:right">Var. %</th>
+      <th style="min-width:140px">Evolució 8 set.</th>
+    </tr></thead><tbody>` +
+    data.map(p => {
+      // mini sparkline: unitats per setmana de les últimes 8
+      const wkVals = last8weeks.map(wk => {
+        let qty = 0;
+        vendesRows.forEach(r => {
+          if (r.desc === p.name && getWeekKey(r.date) === wk) qty += r.units;
+        });
+        return qty;
+      });
+      const maxV = Math.max(...wkVals, 1);
+      const sparkBars = wkVals.map((v, i) => {
+        const h = Math.round(v / maxV * 24);
+        const isRecent = i >= 4;
+        const color = isRecent
+          ? (p.pctChange >= 5 ? '#2ECC71' : p.pctChange <= -5 ? '#E74C3C' : '#F5A623')
+          : 'rgba(91,141,239,.5)';
+        return `<div style="width:14px;height:${h}px;background:${color};border-radius:2px;align-self:flex-end"></div>`;
+      }).join('');
+
+      return `<tr>
+        <td>${p.name}</td>
+        <td style="text-align:right;color:var(--muted)">${p.prev} ut.</td>
+        <td style="text-align:right;font-weight:500">${p.rec} ut.</td>
+        <td style="text-align:right">${absStr(p)}</td>
+        <td style="text-align:right">${trendBadge(p)}</td>
+        <td>
+          <div style="display:flex;gap:3px;align-items:flex-end;height:28px">${sparkBars}</div>
+        </td>
+      </tr>`;
+    }).join('') + '</tbody>';
+}
+
+
 </body>
 </html>
