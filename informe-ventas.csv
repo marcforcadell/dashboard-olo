@@ -2354,8 +2354,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "30 may 2026, 9:56",Venta,TAAA3DKPF4F,Visa - Débito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "30 may 2026, 9:58",Venta,TAAA3DKP6DA,Visa - Débito,1,Propina,,,EUR,"0,13",,"0,13","0,13","0,00",,treballador1@olo.com
 "30 may 2026, 9:58",Venta,TAAA3DKP6DA,Visa - Débito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
-"30 may 2026, 10:00",Venta,TAAA3DKQSG9,Mastercard - Débito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "30 may 2026, 10:00",Venta,TAAA3DKQSG9,Mastercard - Débito,2,Cafè amb llet Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"30 may 2026, 10:00",Venta,TAAA3DKQSG9,Mastercard - Débito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "30 may 2026, 10:00",Venta,TAAA3DKQSG9,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "30 may 2026, 10:00",Venta,TAAA3DKQZAY,Visa - Débito,1,Propina,,,EUR,"0,21",,"0,21","0,21","0,00",,treballador1@olo.com
 "30 may 2026, 10:01",Venta,TAAA3DKQZAY,Visa - Débito,1,Americano  Decaf,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
@@ -2390,8 +2390,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "30 may 2026, 10:29",Venta,TAAA3DK644F,Visa - Débito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "30 may 2026, 10:29",Venta,TAAA3DK7KGT,Visa - Crédito,1,Banana Bread OLO,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
 "30 may 2026, 10:29",Venta,TAAA3DK7KGT,Visa - Crédito,2,Flat white Estándar,Cafes,,EUR,"5,80","0,00","5,80","5,27","0,53",10 %,Caixer
-"30 may 2026, 10:31",Venta,TAAA3DK9BNC,Visa - Crédito,2,Cafè amb llet Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "30 may 2026, 10:31",Venta,TAAA3DK9BNC,Visa - Crédito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 may 2026, 10:31",Venta,TAAA3DK9BNC,Visa - Crédito,2,Cafè amb llet Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "30 may 2026, 10:31",Venta,TAAA3DK9BNC,Visa - Crédito,1,Cafè amb llet Decaf,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "30 may 2026, 10:34",Venta,TAAA3DLARPE,Mastercard - Débito,1,Banana Bread OLO,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
 "30 may 2026, 10:34",Venta,TAAA3DLARPE,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
@@ -2880,8 +2880,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,2,Entrepà Pastrami,Menjar,,EUR,"10,00","0,00","10,00","9,09","0,91",10 %,Caixer
 "2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
 "2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,1,Lemonade Honey Cold Brew,Especials,,EUR,"3,70","0,00","3,70","3,36","0,34",10 %,Caixer
-"2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"2 jun 2026, 9:45",Venta,TAAA3E6DH6B,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "2 jun 2026, 9:51",Venta,TAAA3E6ESR4,Visa - Crédito,2,Flat white Estándar,Cafes,,EUR,"5,80","0,00","5,80","5,27","0,53",10 %,Caixer
 "2 jun 2026, 9:55",Venta,TAAA3E6FPGH,Visa - Débito,1,Propina,,,EUR,"0,11",,"0,11","0,11","0,00",,treballador1@olo.com
 "2 jun 2026, 9:55",Venta,TAAA3E6FPGH,Visa - Débito,1,Americano  Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
@@ -4221,8 +4221,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "7 jun 2026, 13:27",Venta,TAAA3HUTTZU,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
 "7 jun 2026, 13:47",Venta,TAAA3HU9XCR,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
 "7 jun 2026, 13:50",Venta,TAAA3HVBCR6,Mastercard - Débito,1,Propina,,,EUR,"0,31",,"0,31","0,31","0,00",,holo@olo.cafe
-"7 jun 2026, 13:50",Venta,TAAA3HVBCR6,Mastercard - Débito,1,Espresso Espresso,Cafes,,EUR,"2,10","0,00","2,10","1,91","0,19",10 %,holo@olo.cafe
 "7 jun 2026, 13:50",Venta,TAAA3HVBCR6,Mastercard - Débito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"7 jun 2026, 13:50",Venta,TAAA3HVBCR6,Mastercard - Débito,1,Espresso Espresso,Cafes,,EUR,"2,10","0,00","2,10","1,91","0,19",10 %,holo@olo.cafe
 "7 jun 2026, 13:50",Venta,TAAA3HVBCR6,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
 "7 jun 2026, 13:51",Venta,TAAA3HVBVUG,Mastercard - Débito,2,Batch Coffee,Filtrats,,EUR,"7,00","0,00","7,00","6,36","0,64",10 %,holo@olo.cafe
 "7 jun 2026, 13:51",Venta,TAAA3HVBVUG,Mastercard - Débito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,holo@olo.cafe
@@ -4805,8 +4805,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "11 jun 2026, 11:20",Venta,TAAA3LHAA4F,Visa - Débito,1,Capuccino Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "11 jun 2026, 11:20",Venta,TAAA3LHAA4F,Visa - Débito,1,Coco Matcha Cloud,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,holo@olo.cafe
 "11 jun 2026, 11:21",Venta,TAAA3LHAQSY,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
-"11 jun 2026, 11:21",Venta,TAAA3LHAQSY,Mastercard - Débito,2,Espresso Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,holo@olo.cafe
 "11 jun 2026, 11:21",Venta,TAAA3LHAQSY,Mastercard - Débito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"11 jun 2026, 11:21",Venta,TAAA3LHAQSY,Mastercard - Débito,2,Espresso Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,holo@olo.cafe
 "11 jun 2026, 11:21",Venta,TAAA3LHAQSY,Mastercard - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
 "11 jun 2026, 11:22",Venta,TAAA3LHAY7N,Efectivo,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "11 jun 2026, 11:22",Venta,TAAA3LHAY7N,Efectivo,1,Ice Latte,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,holo@olo.cafe
@@ -5471,8 +5471,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "13 jun 2026, 12:34",Venta,TAAA3MK6C96,Visa - Crédito,1,Propina,,,EUR,"0,33",,"0,33","0,33","0,00",,treballador1@olo.com
 "13 jun 2026, 12:34",Venta,TAAA3MK6C96,Visa - Crédito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
 "13 jun 2026, 12:34",Venta,TAAA3MK6C96,Visa - Crédito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
-"13 jun 2026, 12:37",Venta,TAAA3MK9QR4,Visa - Crédito,2,Cafè amb llet Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "13 jun 2026, 12:37",Venta,TAAA3MK9QR4,Visa - Crédito,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"13 jun 2026, 12:37",Venta,TAAA3MK9QR4,Visa - Crédito,2,Cafè amb llet Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "13 jun 2026, 12:37",Venta,TAAA3MK9QR4,Visa - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "13 jun 2026, 12:37",Venta,TAAA3MK9QR4,Visa - Crédito,2,Croissant Farcit,Menjar,,EUR,"5,80","0,00","5,80","5,27","0,53",10 %,Caixer
 "13 jun 2026, 12:37",Venta,TAAA3MK9QR4,Visa - Crédito,1,Red Matcha Coco,Especials,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
@@ -5629,8 +5629,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
 "14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
-"14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
 "14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Espresso Espresso,Cafes,,EUR,"2,10","0,00","2,10","1,91","0,19",10 %,Caixer
+"14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Espresso Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
 "14 jun 2026, 10:36",Venta,TAAA3M9XEUE,Visa - Crédito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "14 jun 2026, 10:37",Venta,TAAA3M9XQE9,Efectivo,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
 "14 jun 2026, 10:37",Venta,TAAA3M9XQE9,Efectivo,1,Cafè amb llet Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
@@ -5853,8 +5853,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "16 jun 2026, 11:13",Venta,TAAA3N3NNDN,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "16 jun 2026, 11:15",Venta,TAAA3N3PDEN,Efectivo,1,Tònica Schweppes,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "16 jun 2026, 11:18",Venta,TAAA3N3QBAZ,Visa - Débito,1,Tallat Decaf,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
-"16 jun 2026, 11:18",Venta,TAAA3N3QBAZ,Visa - Débito,1,Tallat Estándar,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "16 jun 2026, 11:18",Venta,TAAA3N3QBAZ,Visa - Débito,2,Tallat Estándar,Cafes,,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"16 jun 2026, 11:18",Venta,TAAA3N3QBAZ,Visa - Débito,1,Tallat Estándar,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "16 jun 2026, 11:19",Venta,TAAA3N3QUDS,Mastercard - Débito,1,Propina,,,EUR,"0,36",,"0,36","0,36","0,00",,treballador1@olo.com
 "16 jun 2026, 11:19",Venta,TAAA3N3QUDS,Mastercard - Débito,1,Capuccino Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "16 jun 2026, 11:19",Venta,TAAA3N3QUDS,Mastercard - Débito,1,Capuccino Decaf,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
@@ -6630,8 +6630,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "20 jun 2026, 11:22",Venta,TAAA3Q4YQ6H,Mastercard - Débito,1,Americano  Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "20 jun 2026, 11:22",Venta,TAAA3Q4YQ6H,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
 "20 jun 2026, 11:26",Venta,TAAA3Q43A6G,Visa - Débito,1,Propina,,,EUR,"0,72",,"0,72","0,72","0,00",,treballador1@olo.com
-"20 jun 2026, 11:26",Venta,TAAA3Q43A6G,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,Caixer
 "20 jun 2026, 11:26",Venta,TAAA3Q43A6G,Visa - Débito,2,Ice Latte,Cafes,,EUR,"7,20","0,00","7,20","6,55","0,65",10 %,Caixer
+"20 jun 2026, 11:26",Venta,TAAA3Q43A6G,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,Caixer
 "20 jun 2026, 11:26",Venta,TAAA3Q43A6G,Visa - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
 "20 jun 2026, 11:27",Venta,TAAA3Q43MHM,Visa - Crédito,1,Propina,,,EUR,"0,28",,"0,28","0,28","0,00",,treballador1@olo.com
 "20 jun 2026, 11:27",Venta,TAAA3Q43MHM,Visa - Crédito,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
@@ -8323,8 +8323,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "1 jul 2026, 9:15",Venta,TAAA3XPPRLB,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
 "1 jul 2026, 9:15",Venta,TAAA3XPPRLB,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
 "1 jul 2026, 9:15",Venta,TAAA3XPPRLB,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
-"1 jul 2026, 9:17",Venta,TAAA3XPP4EX,Visa - Crédito,2,Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,holo@olo.cafe
 "1 jul 2026, 9:17",Venta,TAAA3XPP4EX,Visa - Crédito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"1 jul 2026, 9:17",Venta,TAAA3XPP4EX,Visa - Crédito,2,Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,holo@olo.cafe
 "1 jul 2026, 9:17",Venta,TAAA3XPP4EX,Visa - Crédito,1,Coco Matcha Cloud,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,holo@olo.cafe
 "1 jul 2026, 9:17",Venta,TAAA3XPP4EX,Visa - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
 "1 jul 2026, 9:17",Venta,TAAA3XPP4EX,Visa - Crédito,1,Ice Matcha Latte,Te,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
@@ -8610,8 +8610,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "2 jul 2026, 10:17",Venta,TAAA3X7X2YU,Mastercard - Débito,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
 "2 jul 2026, 10:17",Venta,TAAA3X7X2YU,Mastercard - Débito,2,Tallat,Cafes,,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,holo@olo.cafe
 "2 jul 2026, 10:19",Venta,TAAA3X7YHC2,Visa - Crédito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
-"2 jul 2026, 10:20",Venta,TAAA3X7YVYA,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "2 jul 2026, 10:20",Venta,TAAA3X7YVYA,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,80","0,00","2,80","2,54","0,26",10 %,holo@olo.cafe
+"2 jul 2026, 10:20",Venta,TAAA3X7YVYA,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "2 jul 2026, 10:20",Venta,TAAA3X7YVYA,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
 "2 jul 2026, 10:22",Venta,TAAA3X7ZLFL,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "2 jul 2026, 10:22",Venta,TAAA3X7ZLFL,Visa - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,holo@olo.cafe
@@ -9006,8 +9006,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "4 jul 2026, 9:33",Venta,TAAA3ZCVRL9,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "4 jul 2026, 9:34",Venta,TAAA3ZCV3PB,Efectivo,1,Importe personalizado,,,EUR,"17,00","0,00","17,00","15,45","1,55",10 %,Caixer
 "4 jul 2026, 9:35",Venta,TAAA3ZCXD77,Efectivo,2,Americano,Cafes,,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
-"4 jul 2026, 9:38",Venta,TAAA3ZCX4T6,Visa - Débito,2,Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "4 jul 2026, 9:38",Venta,TAAA3ZCX4T6,Visa - Débito,3,Cafè amb llet,Cafes,,EUR,"7,50","0,00","7,50","6,82","0,68",10 %,Caixer
+"4 jul 2026, 9:38",Venta,TAAA3ZCX4T6,Visa - Débito,2,Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "4 jul 2026, 9:38",Venta,TAAA3ZCX4T6,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "4 jul 2026, 9:38",Venta,TAAA3ZCX4T6,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "4 jul 2026, 9:38",Venta,TAAA3ZCX4T6,Visa - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
@@ -10700,8 +10700,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "12 jul 2026, 10:20",Venta,TAAA36V4US3,Mastercard - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "12 jul 2026, 10:20",Venta,TAAA36V4US3,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
 "12 jul 2026, 10:20",Venta,TAAA36V4US3,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
-"12 jul 2026, 10:20",Venta,TAAA36V43VB,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
 "12 jul 2026, 10:20",Venta,TAAA36V43VB,Efectivo,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,Caixer
+"12 jul 2026, 10:20",Venta,TAAA36V43VB,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
 "12 jul 2026, 10:20",Venta,TAAA36V43VB,Efectivo,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "12 jul 2026, 10:22",Venta,TAAA36V6C4C,Efectivo,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "12 jul 2026, 10:22",Venta,TAAA36V6C4C,Efectivo,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
@@ -11115,8 +11115,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "14 jul 2026, 8:47",Venta,TAAA37TCXS2,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "14 jul 2026, 8:47",Venta,TAAA37TCXS2,Visa - Débito,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
 "14 jul 2026, 8:47",Venta,TAAA37TCXS2,Visa - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
-"14 jul 2026, 8:47",Venta,TAAA37TCXS2,Visa - Débito,2,Flat white,Cafes,,EUR,"5,80","0,00","5,80","5,27","0,53",10 %,Caixer
 "14 jul 2026, 8:47",Venta,TAAA37TCXS2,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"14 jul 2026, 8:47",Venta,TAAA37TCXS2,Visa - Débito,2,Flat white,Cafes,,EUR,"5,80","0,00","5,80","5,27","0,53",10 %,Caixer
 "14 jul 2026, 8:48",Venta,TAAA37TC2P6,Visa - Débito,1,Propina,,,EUR,"0,26",,"0,26","0,26","0,00",,treballador1@olo.com
 "14 jul 2026, 8:48",Venta,TAAA37TC2P6,Visa - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
 "14 jul 2026, 8:48",Venta,TAAA37TC2P6,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
@@ -11178,8 +11178,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "14 jul 2026, 10:03",Venta,TAAA37TVK2T,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
 "14 jul 2026, 10:05",Venta,TAAA37TVYK9,Visa - Débito,1,Aigua Gas,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "14 jul 2026, 10:09",Venta,TAAA37TXZQE,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
-"14 jul 2026, 10:09",Venta,TAAA37TXZQE,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
 "14 jul 2026, 10:09",Venta,TAAA37TXZQE,Visa - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,holo@olo.cafe
+"14 jul 2026, 10:09",Venta,TAAA37TXZQE,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
 "14 jul 2026, 10:10",Venta,TAAA37TYEEA,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
 "14 jul 2026, 10:10",Venta,TAAA37TYEEA,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
 "14 jul 2026, 10:11",Venta,TAAA37TYK6L,Mastercard - Crédito,1,Doble expresso,Cafes,,EUR,"2,40","0,00","2,40","2,18","0,22",10 %,holo@olo.cafe
@@ -11464,8 +11464,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "15 jul 2026, 11:48",Venta,TAAA39DSEMU,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
 "15 jul 2026, 11:48",Venta,TAAA39DSEMU,Mastercard - Débito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
 "15 jul 2026, 11:53",Venta,TAAA39DUF4T,Efectivo,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
-"15 jul 2026, 11:54",Venta,TAAA39DUYY9,Mastercard - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,Caixer
 "15 jul 2026, 11:54",Venta,TAAA39DUYY9,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"15 jul 2026, 11:54",Venta,TAAA39DUYY9,Mastercard - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,Caixer
 "15 jul 2026, 12:16",Venta,TAAA39EAG6D,Visa - Débito,1,Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "15 jul 2026, 12:16",Venta,TAAA39EAG6D,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
 "15 jul 2026, 12:16",Venta,TAAA39EAG6D,Visa - Débito,1,Croissant Farcit,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
@@ -11715,8 +11715,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "16 jul 2026, 14:03",Venta,TAAA39YHU33,Mastercard - Crédito,1,Fritz Llimona,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
 "17 jul 2026, 7:53",Venta,TAAA4ACDQ96,Mastercard - Débito,2,Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
 "17 jul 2026, 8:05",Venta,TAAA4ACEYUD,Visa - Crédito,1,Propina,,,EUR,"0,45",,"0,45","0,45","0,00",,treballador1@olo.com
-"17 jul 2026, 8:06",Venta,TAAA4ACEYUD,Visa - Crédito,1,Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "17 jul 2026, 8:06",Venta,TAAA4ACEYUD,Visa - Crédito,1,Americano,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"17 jul 2026, 8:06",Venta,TAAA4ACEYUD,Visa - Crédito,1,Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "17 jul 2026, 8:06",Venta,TAAA4ACEYUD,Visa - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "17 jul 2026, 8:06",Venta,TAAA4ACEYUD,Visa - Crédito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "17 jul 2026, 8:08",Venta,TAAA4ACE9AS,Visa - Crédito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
@@ -12778,8 +12778,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "21 jul 2026, 9:05",Venta,TAAA4CH7PBH,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
 "21 jul 2026, 9:06",Venta,TAAA4CH7TXN,Efectivo,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
 "21 jul 2026, 9:07",Venta,TAAA4CH72NU,Visa - Crédito,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
-"21 jul 2026, 9:08",Venta,TAAA4CH799N,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","1,25","1,25","1,13","0,12",10 %,holo@olo.cafe
 "21 jul 2026, 9:08",Venta,TAAA4CH799N,Mastercard - Débito,2,Cafè amb llet,Cafes,,EUR,"5,00","2,50","2,50","2,28","0,22",10 %,holo@olo.cafe
+"21 jul 2026, 9:08",Venta,TAAA4CH799N,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","1,25","1,25","1,13","0,12",10 %,holo@olo.cafe
 "21 jul 2026, 9:08",Venta,TAAA4CH799N,Mastercard - Débito,2,Croissant Estandard,Menjar,48,EUR,"4,00","2,00","2,00","1,82","0,18",10 %,holo@olo.cafe
 "21 jul 2026, 9:12",Venta,TAAA4CH9UPF,Visa - Débito,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
 "21 jul 2026, 9:12",Venta,TAAA4CH9UPF,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
@@ -13589,8 +13589,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "24 jul 2026, 11:22",Venta,TAAA4D2DRVL,Efectivo,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
 "24 jul 2026, 11:24",Venta,TAAA4D2EGGH,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "24 jul 2026, 11:24",Venta,TAAA4D2EGGH,Mastercard - Débito,1,Coco Matcha Cloud,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
-"24 jul 2026, 11:24",Venta,TAAA4D2EGGH,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
 "24 jul 2026, 11:24",Venta,TAAA4D2EGGH,Mastercard - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,Caixer
+"24 jul 2026, 11:24",Venta,TAAA4D2EGGH,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
 "24 jul 2026, 11:26",Venta,TAAA4D2FAKX,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "24 jul 2026, 11:26",Venta,TAAA4D2FAKX,Efectivo,2,Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,Caixer
 "24 jul 2026, 11:26",Venta,TAAA4D2FM43,Efectivo,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
@@ -13727,8 +13727,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "24 jul 2026, 17:53",Venta,TAAA4EBPBNZ,Visa - Crédito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "24 jul 2026, 18:04",Venta,TAAA4EBU7M3,Mastercard - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
 "24 jul 2026, 18:04",Venta,TAAA4EBU7M3,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
-"24 jul 2026, 18:04",Venta,TAAA4EBU7M3,Mastercard - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "24 jul 2026, 18:04",Venta,TAAA4EBU7M3,Mastercard - Débito,2,Tallat,Cafes,,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"24 jul 2026, 18:04",Venta,TAAA4EBU7M3,Mastercard - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "24 jul 2026, 18:05",Venta,TAAA4EBVDNT,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "24 jul 2026, 18:08",Venta,TAAA4EBYECT,Mastercard - Crédito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
 "24 jul 2026, 18:08",Venta,TAAA4EBYECT,Mastercard - Crédito,1,Fritz Llimona,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
@@ -14241,8 +14241,8 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "26 jul 2026, 10:02",Venta,TAAA4FCYLLV,Visa - Crédito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
 "26 jul 2026, 10:03",Venta,TAAA4FCYQNG,Efectivo,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
 "26 jul 2026, 10:04",Venta,TAAA4FCYV9T,Efectivo,1,Croissant Pastrami,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
-"26 jul 2026, 10:06",Venta,TAAA4FCZCG6,Visa - Crédito,1,Latte,Cafes,,EUR,"3,05","1,45","1,60","1,45","0,15",10 %,Caixer
 "26 jul 2026, 10:06",Venta,TAAA4FCZCG6,Visa - Crédito,1,Latte,Cafes,,EUR,"2,90","1,45","1,45","1,32","0,13",10 %,Caixer
+"26 jul 2026, 10:06",Venta,TAAA4FCZCG6,Visa - Crédito,1,Latte,Cafes,,EUR,"3,05","1,45","1,60","1,45","0,15",10 %,Caixer
 "26 jul 2026, 10:08",Venta,TAAA4FCZS3E,Mastercard - Débito,1,Latte,Cafes,,EUR,"3,05","1,45","1,60","1,45","0,15",10 %,Caixer
 "26 jul 2026, 10:08",Venta,TAAA4FCZS3E,Mastercard - Débito,1,Latte,Cafes,,EUR,"3,05","1,45","1,60","1,45","0,15",10 %,Caixer
 "26 jul 2026, 10:10",Venta,TAAA4FCZ6KN,Mastercard - Débito,2,Cold Brew,Filtrats,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,Caixer
@@ -14731,3 +14731,919 @@ Fecha,Tipo,ID de transacción,Forma de pago,Unidades,Descripción,Categoría,SKU
 "27 jul 2026, 14:07",Venta,TAAA4FVEF79,Visa - Débito,1,Propina,,,EUR,"0,33",,"0,33","0,33","0,00",,holo@olo.cafe
 "27 jul 2026, 14:07",Venta,TAAA4FVEF79,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
 "27 jul 2026, 14:24",Venta,TAAA4FVMKC3,Mastercard - Débito,3,"Aigua 0,5L",Begudes Envasades,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,holo@olo.cafe
+"27 jul 2026, 20:37",Venta,TAAA4F3C7GX,Visa,1,Pilates i OLO,,,EUR,"25,00","0,00","25,00","25,00","0,00",,holo@olo.cafe
+"27 jul 2026, 20:38",Venta,TAAA4F3DHQ7,Visa,1,Pilates i OLO,,,EUR,"25,00","0,00","25,00","25,00","0,00",,holo@olo.cafe
+"27 jul 2026, 20:39",Venta,TAAA4F3DPMF,Visa,1,Pilates i OLO,,,EUR,"25,00","0,00","25,00","25,00","0,00",,holo@olo.cafe
+"28 jul 2026, 1:22",Venta,TAAA4F6DXZ2,Mastercard,1,Pilates i OLO,,,EUR,"25,00","0,00","25,00","25,00","0,00",,holo@olo.cafe
+"28 jul 2026, 8:01",Venta,TAAA4F6UT2R,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 8:01",Venta,TAAA4F6UT2R,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 8:15",Venta,TAAA4F6V399,Efectivo,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 8:16",Venta,TAAA4F6V6EB,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 8:20",Venta,TAAA4F6XKLR,Visa - Crédito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 8:23",Venta,TAAA4F6XUEZ,Efectivo,1,Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 8:25",Venta,TAAA4F6X3BQ,Efectivo,1,Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 8:28",Venta,TAAA4F6YD6A,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 8:34",Venta,TAAA4F6Y7N9,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 8:38",Venta,TAAA4F6ZLG4,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 8:38",Venta,TAAA4F6ZLG4,Mastercard - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 8:50",Venta,TAAA4F63CXN,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 8:51",Venta,TAAA4F63GUH,Visa - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 8:51",Venta,TAAA4F63GUH,Visa - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 8:51",Venta,TAAA4F63GUH,Visa - Débito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"28 jul 2026, 8:51",Venta,TAAA4F63GUH,Visa - Débito,1,Suc Raïm-Pressec Cal Valls,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 8:52",Venta,TAAA4F63MQC,Visa - Crédito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 8:52",Venta,TAAA4F63MQC,Visa - Crédito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 8:52",Venta,TAAA4F63MQC,Visa - Crédito,1,Croissant Pastrami,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"28 jul 2026, 8:54",Venta,TAAA4F63XZV,Mastercard - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 9:01",Venta,TAAA4F643XD,Mastercard - Débito,1,Propina,,,EUR,"0,13",,"0,13","0,13","0,00",,treballador1@olo.com
+"28 jul 2026, 9:01",Venta,TAAA4F643XD,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 9:04",Venta,TAAA4F66HZ3,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 9:04",Venta,TAAA4F66HZ3,Visa - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 9:04",Venta,TAAA4F66HZ3,Visa - Débito,1,Croissant Pastrami,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"28 jul 2026, 9:04",Venta,TAAA4F66HZ3,Visa - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 9:07",Venta,TAAA4F66ZZQ,Mastercard - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 9:10",Venta,TAAA4F67LHZ,Visa - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 9:10",Venta,TAAA4F67LHZ,Visa - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 9:10",Venta,TAAA4F67LHZ,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 9:10",Venta,TAAA4F67LHZ,Visa - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"28 jul 2026, 9:11",Venta,TAAA4F67PYG,Visa - Crédito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 9:15",Venta,TAAA4F69FR4,Visa - Débito,2,Capuccino,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"28 jul 2026, 9:17",Venta,TAAA4F69RE6,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 9:18",Venta,TAAA4F69ZPK,Efectivo,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"28 jul 2026, 9:18",Venta,TAAA4F69ZPK,Efectivo,1,Iced Chai Latte,Cafes,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"28 jul 2026, 9:20",Venta,TAAA4F7AACX,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","1,25","1,25","1,13","0,12",10 %,Caixer
+"28 jul 2026, 9:20",Venta,TAAA4F7AACX,Mastercard - Débito,2,Croissant Xoco,Menjar,,EUR,"7,60","3,80","3,80","3,46","0,34",10 %,Caixer
+"28 jul 2026, 9:20",Venta,TAAA4F7AACX,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","1,90","1,90","1,72","0,18",10 %,Caixer
+"28 jul 2026, 9:25",Venta,TAAA4F7BDMT,Visa - Crédito,1,Propina,,,EUR,"0,55",,"0,55","0,55","0,00",,treballador1@olo.com
+"28 jul 2026, 9:26",Venta,TAAA4F7BDMT,Visa - Crédito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 9:26",Venta,TAAA4F7BDMT,Visa - Crédito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"28 jul 2026, 9:26",Venta,TAAA4F7BDMT,Visa - Crédito,1,Te,Te,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 9:26",Venta,TAAA4F7BKM9,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 9:26",Venta,TAAA4F7BKM9,Visa - Débito,1,Doble expresso,Cafes,,EUR,"2,40","0,00","2,40","2,18","0,22",10 %,Caixer
+"28 jul 2026, 9:26",Venta,TAAA4F7BKM9,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 9:33",Venta,TAAA4F7CUSZ,Mastercard - Crédito,1,Espresso Tonic,Especials,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 9:33",Venta,TAAA4F7CZKR,Visa - Débito,1,Propina,,,EUR,"0,18",,"0,18","0,18","0,00",,treballador1@olo.com
+"28 jul 2026, 9:34",Venta,TAAA4F7CZKR,Visa - Débito,1,Espresso Tonic,Especials,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 9:36",Venta,TAAA4F7DGMZ,Visa - Débito,1,Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 9:36",Venta,TAAA4F7DGMZ,Visa - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 9:36",Venta,TAAA4F7DGMZ,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 9:36",Venta,TAAA4F7DGMZ,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 9:36",Venta,TAAA4F7DGMZ,Visa - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 9:36",Venta,TAAA4F7DMCG,Efectivo,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 9:36",Venta,TAAA4F7DMCG,Efectivo,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 9:39",Venta,TAAA4F7D7XK,Visa - Crédito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 9:39",Venta,TAAA4F7D7XK,Visa - Crédito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 9:39",Venta,TAAA4F7D7XK,Visa - Crédito,1,Croissant Pastrami,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"28 jul 2026, 9:39",Venta,TAAA4F7D7XK,Visa - Crédito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 9:41",Venta,TAAA4F7EK33,Mastercard - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 9:42",Reembolso,TAAA4F7D7XK,Visa - Crédito,1,Pain au chocolat,Menjar,52,EUR,"-2,20","0,00","-2,20","-2,00","-0,20",10 %,Caixer
+"28 jul 2026, 9:43",Venta,TAAA4F7E2V7,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","1,25","1,25","1,13","0,12",10 %,Caixer
+"28 jul 2026, 9:43",Venta,TAAA4F7E2V7,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","1,00","1,00","0,91","0,09",10 %,Caixer
+"28 jul 2026, 9:43",Venta,TAAA4F7E2V7,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","1,90","1,90","1,72","0,18",10 %,Caixer
+"28 jul 2026, 9:43",Venta,TAAA4F7E2V7,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","1,90","1,90","1,72","0,18",10 %,Caixer
+"28 jul 2026, 9:43",Venta,TAAA4F7E2V7,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","1,10","1,10","1,00","0,10",10 %,Caixer
+"28 jul 2026, 9:43",Venta,TAAA4F7E2V7,Mastercard - Débito,1,Red Matcha Coco,Especials,,EUR,"5,50","2,75","2,75","2,50","0,25",10 %,Caixer
+"28 jul 2026, 9:44",Venta,TAAA4F7E7NS,Visa - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 9:56",Venta,TAAA4F7H79N,Efectivo,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"28 jul 2026, 9:56",Venta,TAAA4F7H79N,Efectivo,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 9:58",Venta,TAAA4F7KHG9,Visa - Débito,1,Vichy Catalan,Begudes Envasades,,EUR,"2,60","0,00","2,60","2,36","0,24",10 %,Caixer
+"28 jul 2026, 9:59",Venta,TAAA4F7KU67,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 9:59",Venta,TAAA4F7KU67,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 9:59",Venta,TAAA4F7KU67,Visa - Débito,1,Chai Latte,Cafes,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"28 jul 2026, 9:59",Venta,TAAA4F7KU67,Visa - Débito,1,Cookie 3 xoco,Menjar,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 9:59",Venta,TAAA4F7KU67,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 9:59",Venta,TAAA4F7KU67,Visa - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 10:05",Venta,TAAA4F7MLDF,Visa - Débito,3,Capuccino,Cafes,,EUR,"7,50","0,00","7,50","6,82","0,68",10 %,Caixer
+"28 jul 2026, 10:05",Venta,TAAA4F7MLDF,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 10:10",Venta,TAAA4F7NPTZ,Efectivo,2,Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"28 jul 2026, 10:10",Venta,TAAA4F7NPTZ,Efectivo,1,Croissant Pastrami,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"28 jul 2026, 10:10",Venta,TAAA4F7NT9M,Visa - Débito,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"28 jul 2026, 10:11",Venta,TAAA4F7N7HD,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 10:14",Venta,TAAA4F7PTS7,Visa - Crédito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 10:16",Venta,TAAA4F7QFPR,Mastercard - Débito,2,Entrepà Pastrami,Entrepans,,EUR,"10,00","0,00","10,00","9,09","0,91",10 %,Caixer
+"28 jul 2026, 10:16",Venta,TAAA4F7QFPR,Mastercard - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"28 jul 2026, 10:16",Venta,TAAA4F7QFPR,Mastercard - Débito,1,Suc Taronja,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 10:16",Venta,TAAA4F7QNB9,Efectivo,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 10:16",Venta,TAAA4F7QNB9,Efectivo,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 10:18",Venta,TAAA4F7Q32Q,Visa - Débito,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"28 jul 2026, 10:18",Venta,TAAA4F7Q32Q,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 10:18",Venta,TAAA4F7Q32Q,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 10:19",Venta,TAAA4F7RAVY,Efectivo,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"28 jul 2026, 10:21",Venta,TAAA4F7RUG6,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 10:24",Venta,TAAA4F7SSBT,Discover - Débito,1,Propina,,,EUR,"0,48",,"0,48","0,48","0,00",,treballador1@olo.com
+"28 jul 2026, 10:24",Venta,TAAA4F7SSBT,Discover - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 10:24",Venta,TAAA4F7SSBT,Discover - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 10:24",Venta,TAAA4F7SSBT,Discover - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 10:25",Venta,TAAA4F7S6E6,Visa - Crédito,1,Propina,,,EUR,"0,30",,"0,30","0,30","0,00",,treballador1@olo.com
+"28 jul 2026, 10:25",Venta,TAAA4F7S6E6,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 10:25",Venta,TAAA4F7S6E6,Visa - Crédito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 10:30",Venta,TAAA4F7UNZH,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 10:30",Venta,TAAA4F7UNZH,Visa - Crédito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 10:33",Venta,TAAA4F7VFV9,Visa - Débito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"28 jul 2026, 10:33",Venta,TAAA4F7VFV9,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 10:33",Venta,TAAA4F7VFV9,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 10:35",Venta,TAAA4F7V7CN,Mastercard - Crédito,1,Propina,,,EUR,"1,22",,"1,22","1,22","0,00",,treballador1@olo.com
+"28 jul 2026, 10:35",Venta,TAAA4F7V7CN,Mastercard - Crédito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 10:35",Venta,TAAA4F7V7CN,Mastercard - Crédito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"28 jul 2026, 10:35",Venta,TAAA4F7V7CN,Mastercard - Crédito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"28 jul 2026, 10:39",Venta,TAAA4F7YGFS,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 10:43",Venta,TAAA4F7ZSVX,Mastercard - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 10:43",Venta,TAAA4F7ZSVX,Mastercard - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 10:44",Venta,TAAA4F7Z3YT,Mastercard - Débito,1,Propina,,,EUR,"0,19",,"0,19","0,19","0,00",,treballador1@olo.com
+"28 jul 2026, 10:44",Venta,TAAA4F7Z3YT,Mastercard - Débito,1,Croissant Pistacho,Menjar,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 10:46",Venta,TAAA4F72UCH,Mastercard - Crédito,1,Propina,,,EUR,"0,98",,"0,98","0,98","0,00",,treballador1@olo.com
+"28 jul 2026, 10:46",Venta,TAAA4F72UCH,Mastercard - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 10:46",Venta,TAAA4F72UCH,Mastercard - Crédito,1,Doble expresso,Cafes,,EUR,"2,70","0,00","2,70","2,45","0,25",10 %,Caixer
+"28 jul 2026, 10:46",Venta,TAAA4F72UCH,Mastercard - Crédito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 10:46",Venta,TAAA4F72UCH,Mastercard - Crédito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"28 jul 2026, 10:46",Venta,TAAA4F72UCH,Mastercard - Crédito,2,Suc Taronja,Begudes,,EUR,"7,00","0,00","7,00","6,36","0,64",10 %,Caixer
+"28 jul 2026, 10:47",Venta,TAAA4F727LV,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 10:47",Venta,TAAA4F727LV,Visa - Débito,1,Chai Latte,Cafes,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"28 jul 2026, 10:47",Venta,TAAA4F727LV,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 10:52",Venta,TAAA4F74PQD,Mastercard - Débito,1,Propina,,,EUR,"1,28",,"1,28","1,28","0,00",,treballador1@olo.com
+"28 jul 2026, 10:52",Venta,TAAA4F74PQD,Mastercard - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 10:52",Venta,TAAA4F74PQD,Mastercard - Débito,1,Croissant Pastrami,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"28 jul 2026, 10:52",Venta,TAAA4F74PQD,Mastercard - Débito,1,Croissant Pistacho,Menjar,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 10:52",Venta,TAAA4F74PQD,Mastercard - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"28 jul 2026, 10:52",Venta,TAAA4F74PQD,Mastercard - Débito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"28 jul 2026, 10:52",Venta,TAAA4F74PQD,Mastercard - Débito,1,Iced Chai Latte,Cafes,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"28 jul 2026, 10:52",Venta,TAAA4F74UME,Visa - Débito,2,Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,Caixer
+"28 jul 2026, 10:53",Venta,TAAA4F74YLG,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 11:00",Venta,TAAA4F79NYP,Mastercard - Débito,1,Croissant Xoco,Menjar,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 11:00",Venta,TAAA4F79NYP,Mastercard - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 11:00",Venta,TAAA4F79NYP,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 11:00",Venta,TAAA4F79NYP,Mastercard - Débito,1,Te,Te,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 11:01",Venta,TAAA4F79ZEG,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","1,25","1,25","1,13","0,12",10 %,Caixer
+"28 jul 2026, 11:09",Venta,TAAA4F9CYE9,Mastercard - Débito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"28 jul 2026, 11:12",Venta,TAAA4F9D7KY,Mastercard - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"28 jul 2026, 11:14",Venta,TAAA4F9ET3Q,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 11:14",Venta,TAAA4F9ET3Q,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 11:15",Venta,TAAA4F9E3AD,Visa - Débito,1,Propina,,,EUR,"0,11",,"0,11","0,11","0,00",,treballador1@olo.com
+"28 jul 2026, 11:15",Venta,TAAA4F9E3AD,Visa - Débito,1,Cookie 3 xoco,Menjar,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 11:16",Venta,TAAA4F9FHTH,Mastercard - Débito,1,Croissant Xoco,Menjar,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 11:16",Venta,TAAA4F9FHTH,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 11:17",Venta,TAAA4F9FVYF,Visa - Débito,2,Tallat,Cafes,,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"28 jul 2026, 11:22",Venta,TAAA4F9HN7R,Mastercard - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 11:22",Venta,TAAA4F9HN7R,Mastercard - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 11:23",Venta,TAAA4F9HYVQ,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 11:24",Venta,TAAA4F9KHCK,Mastercard - Débito,1,Propina,,,EUR,"0,40",,"0,40","0,40","0,00",,treballador1@olo.com
+"28 jul 2026, 11:24",Venta,TAAA4F9KHCK,Mastercard - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 11:24",Venta,TAAA4F9KHCK,Mastercard - Débito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"28 jul 2026, 11:25",Venta,TAAA4F9KQFC,Efectivo,2,Capuccino,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"28 jul 2026, 11:27",Venta,TAAA4F9LHNT,Efectivo,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 11:27",Venta,TAAA4F9LHNT,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 11:30",Venta,TAAA4F9MQ2F,Visa - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 11:30",Venta,TAAA4F9MQ2F,Visa - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"28 jul 2026, 11:31",Venta,TAAA4F9M4SA,Visa - Crédito,1,Cold Brew Lemonade Honey,Especials,,EUR,"4,70","0,00","4,70","4,27","0,43",10 %,Caixer
+"28 jul 2026, 11:31",Venta,TAAA4F9M4SA,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 11:31",Venta,TAAA4F9NBHZ,Visa - Débito,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 11:32",Venta,TAAA4F9NKM2,Visa - Débito,1,Propina,,,EUR,"0,09",,"0,09","0,09","0,00",,treballador1@olo.com
+"28 jul 2026, 11:32",Venta,TAAA4F9NKM2,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 11:33",Venta,TAAA4F9N742,Visa - Débito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"28 jul 2026, 11:33",Venta,TAAA4F9N742,Visa - Débito,1,Llimonada,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 11:35",Venta,TAAA4F9PSYX,Mastercard - Débito,1,Propina,,,EUR,"0,44",,"0,44","0,44","0,00",,treballador1@olo.com
+"28 jul 2026, 11:35",Venta,TAAA4F9PSYX,Mastercard - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 11:38",Venta,TAAA4F9QYHQ,Mastercard - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"28 jul 2026, 11:42",Venta,TAAA4F9SSVN,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 11:48",Venta,TAAA4F9VFLK,Visa - Débito,1,Propina,,,EUR,"0,35",,"0,35","0,35","0,00",,treballador1@olo.com
+"28 jul 2026, 11:48",Venta,TAAA4F9VFLK,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 11:48",Venta,TAAA4F9VFLK,Visa - Débito,1,Ice Latte,Cafes,,EUR,"4,10","0,00","4,10","3,72","0,38",10 %,Caixer
+"28 jul 2026, 11:49",Venta,TAAA4F9VNEV,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 11:51",Venta,TAAA4F9XPLF,Visa - Débito,1,Propina,,,EUR,"0,29",,"0,29","0,29","0,00",,treballador1@olo.com
+"28 jul 2026, 11:51",Venta,TAAA4F9XPLF,Visa - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"28 jul 2026, 11:52",Venta,TAAA4F9XU93,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 11:52",Venta,TAAA4F9XU93,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 11:53",Venta,TAAA4F9YF7Y,Mastercard - Débito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"28 jul 2026, 11:54",Venta,TAAA4F9YTMK,Visa - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"28 jul 2026, 11:54",Venta,TAAA4F9YTMK,Visa - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"28 jul 2026, 11:54",Venta,TAAA4F9Y3EE,Visa - Débito,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"28 jul 2026, 11:54",Venta,TAAA4F9Y3EE,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 11:57",Venta,TAAA4F9Z62M,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 11:57",Venta,TAAA4F92ENZ,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 12:00",Venta,TAAA4F93HXL,Visa - Débito,1,Aigua Gas,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 12:00",Venta,TAAA4F93HXL,Visa - Débito,2,Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"28 jul 2026, 12:04",Venta,TAAA4F96KHX,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 12:04",Venta,TAAA4F96KHX,Visa - Débito,1,Limonada Menta,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 12:04",Venta,TAAA4F96SU7,Visa - Débito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"28 jul 2026, 12:10",Venta,TAAA4GAANAQ,Maestro - Débito,1,Propina,,,EUR,"0,37",,"0,37","0,37","0,00",,treballador1@olo.com
+"28 jul 2026, 12:10",Venta,TAAA4GAANAQ,Maestro - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 12:10",Venta,TAAA4GAANAQ,Maestro - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"28 jul 2026, 12:12",Venta,TAAA4GABCH9,Maestro - Débito,1,Propina,,,EUR,"0,73",,"0,73","0,73","0,00",,treballador1@olo.com
+"28 jul 2026, 12:12",Venta,TAAA4GABCH9,Maestro - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 12:12",Venta,TAAA4GABCH9,Maestro - Débito,1,Coco Matcha Cloud,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"28 jul 2026, 12:12",Venta,TAAA4GABCH9,Maestro - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"28 jul 2026, 12:12",Venta,TAAA4GABCH9,Maestro - Débito,1,Iced Chai Latte,Cafes,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"28 jul 2026, 12:12",Venta,TAAA4GABNYC,Maestro - Débito,1,Cookie 3 xoco,Menjar,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 12:12",Venta,TAAA4GABNYC,Maestro - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 12:18",Venta,TAAA4GAEFN2,Visa - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"28 jul 2026, 12:18",Venta,TAAA4GAEFN2,Visa - Débito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"28 jul 2026, 12:27",Venta,TAAA4GAKQUK,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 12:27",Venta,TAAA4GAKQUK,Mastercard - Débito,1,Fritz Kola,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 12:27",Venta,TAAA4GAKQUK,Mastercard - Débito,1,Fritz Llimona,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 12:27",Venta,TAAA4GAKQUK,Mastercard - Débito,1,Suc Raïm-Pressec Cal Valls,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 12:27",Venta,TAAA4GAKQUK,Mastercard - Débito,1,Vichy Catalan,Begudes Envasades,,EUR,"2,60","0,00","2,60","2,36","0,24",10 %,Caixer
+"28 jul 2026, 12:53",Venta,TAAA4GAYQMH,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 12:53",Venta,TAAA4GAYQMH,Mastercard - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 13:01",Venta,TAAA4GA4D6S,Visa - Crédito,1,Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 13:01",Venta,TAAA4GA4D6S,Visa - Crédito,1,Free IPA Brebel,Cervesa,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 13:01",Venta,TAAA4GA4D6S,Visa - Crédito,1,Fritz Kola,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 13:01",Venta,TAAA4GA4D6S,Visa - Crédito,1,Fritz Llimona,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 13:01",Venta,TAAA4GA4D6S,Visa - Crédito,1,Fritz Taronja,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"28 jul 2026, 13:06",Venta,TAAA4GA7YSG,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 13:06",Venta,TAAA4GA7YSG,Efectivo,1,In solem Twins,Cervesa,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 13:12",Venta,TAAA4GBBFRX,Efectivo,2,Suc Raïm-Pressec Cal Valls,Begudes Envasades,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"28 jul 2026, 13:13",Venta,TAAA4GBBS3T,Visa - Crédito,2,Iced Chai Latte,Cafes,,EUR,"9,60","0,00","9,60","8,73","0,87",10 %,Caixer
+"28 jul 2026, 13:15",Venta,TAAA4GBC4M9,Efectivo,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"28 jul 2026, 13:23",Venta,TAAA4GBGSLK,Visa - Débito,1,Croissant Pastrami,Menjar,,EUR,"4,00","2,00","2,00","1,82","0,18",10 %,Caixer
+"28 jul 2026, 13:23",Venta,TAAA4GBGSLK,Visa - Débito,1,Suc Poma Cal Valls,Begudes Envasades,,EUR,"2,50","1,25","1,25","1,13","0,12",10 %,Caixer
+"28 jul 2026, 13:28",Venta,TAAA4GBKYSH,Visa - Débito,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"28 jul 2026, 13:28",Venta,TAAA4GBKYSH,Visa - Débito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"28 jul 2026, 14:10",Venta,TAAA4GB9UEU,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"28 jul 2026, 14:14",Venta,TAAA4GCBGYV,Efectivo,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"28 jul 2026, 21:38",Venta,TAAA4GKQ3AR,Visa,1,Pilates i OLO,,,EUR,"25,00","0,00","25,00","25,00","0,00",,holo@olo.cafe
+"29 jul 2026, 8:18",Venta,TAAA4GMYV63,Efectivo,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"29 jul 2026, 8:26",Venta,TAAA4GMZSFR,Visa - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"29 jul 2026, 8:29",Venta,TAAA4GMZ3U4,Mastercard - Débito,1,Propina,,,EUR,"0,64",,"0,64","0,64","0,00",,treballador1@olo.com
+"29 jul 2026, 8:29",Venta,TAAA4GMZ3U4,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"29 jul 2026, 8:29",Venta,TAAA4GMZ3U4,Mastercard - Débito,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"29 jul 2026, 8:29",Venta,TAAA4GMZ3U4,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"29 jul 2026, 8:54",Venta,TAAA4GM6NQX,Visa - Débito,1,Propina,,,EUR,"0,53",,"0,53","0,53","0,00",,holo@olo.cafe
+"29 jul 2026, 8:55",Venta,TAAA4GM6NQX,Visa - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,holo@olo.cafe
+"29 jul 2026, 8:55",Venta,TAAA4GM6NQX,Visa - Débito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,holo@olo.cafe
+"29 jul 2026, 8:56",Venta,TAAA4GM6XFN,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 9:03",Venta,TAAA4GM7ZKF,Visa - Débito,1,Croissant Moratdel·la,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"29 jul 2026, 9:05",Venta,TAAA4GM9GDL,Visa - Crédito,2,Carrot Cake,Menjar,,EUR,"7,00","0,00","7,00","6,36","0,64",10 %,holo@olo.cafe
+"29 jul 2026, 9:05",Venta,TAAA4GM9GDL,Visa - Crédito,1,Espresso Tonic,Especials,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 9:12",Venta,TAAA4GNANHF,Visa - Crédito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 9:12",Venta,TAAA4GNANHF,Visa - Crédito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"29 jul 2026, 9:19",Venta,TAAA4GNBYYR,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 9:28",Venta,TAAA4GNDT7H,Mastercard - Débito,1,Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 9:28",Venta,TAAA4GNDT7H,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 9:29",Venta,TAAA4GND3P4,Visa - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 9:29",Venta,TAAA4GND3P4,Visa - Débito,1,Matcha Latte,Te,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,holo@olo.cafe
+"29 jul 2026, 9:29",Venta,TAAA4GND3P4,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 9:32",Venta,TAAA4GNELV2,Mastercard - Débito,2,Capuccino,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,holo@olo.cafe
+"29 jul 2026, 9:32",Venta,TAAA4GNELV2,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 9:33",Venta,TAAA4GNEVPY,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 9:35",Venta,TAAA4GNFBU3,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"29 jul 2026, 9:38",Venta,TAAA4GNF3SM,Mastercard - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,holo@olo.cafe
+"29 jul 2026, 9:44",Venta,TAAA4GNHFMS,Visa - Débito,1,Propina,,,EUR,"1,67",,"1,67","1,67","0,00",,holo@olo.cafe
+"29 jul 2026, 9:44",Venta,TAAA4GNHFMS,Visa - Débito,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 9:44",Venta,TAAA4GNHFMS,Visa - Débito,2,Ice Strawberry Matcha Latte,Especials,,EUR,"11,00","0,00","11,00","10,00","1,00",10 %,holo@olo.cafe
+"29 jul 2026, 9:44",Venta,TAAA4GNHFMS,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 9:50",Venta,TAAA4GNKTTC,Efectivo,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 9:55",Venta,TAAA4GNL7GF,Visa - Crédito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 9:55",Venta,TAAA4GNL7GF,Visa - Crédito,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 9:55",Venta,TAAA4GNL7GF,Visa - Crédito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,holo@olo.cafe
+"29 jul 2026, 9:55",Venta,TAAA4GNL7GF,Visa - Crédito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,holo@olo.cafe
+"29 jul 2026, 9:55",Venta,TAAA4GNL7GF,Visa - Crédito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,holo@olo.cafe
+"29 jul 2026, 9:55",Venta,TAAA4GNL7GF,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 9:55",Venta,TAAA4GNL7GF,Visa - Crédito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,holo@olo.cafe
+"29 jul 2026, 9:55",Venta,TAAA4GNL7GF,Visa - Crédito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 9:55",Venta,TAAA4GNL7GF,Visa - Crédito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 9:56",Venta,TAAA4GNMG7F,Visa - Débito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,holo@olo.cafe
+"29 jul 2026, 9:56",Venta,TAAA4GNMG7F,Visa - Débito,2,Suc Raïm-Pressec Cal Valls,Begudes Envasades,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,holo@olo.cafe
+"29 jul 2026, 9:57",Venta,TAAA4GNMQ9S,Visa - Débito,1,Propina,,,EUR,"0,34",,"0,34","0,34","0,00",,holo@olo.cafe
+"29 jul 2026, 9:57",Venta,TAAA4GNMQ9S,Visa - Débito,1,Fritz Kola,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"29 jul 2026, 9:57",Venta,TAAA4GNMQ9S,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 9:59",Venta,TAAA4GNNBPF,Efectivo,3,Cafè amb llet,Cafes,,EUR,"7,50","0,00","7,50","6,82","0,68",10 %,holo@olo.cafe
+"29 jul 2026, 9:59",Venta,TAAA4GNNBPF,Efectivo,1,Cookie 3 xoco,Menjar,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 9:59",Venta,TAAA4GNNBPF,Efectivo,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 9:59",Venta,TAAA4GNNBPF,Efectivo,1,Ice Latte,Cafes,,EUR,"4,10","0,00","4,10","3,72","0,38",10 %,holo@olo.cafe
+"29 jul 2026, 9:59",Venta,TAAA4GNNBPF,Efectivo,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,holo@olo.cafe
+"29 jul 2026, 10:02",Venta,TAAA4GNNYHV,Mastercard - Débito,2,Croissant Moratdel·la,Menjar,,EUR,"8,00","4,00","4,00","3,63","0,37",10 %,holo@olo.cafe
+"29 jul 2026, 10:02",Venta,TAAA4GNNYHV,Mastercard - Débito,1,V60 Estàndard,Filtrats,,EUR,"5,00","2,50","2,50","2,28","0,22",10 %,holo@olo.cafe
+"29 jul 2026, 10:05",Venta,TAAA4GNPX37,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 10:05",Venta,TAAA4GNPX37,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 10:09",Venta,TAAA4GNQ4TC,Visa - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"29 jul 2026, 10:09",Venta,TAAA4GNQ4TC,Visa - Débito,1,Croissant Moratdel·la,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"29 jul 2026, 10:11",Venta,TAAA4GNRHBF,Visa - Débito,1,Ice Matcha Latte,Te,,EUR,"5,10","0,00","5,10","4,63","0,47",10 %,holo@olo.cafe
+"29 jul 2026, 10:11",Venta,TAAA4GNRHBF,Visa - Débito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,holo@olo.cafe
+"29 jul 2026, 10:17",Venta,TAAA4GNTF4Q,Visa - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 10:17",Venta,TAAA4GNTF4Q,Visa - Débito,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 10:26",Venta,TAAA4GNV7QZ,Mastercard - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,holo@olo.cafe
+"29 jul 2026, 10:26",Venta,TAAA4GNV7QZ,Mastercard - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,holo@olo.cafe
+"29 jul 2026, 10:26",Venta,TAAA4GNV7QZ,Mastercard - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 10:29",Venta,TAAA4GNX7ZT,Mastercard - Débito,1,Propina,,,EUR,"0,38",,"0,38","0,38","0,00",,holo@olo.cafe
+"29 jul 2026, 10:30",Venta,TAAA4GNX7ZT,Mastercard - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 10:32",Venta,TAAA4GNY2CX,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 10:32",Venta,TAAA4GNY2CX,Visa - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"29 jul 2026, 10:32",Venta,TAAA4GNY2CX,Visa - Débito,1,Cookie 3 xoco,Menjar,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 10:34",Venta,TAAA4GNZLVE,Mastercard - Débito,1,Propina,,,EUR,"0,92",,"0,92","0,92","0,00",,holo@olo.cafe
+"29 jul 2026, 10:34",Venta,TAAA4GNZLVE,Mastercard - Débito,2,Banana Bread,Menjar,,EUR,"7,00","0,00","7,00","6,36","0,64",10 %,holo@olo.cafe
+"29 jul 2026, 10:34",Venta,TAAA4GNZLVE,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 10:34",Venta,TAAA4GNZLVE,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 10:34",Venta,TAAA4GNZLVE,Mastercard - Débito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,holo@olo.cafe
+"29 jul 2026, 10:34",Venta,TAAA4GNZQVY,Mastercard - Crédito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"29 jul 2026, 10:35",Venta,TAAA4GNZYST,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 10:35",Venta,TAAA4GNZYST,Efectivo,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,holo@olo.cafe
+"29 jul 2026, 10:42",Venta,TAAA4GN4ASZ,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 10:42",Venta,TAAA4GN4ASZ,Visa - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 10:42",Venta,TAAA4GN4ASZ,Visa - Débito,1,Croissant Pistacho,Menjar,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 10:43",Venta,TAAA4GN4SZA,Efectivo,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,holo@olo.cafe
+"29 jul 2026, 10:44",Venta,TAAA4GN47LT,Visa - Débito,1,Propina,,,EUR,"0,35",,"0,35","0,35","0,00",,holo@olo.cafe
+"29 jul 2026, 10:45",Venta,TAAA4GN47LT,Visa - Débito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"29 jul 2026, 10:45",Venta,TAAA4GN47LT,Visa - Débito,1,Fritz Kola Zero,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"29 jul 2026, 10:48",Venta,TAAA4GN7HFU,Visa - Crédito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 10:48",Venta,TAAA4GN7HFU,Visa - Crédito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 10:48",Venta,TAAA4GN7HFU,Visa - Crédito,1,Chai Latte,Cafes,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,holo@olo.cafe
+"29 jul 2026, 10:48",Venta,TAAA4GN7HFU,Visa - Crédito,1,Coco Matcha Cloud,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,holo@olo.cafe
+"29 jul 2026, 10:48",Venta,TAAA4GN7HFU,Visa - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 10:48",Venta,TAAA4GN7HFU,Visa - Crédito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,holo@olo.cafe
+"29 jul 2026, 10:48",Venta,TAAA4GN7HFU,Visa - Crédito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"29 jul 2026, 10:49",Venta,TAAA4GN7SZ3,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 10:49",Venta,TAAA4GN7SZ3,Efectivo,1,Limonada Menta,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 10:52",Venta,TAAA4GN9XAU,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 10:52",Venta,TAAA4GN9XAU,Efectivo,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 10:52",Venta,TAAA4GN9XAU,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"29 jul 2026, 10:54",Venta,TAAA4GPAE73,Efectivo,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 10:54",Venta,TAAA4GPAKVM,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 10:55",Venta,TAAA4GPAUMZ,Visa - Crédito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,holo@olo.cafe
+"29 jul 2026, 10:58",Venta,TAAA4GPBY6R,Efectivo,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 10:59",Venta,TAAA4GPCDE9,Visa - Débito,1,Doble expresso,Cafes,,EUR,"2,40","0,00","2,40","2,18","0,22",10 %,holo@olo.cafe
+"29 jul 2026, 10:59",Venta,TAAA4GPCDE9,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 10:59",Venta,TAAA4GPCMZE,Visa - Débito,1,Propina,,,EUR,"0,09",,"0,09","0,09","0,00",,holo@olo.cafe
+"29 jul 2026, 11:00",Venta,TAAA4GPCMZE,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"29 jul 2026, 11:00",Venta,TAAA4GPCS2E,Efectivo,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"29 jul 2026, 11:02",Venta,TAAA4GPDNFC,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 11:02",Venta,TAAA4GPDNFC,Visa - Débito,1,Aigua Gas,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 11:02",Venta,TAAA4GPDNFC,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 11:02",Venta,TAAA4GPDNFC,Visa - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 11:03",Venta,TAAA4GPDXUR,Visa - Crédito,2,Flat white,Cafes,,EUR,"5,80","0,00","5,80","5,27","0,53",10 %,holo@olo.cafe
+"29 jul 2026, 11:07",Venta,TAAA4GPFGN3,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 11:14",Venta,TAAA4GPKGG4,Visa - Débito,1,Propina,,,EUR,"0,55",,"0,55","0,55","0,00",,holo@olo.cafe
+"29 jul 2026, 11:14",Venta,TAAA4GPKGG4,Visa - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 11:14",Venta,TAAA4GPKGG4,Visa - Débito,1,V60 Extra,Filtrats,,EUR,"8,00","0,00","8,00","7,27","0,73",10 %,holo@olo.cafe
+"29 jul 2026, 11:15",Venta,TAAA4GPKPZV,Efectivo,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,holo@olo.cafe
+"29 jul 2026, 11:19",Venta,TAAA4GPMBYM,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 11:19",Venta,TAAA4GPMBYM,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 11:21",Venta,TAAA4GPM6C4,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 11:21",Venta,TAAA4GPM6C4,Visa - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,holo@olo.cafe
+"29 jul 2026, 11:22",Venta,TAAA4GPNGGS,Mastercard - Débito,2,Cold Brew,Filtrats,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,holo@olo.cafe
+"29 jul 2026, 11:22",Venta,TAAA4GPNGGS,Mastercard - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 11:26",Venta,TAAA4GPP9U2,Mastercard - Débito,1,Coco Matcha Cloud,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,holo@olo.cafe
+"29 jul 2026, 11:33",Venta,TAAA4GPSU7E,Visa - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,holo@olo.cafe
+"29 jul 2026, 11:34",Venta,TAAA4GPTH3Z,Mastercard - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 11:40",Venta,TAAA4GPVYFB,Visa - Débito,1,Fritz Kola Zero,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"29 jul 2026, 11:40",Venta,TAAA4GPVYFB,Visa - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 11:40",Venta,TAAA4GPVYFB,Visa - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 11:40",Venta,TAAA4GPVYFB,Visa - Débito,1,Matcha Latte,Te,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,holo@olo.cafe
+"29 jul 2026, 11:43",Venta,TAAA4GPYB9P,Efectivo,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 11:49",Venta,TAAA4GP2TYE,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 11:49",Venta,TAAA4GP29CY,Mastercard - Crédito,3,"Aigua 0,5L",Begudes Envasades,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,holo@olo.cafe
+"29 jul 2026, 11:49",Venta,TAAA4GP29CY,Mastercard - Crédito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"29 jul 2026, 11:51",Venta,TAAA4GP3XE2,Efectivo,1,Croissant Moratdel·la,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"29 jul 2026, 11:59",Venta,TAAA4GP9RMX,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 11:59",Venta,TAAA4GP9RMX,Visa - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 12:03",Venta,TAAA4GQBMQS,Visa - Crédito,2,Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,holo@olo.cafe
+"29 jul 2026, 12:03",Venta,TAAA4GQBMQS,Visa - Crédito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 12:05",Venta,TAAA4GQCG24,Visa - Débito,1,Propina,,,EUR,"0,54",,"0,54","0,54","0,00",,holo@olo.cafe
+"29 jul 2026, 12:05",Venta,TAAA4GQCG24,Visa - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 12:05",Venta,TAAA4GQCG24,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 12:09",Venta,TAAA4GQEGGH,Visa - Débito,2,Batch Coffee,Filtrats,,EUR,"7,00","3,50","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 12:11",Venta,TAAA4GQFQ92,Mastercard - Crédito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"29 jul 2026, 12:11",Venta,TAAA4GQFQ92,Mastercard - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 12:11",Venta,TAAA4GQFQ92,Mastercard - Crédito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 12:13",Venta,TAAA4GQGLNF,Mastercard - Débito,1,Propina,,,EUR,"0,77",,"0,77","0,77","0,00",,holo@olo.cafe
+"29 jul 2026, 12:13",Venta,TAAA4GQGLNF,Mastercard - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 12:13",Venta,TAAA4GQGLNF,Mastercard - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,holo@olo.cafe
+"29 jul 2026, 12:15",Venta,TAAA4GQHURY,Visa - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 12:15",Venta,TAAA4GQHURY,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 12:19",Venta,TAAA4GQLHC2,Mastercard - Crédito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"29 jul 2026, 12:31",Venta,TAAA4GQSC7T,Visa - Crédito,1,Bourbon sidra,,,EUR,"18,50","0,00","18,50","16,82","1,68",10 %,holo@olo.cafe
+"29 jul 2026, 12:31",Venta,TAAA4GQSC7T,Visa - Crédito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"29 jul 2026, 12:33",Venta,TAAA4GQTGKS,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 12:35",Venta,TAAA4GQUC24,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"29 jul 2026, 12:35",Venta,TAAA4GQULEE,Mastercard - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 12:55",Venta,TAAA4GQ9DTS,Visa - Débito,1,Propina,,,EUR,"0,15",,"0,15","0,15","0,00",,holo@olo.cafe
+"29 jul 2026, 12:56",Venta,TAAA4GQ9DTS,Visa - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"29 jul 2026, 13:00",Venta,TAAA4GRBCG6,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 13:00",Venta,TAAA4GRBCG6,Efectivo,1,Fritz Kola,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"29 jul 2026, 13:02",Venta,TAAA4GRCEHK,Efectivo,2,Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,holo@olo.cafe
+"29 jul 2026, 13:04",Venta,TAAA4GRDBMN,Visa - Débito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"29 jul 2026, 13:37",Venta,TAAA4GRXB2X,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"29 jul 2026, 13:37",Venta,TAAA4GRXB2X,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 13:54",Venta,TAAA4GR9HUT,Visa - Crédito,2,Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,holo@olo.cafe
+"29 jul 2026, 14:14",Venta,TAAA4GSKRF7,Efectivo,1,Suc Taronja,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 14:32",Venta,TAAA4GSTV62,Visa - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"29 jul 2026, 14:37",Venta,TAAA4GSXAFL,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 14:37",Venta,TAAA4GSXAFL,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"29 jul 2026, 14:37",Venta,TAAA4GSXAFL,Visa - Crédito,1,Limonada Menta,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"29 jul 2026, 14:44",Venta,TAAA4GS2EXS,Mastercard - Débito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"29 jul 2026, 14:44",Venta,TAAA4GS2EXS,Mastercard - Débito,1,Vichy Catalan,Begudes Envasades,,EUR,"2,60","0,00","2,60","2,36","0,24",10 %,holo@olo.cafe
+"29 jul 2026, 15:03",Venta,TAAA4GTCQPL,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"29 jul 2026, 15:03",Venta,TAAA4GTCQPL,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"30 jul 2026, 8:02",Venta,TAAA4G4SH3U,Visa - Débito,1,Doble expresso,Cafes,,EUR,"2,40","0,00","2,40","2,18","0,22",10 %,Caixer
+"30 jul 2026, 8:04",Venta,TAAA4G4SRRY,Efectivo,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 8:10",Venta,TAAA4G4TCSS,Visa - Crédito,1,Propina,,,EUR,"0,18",,"0,18","0,18","0,00",,treballador1@olo.com
+"30 jul 2026, 8:11",Venta,TAAA4G4TCSS,Visa - Crédito,1,Espresso Tonic,Especials,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 8:23",Venta,TAAA4G4UM9V,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 8:23",Venta,TAAA4G4UM9V,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 8:23",Venta,TAAA4G4UM9V,Mastercard - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"30 jul 2026, 8:24",Reembolso,TAAA4G4UM9V,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"-2,00","0,00","-2,00","-1,82","-0,18",10 %,Caixer
+"30 jul 2026, 8:32",Venta,TAAA4G4VN2G,Mastercard - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 8:40",Venta,TAAA4G4XSEF,Visa - Débito,1,Propina,,,EUR,"0,13",,"0,13","0,13","0,00",,treballador1@olo.com
+"30 jul 2026, 8:40",Venta,TAAA4G4XSEF,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 8:48",Venta,TAAA4G4YVBS,Visa - Débito,1,Propina,,,EUR,"1,03",,"1,03","1,03","0,00",,treballador1@olo.com
+"30 jul 2026, 8:48",Venta,TAAA4G4YVBS,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 8:48",Venta,TAAA4G4YVBS,Visa - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 8:48",Venta,TAAA4G4YVBS,Visa - Débito,1,Macarena,Granel,,EUR,"15,00","0,00","15,00","13,64","1,36",10 %,Caixer
+"30 jul 2026, 8:49",Venta,TAAA4G4YY7Q,Mastercard - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 8:54",Venta,TAAA4G4ZSRT,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 8:59",Venta,TAAA4G42NNQ,Efectivo,1,Croissant Moratdel·la,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 8:59",Venta,TAAA4G42NNQ,Efectivo,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"30 jul 2026, 9:09",Venta,TAAA4G44D42,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","1,00","1,00","0,91","0,09",10 %,Caixer
+"30 jul 2026, 9:09",Venta,TAAA4G44D42,Mastercard - Débito,1,Got Llet,Cafes,,EUR,"1,00","0,50","0,50","0,46","0,04",10 %,Caixer
+"30 jul 2026, 9:09",Venta,TAAA4G44D42,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","1,90","1,90","1,72","0,18",10 %,Caixer
+"30 jul 2026, 9:11",Venta,TAAA4G44PUR,Mastercard - Débito,1,Doble expresso,Cafes,,EUR,"2,40","0,00","2,40","2,18","0,22",10 %,Caixer
+"30 jul 2026, 9:13",Venta,TAAA4G446SU,Visa - Débito,1,Americano,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 9:20",Venta,TAAA4G47G6F,Visa - Débito,1,Cold Brew Cinammon Orange,Especials,,EUR,"4,70","0,00","4,70","4,27","0,43",10 %,Caixer
+"30 jul 2026, 9:20",Venta,TAAA4G47G6F,Visa - Débito,1,Cold Brew Lemonade Honey,Especials,,EUR,"4,70","0,00","4,70","4,27","0,43",10 %,Caixer
+"30 jul 2026, 9:20",Venta,TAAA4G47G6F,Visa - Débito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"30 jul 2026, 9:20",Venta,TAAA4G47G6F,Visa - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"30 jul 2026, 9:20",Venta,TAAA4G47G6F,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 9:23",Venta,TAAA4G472FB,Visa - Crédito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 9:23",Venta,TAAA4G472FB,Visa - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 9:23",Venta,TAAA4G472FB,Visa - Crédito,1,Croissant Moratdel·la,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 9:23",Venta,TAAA4G472FB,Visa - Crédito,2,Entrepà Pastrami,Entrepans,,EUR,"10,00","0,00","10,00","9,09","0,91",10 %,Caixer
+"30 jul 2026, 9:23",Venta,TAAA4G472FB,Visa - Crédito,1,Iced Chai Latte,Cafes,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"30 jul 2026, 9:23",Venta,TAAA4G472FB,Visa - Crédito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 9:23",Venta,TAAA4G472FB,Visa - Crédito,1,Te,Te,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 9:23",Venta,TAAA4G476RH,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 9:27",Venta,TAAA4G49VMU,Visa - Débito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 9:27",Venta,TAAA4G49VMU,Visa - Débito,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 9:27",Venta,TAAA4G49VMU,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"30 jul 2026, 9:27",Venta,TAAA4G49VMU,Visa - Débito,1,Te,Te,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 9:30",Venta,TAAA4G6AF4G,Visa - Débito,1,Propina,,,EUR,"1,38",,"1,38","1,38","0,00",,treballador1@olo.com
+"30 jul 2026, 9:30",Venta,TAAA4G6AF4G,Visa - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 9:30",Venta,TAAA4G6AF4G,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 9:30",Venta,TAAA4G6AF4G,Visa - Débito,1,Suc Taronja,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 9:38",Venta,TAAA4G6CEFZ,Visa - Débito,1,Affogato,Especials,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"30 jul 2026, 9:38",Venta,TAAA4G6CEFZ,Visa - Débito,1,Coco Matcha Cloud,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"30 jul 2026, 9:41",Venta,TAAA4G6C4L2,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 9:43",Venta,TAAA4G6DFLE,Efectivo,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 9:53",Venta,TAAA4G6FYPC,American Express - Crédito,1,Propina,,,EUR,"2,16",,"2,16","2,16","0,00",,treballador1@olo.com
+"30 jul 2026, 9:53",Venta,TAAA4G6FYPC,American Express - Crédito,1,Chai Latte,Cafes,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"30 jul 2026, 9:53",Venta,TAAA4G6FYPC,American Express - Crédito,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"30 jul 2026, 9:53",Venta,TAAA4G6FYPC,American Express - Crédito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"30 jul 2026, 9:53",Venta,TAAA4G6FYPC,American Express - Crédito,1,Latte,Cafes,,EUR,"3,20","0,00","3,20","2,91","0,29",10 %,Caixer
+"30 jul 2026, 9:53",Venta,TAAA4G6FYPC,American Express - Crédito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 9:54",Venta,TAAA4G6F9GK,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 9:54",Venta,TAAA4G6F9GK,Visa - Crédito,2,Suc Taronja,Begudes,,EUR,"7,00","0,00","7,00","6,36","0,64",10 %,Caixer
+"30 jul 2026, 9:54",Venta,TAAA4G6GCHV,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 10:02",Venta,TAAA4G6KCZB,Mastercard - Débito,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 10:02",Venta,TAAA4G6KCZB,Mastercard - Débito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"30 jul 2026, 10:02",Venta,TAAA4G6KCZB,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 10:02",Venta,TAAA4G6KCZB,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 10:04",Venta,TAAA4G6KZU6,Efectivo,4,Croissant Estandard,Menjar,48,EUR,"8,00","0,00","8,00","7,27","0,73",10 %,Caixer
+"30 jul 2026, 10:05",Venta,TAAA4G6LERR,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 10:05",Venta,TAAA4G6LERR,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 10:06",Reembolso,TAAA4G6LERR,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"-3,80","0,00","-3,80","-3,45","-0,35",10 %,Caixer
+"30 jul 2026, 10:06",Reembolso,TAAA4G6LERR,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"-3,80","0,00","-3,80","-3,45","-0,35",10 %,Caixer
+"30 jul 2026, 10:07",Venta,TAAA4G6LSLE,Mastercard - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"30 jul 2026, 10:07",Venta,TAAA4G6LSLE,Mastercard - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"30 jul 2026, 10:08",Venta,TAAA4G6L7VB,Mastercard - Crédito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"30 jul 2026, 10:08",Venta,TAAA4G6L7VB,Mastercard - Crédito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 10:14",Venta,TAAA4G6NXA7,Efectivo,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"30 jul 2026, 10:14",Venta,TAAA4G6NXA7,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"30 jul 2026, 10:14",Venta,TAAA4G6NXA7,Efectivo,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 10:14",Venta,TAAA4G6NXA7,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 10:16",Venta,TAAA4G6PPBY,Mastercard - Crédito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 10:17",Venta,TAAA4G6PUC7,Visa - Débito,1,Propina,,,EUR,"0,35",,"0,35","0,35","0,00",,treballador1@olo.com
+"30 jul 2026, 10:17",Venta,TAAA4G6PUC7,Visa - Débito,1,Croissant Pastrami,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 10:17",Venta,TAAA4G6PUC7,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 10:19",Venta,TAAA4G6QDHR,Visa - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 10:19",Venta,TAAA4G6QDHR,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 10:19",Venta,TAAA4G6QDHR,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 10:20",Venta,TAAA4G6QP27,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 10:20",Venta,TAAA4G6QP27,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 10:25",Venta,TAAA4G6SA77,Visa - Crédito,1,Carrot Cake,Menjar,,EUR,"3,50","1,75","1,75","1,59","0,16",10 %,Caixer
+"30 jul 2026, 10:25",Venta,TAAA4G6SA77,Visa - Crédito,1,Latte,Cafes,,EUR,"2,90","1,45","1,45","1,32","0,13",10 %,Caixer
+"30 jul 2026, 10:26",Venta,TAAA4G6SMX2,Visa - Débito,1,Moka,Cafes,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 10:26",Venta,TAAA4G6SMX2,Visa - Débito,1,Te,Te,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 10:26",Venta,TAAA4G6STAM,Mastercard - Crédito,1,Propina,,,EUR,"0,15",,"0,15","0,15","0,00",,treballador1@olo.com
+"30 jul 2026, 10:27",Venta,TAAA4G6STAM,Mastercard - Crédito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 10:29",Venta,TAAA4G6TQ4N,Visa - Débito,1,Latte,Cafes,,EUR,"3,05","1,45","1,60","1,45","0,15",10 %,Caixer
+"30 jul 2026, 10:29",Venta,TAAA4G6TQ4N,Visa - Débito,1,Latte,Cafes,,EUR,"2,90","1,45","1,45","1,32","0,13",10 %,Caixer
+"30 jul 2026, 10:33",Venta,TAAA4G6UYXM,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 10:33",Venta,TAAA4G6UYXM,Visa - Débito,2,Entrepà Gorgonzola,Entrepans,,EUR,"9,00","0,00","9,00","8,18","0,82",10 %,Caixer
+"30 jul 2026, 10:33",Venta,TAAA4G6UYXM,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 10:33",Venta,TAAA4G6UYXM,Visa - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 10:37",Venta,TAAA4G6V9KP,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 10:44",Venta,TAAA4G6ZLVP,Visa - Débito,2,Suc Taronja,Begudes,,EUR,"7,00","0,00","7,00","6,36","0,64",10 %,Caixer
+"30 jul 2026, 10:46",Venta,TAAA4G62DCQ,Mastercard - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 10:46",Venta,TAAA4G62DCQ,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 10:48",Venta,TAAA4G62YYD,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"30 jul 2026, 10:53",Venta,TAAA4G64RLE,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 10:56",Venta,TAAA4G663PC,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 10:56",Venta,TAAA4G663PC,Mastercard - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 10:59",Venta,TAAA4G676G4,Visa - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,Caixer
+"30 jul 2026, 11:11",Venta,TAAA4G7DQCZ,Mastercard - Débito,2,Cafè amb llet,Cafes,,EUR,"5,60","0,00","5,60","5,10","0,50",10 %,Caixer
+"30 jul 2026, 11:11",Venta,TAAA4G7DXRK,Efectivo,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 11:19",Venta,TAAA4G7G6DV,Mastercard - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 11:19",Venta,TAAA4G7G6DV,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 11:19",Venta,TAAA4G7G6DV,Mastercard - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"30 jul 2026, 11:19",Venta,TAAA4G7G6DV,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 11:23",Venta,TAAA4G7KNXN,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 11:23",Venta,TAAA4G7KNXN,Visa - Débito,1,Moka,Cafes,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 11:28",Venta,TAAA4G7MNVU,Visa - Crédito,1,Espresso,Cafes,,EUR,"2,10","0,00","2,10","1,91","0,19",10 %,Caixer
+"30 jul 2026, 11:28",Venta,TAAA4G7MNVU,Visa - Crédito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"30 jul 2026, 11:28",Venta,TAAA4G7MNVU,Visa - Crédito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 11:29",Venta,TAAA4G7M2EQ,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 11:30",Venta,TAAA4G7NR4U,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 11:43",Venta,TAAA4G7UAZP,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 11:43",Venta,TAAA4G7UAZP,Mastercard - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 11:44",Venta,TAAA4G7UQEM,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 11:44",Venta,TAAA4G7UQEM,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 11:44",Venta,TAAA4G7UQEM,Mastercard - Débito,1,Fritz Taronja,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 11:46",Venta,TAAA4G7VRRP,Mastercard - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"30 jul 2026, 11:52",Venta,TAAA4G7ZCBL,Mastercard - Débito,1,Croissant Moratdel·la,Menjar,,EUR,"4,00","2,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 11:52",Venta,TAAA4G7ZCBL,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","1,90","1,90","1,72","0,18",10 %,Caixer
+"30 jul 2026, 11:53",Venta,TAAA4G7ZVAF,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 11:56",Venta,TAAA4G73C6K,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 11:56",Venta,TAAA4G73C6K,Visa - Débito,1,Suc Taronja,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 11:58",Venta,TAAA4G7363U,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 12:00",Venta,TAAA4G743PU,Efectivo,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 12:05",Venta,TAAA4G79KLG,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"30 jul 2026, 12:06",Venta,TAAA4G792H7,Visa - Débito,1,Propina,,,EUR,"0,39",,"0,39","0,39","0,00",,treballador1@olo.com
+"30 jul 2026, 12:06",Venta,TAAA4G792H7,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 12:06",Venta,TAAA4G792H7,Visa - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"30 jul 2026, 12:20",Venta,TAAA4G9HA34,Efectivo,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 12:25",Venta,TAAA4G9LVLN,Efectivo,3,Suc Taronja,Begudes,,EUR,"10,50","0,00","10,50","9,55","0,95",10 %,Caixer
+"30 jul 2026, 12:38",Venta,TAAA4G9S4ZY,Mastercard - Crédito,1,Propina,,,EUR,"1,05",,"1,05","1,05","0,00",,treballador1@olo.com
+"30 jul 2026, 12:38",Venta,TAAA4G9S4ZY,Mastercard - Crédito,2,Batch Coffee,Filtrats,,EUR,"7,00","0,00","7,00","6,36","0,64",10 %,Caixer
+"30 jul 2026, 12:38",Venta,TAAA4G9S4ZY,Mastercard - Crédito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 12:48",Venta,TAAA4G9Y67X,Mastercard - Crédito,1,Propina,,,EUR,"0,35",,"0,35","0,35","0,00",,treballador1@olo.com
+"30 jul 2026, 12:48",Venta,TAAA4G9Y67X,Mastercard - Crédito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 12:49",Venta,TAAA4G9ZQ3F,Visa - Débito,1,Propina,,,EUR,"0,15",,"0,15","0,15","0,00",,treballador1@olo.com
+"30 jul 2026, 12:49",Venta,TAAA4G9ZQ3F,Visa - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 12:58",Venta,TAAA4G96SYB,Mastercard - Débito,1,Cold Brew Lemonade Honey,Especials,,EUR,"4,70","0,00","4,70","4,27","0,43",10 %,Caixer
+"30 jul 2026, 13:05",Venta,TAAA4HABERB,Efectivo,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 13:12",Venta,TAAA4HAER4T,Mastercard - Crédito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"30 jul 2026, 13:12",Venta,TAAA4HAER4T,Mastercard - Crédito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"30 jul 2026, 13:20",Venta,TAAA4HAK7QE,Visa - Crédito,1,Granja Paraíso 250,Granel,,EUR,"21,00","0,00","21,00","19,09","1,91",10 %,Caixer
+"30 jul 2026, 13:20",Venta,TAAA4HAK7QE,Visa - Crédito,1,Macarena,Granel,,EUR,"15,00","0,00","15,00","13,64","1,36",10 %,Caixer
+"30 jul 2026, 13:20",Venta,TAAA4HAK7QE,Visa - Crédito,1,Seweda 250,Granel,,EUR,"16,00","0,00","16,00","14,55","1,45",10 %,Caixer
+"30 jul 2026, 13:33",Venta,TAAA4HASBDH,Visa - Crédito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 13:33",Venta,TAAA4HASBDH,Visa - Crédito,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 13:44",Venta,TAAA4HAYKSE,Efectivo,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"30 jul 2026, 13:44",Venta,TAAA4HAYKSE,Efectivo,1,Suc Taronja,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 14:06",Venta,TAAA4HBDE9L,Visa - Débito,1,Propina,,,EUR,"1,70",,"1,70","1,70","0,00",,treballador1@olo.com
+"30 jul 2026, 14:06",Venta,TAAA4HBDE9L,Visa - Débito,2,Entrepà Pastrami,Entrepans,,EUR,"10,00","0,00","10,00","9,09","0,91",10 %,Caixer
+"30 jul 2026, 14:06",Venta,TAAA4HBDE9L,Visa - Débito,2,Free IPA Brebel,Cervesa,,EUR,"7,00","0,00","7,00","6,36","0,64",10 %,Caixer
+"30 jul 2026, 14:19",Venta,TAAA4HBLF3N,Mastercard - Débito,3,"Aigua 0,5L",Begudes Envasades,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,Caixer
+"30 jul 2026, 14:36",Venta,TAAA4HBUCHK,Visa - Débito,1,Propina,,,EUR,"0,19",,"0,19","0,19","0,00",,treballador1@olo.com
+"30 jul 2026, 14:36",Venta,TAAA4HBUCHK,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 14:40",Venta,TAAA4HBV7QX,Visa - Débito,1,Propina,,,EUR,"0,22",,"0,22","0,22","0,00",,treballador1@olo.com
+"30 jul 2026, 14:40",Venta,TAAA4HBV7QX,Visa - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 14:43",Venta,TAAA4HBYFXX,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 14:46",Venta,TAAA4HBZKYQ,Efectivo,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 14:46",Venta,TAAA4HBZKYQ,Efectivo,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"30 jul 2026, 14:47",Venta,TAAA4HBZVPT,Mastercard - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 15:14",Venta,TAAA4HCGACV,Mastercard - Débito,1,Dirty Chai Latte,Cafes,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"30 jul 2026, 15:14",Venta,TAAA4HCGACV,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 15:19",Venta,TAAA4HCKCLG,Efectivo,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 15:24",Venta,TAAA4HCMN2Y,Mastercard - Débito,2,Cold Brew,Filtrats,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,Caixer
+"30 jul 2026, 15:24",Venta,TAAA4HCMN2Y,Mastercard - Débito,1,Croissant Moratdel·la,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 15:24",Venta,TAAA4HCMN2Y,Mastercard - Débito,1,Suc Poma Cal Valls,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 15:55",Venta,TAAA4HC37F4,Efectivo,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 16:07",Venta,TAAA4HDB6PB,Mastercard - Débito,1,Propina,,,EUR,"0,83",,"0,83","0,83","0,00",,treballador1@olo.com
+"30 jul 2026, 16:08",Venta,TAAA4HDB6PB,Mastercard - Débito,1,Coco Matcha Cloud,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"30 jul 2026, 16:11",Venta,TAAA4HDDK6E,Visa - Crédito,1,Propina,,,EUR,"0,33",,"0,33","0,33","0,00",,treballador1@olo.com
+"30 jul 2026, 16:11",Venta,TAAA4HDDK6E,Visa - Crédito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 16:11",Venta,TAAA4HDDK6E,Visa - Crédito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 16:13",Venta,TAAA4HDEQGZ,Efectivo,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 16:20",Venta,TAAA4HDHUVH,Mastercard - Débito,1,Affogato,Especials,,EUR,"4,50","2,25","2,25","2,04","0,21",10 %,Caixer
+"30 jul 2026, 16:20",Venta,TAAA4HDHUVH,Mastercard - Débito,1,Espresso,Cafes,,EUR,"1,80","0,90","0,90","0,82","0,08",10 %,Caixer
+"30 jul 2026, 16:29",Venta,TAAA4HDNRAR,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 16:30",Venta,TAAA4HDPEA6,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","1,90","1,90","1,72","0,18",10 %,Caixer
+"30 jul 2026, 16:34",Venta,TAAA4HDRBF4,Visa - Débito,1,Fritz Kola,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 16:35",Venta,TAAA4HDRNMM,Mastercard - Débito,1,Iced Chai Latte,Cafes,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"30 jul 2026, 16:36",Venta,TAAA4HDRY37,Visa - Débito,1,Aigua Gas,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 16:40",Venta,TAAA4HDTU32,Mastercard - Débito,1,Propina,,,EUR,"0,76",,"0,76","0,76","0,00",,treballador1@olo.com
+"30 jul 2026, 16:40",Venta,TAAA4HDTU32,Mastercard - Débito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 16:40",Venta,TAAA4HDTU32,Mastercard - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 16:40",Venta,TAAA4HDTU32,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 16:40",Venta,TAAA4HDTU32,Mastercard - Débito,3,Pain au chocolat,Menjar,52,EUR,"6,60","0,00","6,60","6,00","0,60",10 %,Caixer
+"30 jul 2026, 16:42",Venta,TAAA4HDULVU,Efectivo,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 17:12",Venta,TAAA4HEDNGS,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 17:12",Venta,TAAA4HEDRLZ,Visa - Débito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 17:16",Venta,TAAA4HEFDAD,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 17:25",Venta,TAAA4HELNTN,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 17:30",Venta,TAAA4HEN3KG,Visa - Crédito,1,Propina,,,EUR,"1,46",,"1,46","1,46","0,00",,treballador1@olo.com
+"30 jul 2026, 17:30",Venta,TAAA4HEN3KG,Visa - Crédito,3,"Aigua 0,5L",Begudes Envasades,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,Caixer
+"30 jul 2026, 17:30",Venta,TAAA4HEN3KG,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 17:30",Venta,TAAA4HEN3KG,Visa - Crédito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"30 jul 2026, 17:35",Venta,TAAA4HERAFF,Mastercard - Débito,1,Aigua Gas,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 17:35",Venta,TAAA4HERAFF,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 17:38",Venta,TAAA4HESXAQ,Efectivo,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 17:47",Venta,TAAA4HEXXHN,Mastercard - Crédito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 17:47",Venta,TAAA4HEXXHN,Mastercard - Crédito,1,Fritz Taronja,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"30 jul 2026, 17:47",Venta,TAAA4HEXXHN,Mastercard - Crédito,1,Granja Paraíso 250,Granel,,EUR,"21,00","0,00","21,00","19,09","1,91",10 %,Caixer
+"30 jul 2026, 17:53",Venta,TAAA4HE2L3H,Efectivo,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 17:57",Venta,TAAA4HE4FMF,Efectivo,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 18:16",Venta,TAAA4HFFK2P,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 18:24",Venta,TAAA4HFKXST,Visa - Crédito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 18:24",Venta,TAAA4HFKXST,Visa - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"30 jul 2026, 18:28",Venta,TAAA4HFMXYE,Efectivo,1,Varis,,,EUR,"3,20","0,00","3,20","2,91","0,29",10 %,Caixer
+"30 jul 2026, 18:32",Venta,TAAA4HFPLZD,Visa - Débito,4,"Aigua 0,5L",Begudes Envasades,,EUR,"8,00","0,00","8,00","7,27","0,73",10 %,Franklin
+"30 jul 2026, 18:45",Venta,TAAA4HFVGBP,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Franklin
+"30 jul 2026, 18:45",Venta,TAAA4HFVGBP,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Franklin
+"30 jul 2026, 19:04",Venta,TAAA4HF9MA6,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Franklin
+"30 jul 2026, 19:40",Venta,TAAA4HGSUME,Visa - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"30 jul 2026, 19:42",Venta,TAAA4HGTZCY,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 19:56",Venta,TAAA4HG3FZ7,Mastercard - Crédito,2,Ice Strawberry Matcha Latte,Especials,,EUR,"11,00","0,00","11,00","10,00","1,00",10 %,Caixer
+"30 jul 2026, 19:56",Venta,TAAA4HG3FZ7,Mastercard - Crédito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"30 jul 2026, 19:58",Venta,TAAA4HG39KK,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"30 jul 2026, 20:00",Venta,TAAA4HG6ELA,Mastercard - Crédito,1,Suc Raïm-Pressec Cal Valls,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 20:00",Venta,TAAA4HG6ELA,Mastercard - Crédito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"30 jul 2026, 20:00",Venta,TAAA4HG6ELA,Mastercard - Crédito,1,Tònica Schweppes,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"30 jul 2026, 20:06",Venta,TAAA4HG9ZYT,Efectivo,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"30 jul 2026, 20:17",Venta,TAAA4HHEPYY,Efectivo,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"30 jul 2026, 20:17",Venta,TAAA4HHEPYY,Efectivo,2,Fritz Kola,Begudes Envasades,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,Caixer
+"30 jul 2026, 20:26",Venta,TAAA4HHKU7B,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 8:10",Venta,TAAA4HNC2R7,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 8:10",Venta,TAAA4HNC2R7,Mastercard - Débito,1,Doble expresso,Cafes,,EUR,"2,40","0,00","2,40","2,18","0,22",10 %,Caixer
+"31 jul 2026, 8:10",Venta,TAAA4HNC2R7,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 8:17",Venta,TAAA4HNDRFS,Visa - Crédito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 8:17",Venta,TAAA4HNDRFS,Visa - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 8:19",Venta,TAAA4HNDXZS,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 8:19",Venta,TAAA4HNDXZS,Efectivo,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"31 jul 2026, 8:19",Venta,TAAA4HNDZZ4,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 8:19",Venta,TAAA4HNDZZ4,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 8:21",Venta,TAAA4HNEAZL,Efectivo,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 8:27",Venta,TAAA4HNEVTA,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 8:27",Venta,TAAA4HNEVTA,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 8:27",Venta,TAAA4HNEVTA,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 8:27",Venta,TAAA4HNEVTA,Visa - Débito,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"31 jul 2026, 8:27",Venta,TAAA4HNEVTA,Visa - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"31 jul 2026, 8:27",Venta,TAAA4HNEVTA,Visa - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"31 jul 2026, 8:28",Venta,TAAA4HNE4Q2,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 8:34",Venta,TAAA4HNFSVQ,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 8:40",Venta,TAAA4HNGNYU,Mastercard - Débito,2,Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"31 jul 2026, 8:41",Venta,TAAA4HNGTVC,Efectivo,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 8:41",Venta,TAAA4HNGTVC,Efectivo,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"31 jul 2026, 8:42",Venta,TAAA4HNGZ62,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 8:42",Venta,TAAA4HNGZ62,Visa - Débito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"31 jul 2026, 8:42",Reembolso,TAAA4HNGTVC,Efectivo,1,Cafè amb llet,Cafes,,EUR,"-2,50","0,00","-2,50","-2,27","-0,23",10 %,Caixer
+"31 jul 2026, 8:42",Reembolso,TAAA4HNGTVC,Efectivo,1,Entrepà Gorgonzola,Entrepans,,EUR,"-4,50","0,00","-4,50","-4,09","-0,41",10 %,Caixer
+"31 jul 2026, 8:47",Venta,TAAA4HNHUGR,Visa - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 8:47",Venta,TAAA4HNHUGR,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 8:49",Venta,TAAA4HNH6CN,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 8:49",Venta,TAAA4HNH6CN,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 8:49",Venta,TAAA4HNH6CN,Visa - Débito,1,Croissant Pistacho,Menjar,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 9:00",Venta,TAAA4HNLZR4,Mastercard - Débito,1,Propina,,,EUR,"1,26",,"1,26","1,26","0,00",,treballador1@olo.com
+"31 jul 2026, 9:00",Venta,TAAA4HNLZR4,Mastercard - Débito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","2,25","2,25","2,04","0,21",10 %,Caixer
+"31 jul 2026, 9:00",Venta,TAAA4HNLZR4,Mastercard - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","2,50","2,50","2,28","0,22",10 %,Caixer
+"31 jul 2026, 9:00",Venta,TAAA4HNLZR4,Mastercard - Débito,1,Espresso Tonic,Especials,,EUR,"3,50","1,75","1,75","1,59","0,16",10 %,Caixer
+"31 jul 2026, 9:00",Venta,TAAA4HNLZR4,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","1,90","1,90","1,72","0,18",10 %,Caixer
+"31 jul 2026, 9:01",Venta,TAAA4HNL7QB,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 9:01",Venta,TAAA4HNL7QB,Visa - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"31 jul 2026, 9:01",Venta,TAAA4HNL7QB,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 9:02",Venta,TAAA4HNMC4C,Visa - Débito,1,Propina,,,EUR,"0,33",,"0,33","0,33","0,00",,treballador1@olo.com
+"31 jul 2026, 9:02",Venta,TAAA4HNMC4C,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 9:02",Venta,TAAA4HNMC4C,Visa - Débito,1,Croissant Moratdel·la,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"31 jul 2026, 9:06",Venta,TAAA4HNM6EG,Visa - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"31 jul 2026, 9:07",Venta,TAAA4HNNC4G,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","1,25","1,25","1,13","0,12",10 %,Caixer
+"31 jul 2026, 9:12",Venta,TAAA4HNPCPB,Visa - Crédito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 9:12",Venta,TAAA4HNPCPB,Visa - Crédito,1,Sunrise,Begudes,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"31 jul 2026, 9:24",Venta,TAAA4HNRUUN,Mastercard - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 9:24",Venta,TAAA4HNRUUN,Mastercard - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 9:24",Venta,TAAA4HNRUUN,Mastercard - Débito,1,Croissant Xoco,Menjar,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 9:24",Venta,TAAA4HNRUUN,Mastercard - Débito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"31 jul 2026, 9:24",Venta,TAAA4HNRUUN,Mastercard - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"31 jul 2026, 9:24",Venta,TAAA4HNRUUN,Mastercard - Débito,1,Xocolata,Cafes,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"31 jul 2026, 9:25",Venta,TAAA4HNRY7Q,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 9:27",Venta,TAAA4HNSHV2,Visa - Débito,1,Propina,,,EUR,"0,09",,"0,09","0,09","0,00",,treballador1@olo.com
+"31 jul 2026, 9:27",Venta,TAAA4HNSHV2,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 9:29",Venta,TAAA4HNSXE4,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 9:29",Venta,TAAA4HNSXE4,Efectivo,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"31 jul 2026, 9:38",Venta,TAAA4HNU249,Mastercard - Crédito,1,Propina,,,EUR,"2,54",,"2,54","2,54","0,00",,treballador1@olo.com
+"31 jul 2026, 9:38",Venta,TAAA4HNU249,Mastercard - Crédito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 9:38",Venta,TAAA4HNU249,Mastercard - Crédito,2,Batch Coffee,Filtrats,,EUR,"7,00","0,00","7,00","6,36","0,64",10 %,Caixer
+"31 jul 2026, 9:38",Venta,TAAA4HNU249,Mastercard - Crédito,1,Chai Latte,Cafes,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"31 jul 2026, 9:38",Venta,TAAA4HNU249,Mastercard - Crédito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 9:38",Venta,TAAA4HNU249,Mastercard - Crédito,1,Entrepà Mortadela Trufa,Entrepans,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"31 jul 2026, 9:38",Venta,TAAA4HNU249,Mastercard - Crédito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"31 jul 2026, 9:38",Venta,TAAA4HNU9ER,Efectivo,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"31 jul 2026, 9:46",Venta,TAAA4HNX7EX,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 9:49",Venta,TAAA4HNYZHF,Visa - Débito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"31 jul 2026, 9:49",Venta,TAAA4HNYZHF,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 9:53",Venta,TAAA4HNZ4MG,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","1,25","1,25","1,13","0,12",10 %,Caixer
+"31 jul 2026, 9:53",Venta,TAAA4HNZ4MG,Mastercard - Débito,1,Tallat,Cafes,,EUR,"2,20","1,10","1,10","1,00","0,10",10 %,Caixer
+"31 jul 2026, 9:54",Venta,TAAA4HN2AAS,Visa - Débito,1,Propina,,,EUR,"0,18",,"0,18","0,18","0,00",,treballador1@olo.com
+"31 jul 2026, 9:54",Venta,TAAA4HN2AAS,Visa - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 9:55",Venta,TAAA4HN2HFD,Efectivo,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 9:55",Venta,TAAA4HN2HFD,Efectivo,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 9:55",Venta,TAAA4HN2HFD,Efectivo,1,Limonada Menta,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 9:56",Venta,TAAA4HN2ZDL,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 9:56",Venta,TAAA4HN2ZDL,Efectivo,1,Fritz Llimona,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"31 jul 2026, 9:59",Venta,TAAA4HN3QZS,Visa - Débito,1,Doble expresso,Cafes,,EUR,"2,70","0,00","2,70","2,45","0,25",10 %,Caixer
+"31 jul 2026, 9:59",Venta,TAAA4HN3QZS,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"31 jul 2026, 10:05",Venta,TAAA4HN6FXZ,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 10:13",Venta,TAAA4HN943C,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 10:13",Venta,TAAA4HN943C,Efectivo,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 10:14",Venta,TAAA4HPAA26,Efectivo,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 10:15",Venta,TAAA4HPAPZA,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 10:15",Venta,TAAA4HPAPZA,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 10:15",Venta,TAAA4HPAVP9,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 10:17",Venta,TAAA4HPBAQU,Efectivo,4,Croissant Estandard,Menjar,48,EUR,"8,00","0,00","8,00","7,27","0,73",10 %,Caixer
+"31 jul 2026, 10:17",Venta,TAAA4HPBEY3,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 10:18",Venta,TAAA4HPBPGQ,Efectivo,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"31 jul 2026, 10:18",Venta,TAAA4HPBPGQ,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 10:18",Venta,TAAA4HPBPGQ,Efectivo,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"31 jul 2026, 10:19",Venta,TAAA4HPBZBL,Efectivo,3,"Aigua 0,5L",Begudes Envasades,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,Caixer
+"31 jul 2026, 10:19",Venta,TAAA4HPBZBL,Efectivo,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 10:22",Venta,TAAA4HPCV6Y,Efectivo,2,Bitter,Begudes Envasades,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"31 jul 2026, 10:22",Venta,TAAA4HPCV6Y,Efectivo,2,Cafè amb llet,Cafes,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,Caixer
+"31 jul 2026, 10:22",Venta,TAAA4HPCV6Y,Efectivo,1,Croissant Xoco,Menjar,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 10:22",Venta,TAAA4HPCV6Y,Efectivo,3,Pain au chocolat,Menjar,52,EUR,"6,60","0,00","6,60","6,00","0,60",10 %,Caixer
+"31 jul 2026, 10:22",Venta,TAAA4HPCV6Y,Efectivo,1,Suc Taronja,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 10:28",Venta,TAAA4HPE7XY,Mastercard - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 10:28",Venta,TAAA4HPE7XY,Mastercard - Débito,4,Cafè amb llet,Cafes,,EUR,"10,00","0,00","10,00","9,09","0,91",10 %,Caixer
+"31 jul 2026, 10:28",Venta,TAAA4HPE7XY,Mastercard - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 10:28",Venta,TAAA4HPE7XY,Mastercard - Débito,2,Pain au chocolat,Menjar,52,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,Caixer
+"31 jul 2026, 10:30",Venta,TAAA4HPFTTK,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 10:31",Venta,TAAA4HPF4XD,Mastercard - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 10:31",Venta,TAAA4HPF4XD,Mastercard - Débito,1,Doble expresso,Cafes,,EUR,"2,40","0,00","2,40","2,18","0,22",10 %,Caixer
+"31 jul 2026, 10:39",Venta,TAAA4HPK7LC,Efectivo,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 10:39",Venta,TAAA4HPK7LC,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 10:44",Venta,TAAA4HPMZLN,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 10:44",Venta,TAAA4HPMZLN,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 10:47",Venta,TAAA4HPN6GC,Mastercard - Débito,1,La Tribu,Granel,,EUR,"12,50","0,00","12,50","11,36","1,14",10 %,Caixer
+"31 jul 2026, 10:48",Venta,TAAA4HPPMRD,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 10:49",Venta,TAAA4HPPZ3A,Efectivo,2,Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,Caixer
+"31 jul 2026, 10:52",Venta,TAAA4HPQ7VC,Mastercard - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 10:53",Venta,TAAA4HPRNLA,Efectivo,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"31 jul 2026, 10:53",Venta,TAAA4HPRNLA,Efectivo,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 10:57",Venta,TAAA4HPS6NV,Visa - Débito,1,Propina,,,EUR,"0,94",,"0,94","0,94","0,00",,treballador1@olo.com
+"31 jul 2026, 10:57",Venta,TAAA4HPS6NV,Visa - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 10:57",Venta,TAAA4HPS6NV,Visa - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"31 jul 2026, 10:57",Venta,TAAA4HPS6NV,Visa - Débito,1,Croissant Moratdel·la,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"31 jul 2026, 10:57",Venta,TAAA4HPS6NV,Visa - Débito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"31 jul 2026, 10:57",Venta,TAAA4HPS6NV,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"31 jul 2026, 10:57",Venta,TAAA4HPS6NV,Visa - Débito,1,Suc Poma Cal Valls,Begudes Envasades,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 11:01",Venta,TAAA4HPUS6P,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 11:02",Venta,TAAA4HPVFBQ,Efectivo,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"31 jul 2026, 11:04",Venta,TAAA4HPV6C2,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 11:04",Venta,TAAA4HPXCPC,Visa - Débito,1,Propina,,,EUR,"0,15",,"0,15","0,15","0,00",,treballador1@olo.com
+"31 jul 2026, 11:04",Venta,TAAA4HPXCPC,Visa - Débito,1,Fritz Llimona,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"31 jul 2026, 11:05",Venta,TAAA4HPXQQS,Mastercard - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,Caixer
+"31 jul 2026, 11:05",Venta,TAAA4HPXQQS,Mastercard - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,Caixer
+"31 jul 2026, 11:07",Venta,TAAA4HPYMZX,Efectivo,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 11:08",Venta,TAAA4HPYSA4,Efectivo,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"31 jul 2026, 11:09",Venta,TAAA4HPY7VT,Efectivo,1,Doble expresso,Cafes,,EUR,"2,40","0,00","2,40","2,18","0,22",10 %,Caixer
+"31 jul 2026, 11:09",Venta,TAAA4HPZLLC,Efectivo,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,Caixer
+"31 jul 2026, 11:13",Venta,TAAA4HP23GM,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 11:14",Venta,TAAA4HP3P96,Visa - Débito,1,Doble expresso,Cafes,,EUR,"2,70","0,00","2,70","2,45","0,25",10 %,Caixer
+"31 jul 2026, 11:15",Venta,TAAA4HP34D3,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 11:17",Venta,TAAA4HP43SV,Efectivo,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"31 jul 2026, 11:20",Venta,TAAA4HP64NA,Mastercard - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 11:20",Venta,TAAA4HP64NA,Mastercard - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"31 jul 2026, 11:23",Venta,TAAA4HP9MYA,Visa - Débito,1,Propina,,,EUR,"0,68",,"0,68","0,68","0,00",,holo@olo.cafe
+"31 jul 2026, 11:23",Venta,TAAA4HP9MYA,Visa - Débito,3,Ice Latte,Cafes,,EUR,"11,40","0,00","11,40","10,36","1,04",10 %,holo@olo.cafe
+"31 jul 2026, 11:23",Venta,TAAA4HP9MYA,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"31 jul 2026, 11:24",Venta,TAAA4HP9VXB,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"31 jul 2026, 11:28",Venta,TAAA4HQBZBT,Efectivo,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,holo@olo.cafe
+"31 jul 2026, 11:32",Venta,TAAA4HQDVBR,Visa - Crédito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"31 jul 2026, 11:34",Venta,TAAA4HQEGFK,Visa - Débito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,holo@olo.cafe
+"31 jul 2026, 11:34",Venta,TAAA4HQEGFK,Visa - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"31 jul 2026, 11:36",Venta,TAAA4HQFPEQ,Visa - Débito,1,Propina,,,EUR,"0,15",,"0,15","0,15","0,00",,holo@olo.cafe
+"31 jul 2026, 11:36",Venta,TAAA4HQFPEQ,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"31 jul 2026, 11:42",Venta,TAAA4HQKMT9,Mastercard - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"31 jul 2026, 11:56",Venta,TAAA4HQSKGP,Visa - Crédito,2,Iced Chai Latte,Cafes,,EUR,"9,60","0,00","9,60","8,73","0,87",10 %,holo@olo.cafe
+"31 jul 2026, 11:58",Venta,TAAA4HQTBBZ,Efectivo,1,Fritz Llimona,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"31 jul 2026, 11:58",Venta,TAAA4HQTBBZ,Efectivo,1,Fritz Taronja,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"31 jul 2026, 11:58",Venta,TAAA4HQTBBZ,Efectivo,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"31 jul 2026, 12:01",Venta,TAAA4HQVAMY,Mastercard - Crédito,1,Propina,,,EUR,"1,70",,"1,70","1,70","0,00",,holo@olo.cafe
+"31 jul 2026, 12:02",Venta,TAAA4HQVAMY,Mastercard - Crédito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 12:02",Venta,TAAA4HQVAMY,Mastercard - Crédito,1,Espresso Tonic,Especials,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 12:02",Venta,TAAA4HQVAMY,Mastercard - Crédito,2,V60 Estàndard,Filtrats,,EUR,"10,00","0,00","10,00","9,09","0,91",10 %,holo@olo.cafe
+"31 jul 2026, 12:02",Venta,TAAA4HQVLYH,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"31 jul 2026, 12:02",Venta,TAAA4HQVLYH,Visa - Débito,1,Croissant Moratdel·la,Menjar,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"31 jul 2026, 12:03",Venta,TAAA4HQVXTM,Mastercard - Débito,2,Americano,Cafes,,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,holo@olo.cafe
+"31 jul 2026, 12:10",Venta,TAAA4HQ2UYS,Efectivo,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"31 jul 2026, 12:23",Venta,TAAA4HRBN6B,Mastercard - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"31 jul 2026, 12:23",Venta,TAAA4HRBN6B,Mastercard - Débito,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"31 jul 2026, 12:23",Venta,TAAA4HRBN6B,Mastercard - Débito,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 12:23",Venta,TAAA4HRBN6B,Mastercard - Débito,2,Croissant Estandard,Menjar,48,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"31 jul 2026, 12:23",Venta,TAAA4HRBN6B,Mastercard - Débito,1,Pain au chocolat,Menjar,52,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"31 jul 2026, 12:28",Venta,TAAA4HRD37A,Mastercard - Débito,1,Propina,,,EUR,"1,63",,"1,63","1,63","0,00",,holo@olo.cafe
+"31 jul 2026, 12:28",Venta,TAAA4HRD37A,Mastercard - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 12:28",Venta,TAAA4HRD37A,Mastercard - Débito,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 12:28",Venta,TAAA4HRD37A,Mastercard - Débito,2,Ice Strawberry Matcha Latte,Especials,,EUR,"11,00","0,00","11,00","10,00","1,00",10 %,holo@olo.cafe
+"31 jul 2026, 12:28",Venta,TAAA4HRD37A,Mastercard - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 12:28",Venta,TAAA4HRD37A,Mastercard - Débito,2,Smothie stra,,,EUR,"11,00","0,00","11,00","10,00","1,00",10 %,holo@olo.cafe
+"31 jul 2026, 12:29",Venta,TAAA4HREKCG,Mastercard - Débito,1,Entrepà Gorgonzola,Entrepans,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,holo@olo.cafe
+"31 jul 2026, 12:29",Venta,TAAA4HREKCG,Mastercard - Débito,1,Entrepà Pastrami,Entrepans,,EUR,"5,00","0,00","5,00","4,55","0,45",10 %,holo@olo.cafe
+"31 jul 2026, 12:29",Venta,TAAA4HREKCG,Mastercard - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"31 jul 2026, 12:29",Venta,TAAA4HREKCG,Mastercard - Débito,1,Te,Te,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,holo@olo.cafe
+"31 jul 2026, 12:41",Venta,TAAA4HRM3Y3,Mastercard - Crédito,1,Propina,,,EUR,"0,35",,"0,35","0,35","0,00",,holo@olo.cafe
+"31 jul 2026, 12:41",Venta,TAAA4HRM3Y3,Mastercard - Crédito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 12:48",Venta,TAAA4HRRSKG,Mastercard - Débito,1,Propina,,,EUR,"1,33",,"1,33","1,33","0,00",,holo@olo.cafe
+"31 jul 2026, 12:48",Venta,TAAA4HRRSKG,Mastercard - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 12:48",Venta,TAAA4HRRSKG,Mastercard - Débito,2,Entrepà Pastrami,Entrepans,,EUR,"10,00","0,00","10,00","9,09","0,91",10 %,holo@olo.cafe
+"31 jul 2026, 12:48",Venta,TAAA4HRRSKG,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"31 jul 2026, 12:48",Venta,TAAA4HRRSKG,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"31 jul 2026, 12:48",Venta,TAAA4HRRSKG,Mastercard - Débito,1,Smothie,,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,holo@olo.cafe
+"31 jul 2026, 12:49",Venta,TAAA4HRR2YX,Mastercard - Débito,2,"Aigua 0,5L",Begudes Envasades,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"31 jul 2026, 12:59",Venta,TAAA4HRYCSC,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"31 jul 2026, 13:03",Venta,TAAA4HR2M6R,Mastercard - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 13:16",Venta,TAAA4HSBNY3,Mastercard - Débito,1,Cold Brew Ice Strawberry,Especials,,EUR,"4,70","0,00","4,70","4,27","0,43",10 %,holo@olo.cafe
+"31 jul 2026, 13:16",Venta,TAAA4HSBNY3,Mastercard - Débito,1,Sunrise,Begudes,,EUR,"4,00","0,00","4,00","3,64","0,36",10 %,holo@olo.cafe
+"31 jul 2026, 13:24",Venta,TAAA4HSFTQY,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"31 jul 2026, 13:47",Venta,TAAA4HSUU6Y,Visa - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 13:47",Venta,TAAA4HSUU6Y,Visa - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 13:47",Venta,TAAA4HSUU6Y,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"31 jul 2026, 13:47",Venta,TAAA4HSUU6Y,Visa - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 13:58",Venta,TAAA4HS3RPP,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"31 jul 2026, 14:06",Venta,TAAA4HTAE6G,Efectivo,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,holo@olo.cafe
+"31 jul 2026, 14:16",Venta,TAAA4HTFRA4,Visa - Crédito,1,Propina,,,EUR,"0,30",,"0,30","0,30","0,00",,holo@olo.cafe
+"31 jul 2026, 14:16",Venta,TAAA4HTFRA4,Visa - Crédito,2,Cold Brew,Filtrats,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,holo@olo.cafe
+"31 jul 2026, 14:23",Venta,TAAA4HTK4AY,Maestro - Débito,1,Batch Coffee,Filtrats,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 14:23",Venta,TAAA4HTK4AY,Maestro - Débito,1,Espresso Tonic,Especials,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 14:23",Venta,TAAA4HTK4AY,Maestro - Débito,1,La Cima,Granel,,EUR,"12,50","0,00","12,50","11,36","1,14",10 %,holo@olo.cafe
+"31 jul 2026, 15:02",Venta,TAAA4HUCQLP,Visa - Débito,1,Propina,,,EUR,"0,60",,"0,60","0,60","0,00",,treballador1@olo.com
+"31 jul 2026, 15:02",Venta,TAAA4HUCQLP,Visa - Débito,2,Cold Brew,Filtrats,,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,Caixer
+"31 jul 2026, 15:03",Venta,TAAA4HUDDTM,Visa - Débito,1,Propina,,,EUR,"0,19",,"0,19","0,19","0,00",,treballador1@olo.com
+"31 jul 2026, 15:03",Venta,TAAA4HUDDTM,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 15:06",Venta,TAAA4HUEUP6,Visa - Débito,1,Propina,,,EUR,"0,24",,"0,24","0,24","0,00",,treballador1@olo.com
+"31 jul 2026, 15:06",Venta,TAAA4HUEUP6,Visa - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"31 jul 2026, 15:07",Venta,TAAA4HUFLM6,Mastercard - Débito,1,Propina,,,EUR,"0,33",,"0,33","0,33","0,00",,treballador1@olo.com
+"31 jul 2026, 15:07",Venta,TAAA4HUFLM6,Mastercard - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"31 jul 2026, 15:07",Venta,TAAA4HUFLM6,Mastercard - Débito,1,Limonada Menta,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 15:13",Venta,TAAA4HUKR3R,Visa - Crédito,1,Propina,,,EUR,"0,10",,"0,10","0,10","0,00",,treballador1@olo.com
+"31 jul 2026, 15:13",Venta,TAAA4HUKR3R,Visa - Crédito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 15:13",Venta,TAAA4HUKV3Y,Visa - Crédito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 15:14",Venta,TAAA4HUK3DH,Mastercard - Crédito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 15:22",Venta,TAAA4HUP9UP,Visa - Débito,1,"Aigua 0,5L",Begudes Envasades,,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 15:22",Venta,TAAA4HUP9UP,Visa - Débito,1,Croissant Estandard,Menjar,48,EUR,"2,00","0,00","2,00","1,82","0,18",10 %,Caixer
+"31 jul 2026, 15:22",Venta,TAAA4HUP9UP,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"31 jul 2026, 15:22",Venta,TAAA4HUP9UP,Visa - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"31 jul 2026, 15:25",Venta,TAAA4HURXTC,Visa - Débito,3,Flat white,Cafes,,EUR,"8,70","0,00","8,70","7,91","0,79",10 %,Caixer
+"31 jul 2026, 15:25",Venta,TAAA4HURXTC,Visa - Débito,1,Fritz Taronja,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"31 jul 2026, 15:30",Venta,TAAA4HUUDPV,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 15:50",Venta,TAAA4HU92TG,Mastercard - Débito,1,Iced Chai Latte,Cafes,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"31 jul 2026, 16:02",Venta,TAAA4HVGF9R,Visa - Crédito,1,Propina,,,EUR,"0,36",,"0,36","0,36","0,00",,treballador1@olo.com
+"31 jul 2026, 16:03",Venta,TAAA4HVGF9R,Visa - Crédito,2,Espresso,Cafes,,EUR,"3,60","0,00","3,60","3,27","0,33",10 %,Caixer
+"31 jul 2026, 16:04",Venta,TAAA4HVHKAZ,Mastercard - Débito,1,Propina,,,EUR,"0,47",,"0,47","0,47","0,00",,treballador1@olo.com
+"31 jul 2026, 16:05",Venta,TAAA4HVHKAZ,Mastercard - Débito,1,Cold Brew Cinammon Orange,Especials,,EUR,"4,70","0,00","4,70","4,27","0,43",10 %,Caixer
+"31 jul 2026, 16:05",Venta,TAAA4HVHKAZ,Mastercard - Débito,1,Cold Brew Ice Strawberry,Especials,,EUR,"4,70","0,00","4,70","4,27","0,43",10 %,Caixer
+"31 jul 2026, 16:07",Venta,TAAA4HVKQEF,Mastercard - Crédito,1,Propina,,,EUR,"1,78",,"1,78","1,78","0,00",,treballador1@olo.com
+"31 jul 2026, 16:07",Venta,TAAA4HVKQEF,Mastercard - Crédito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 16:07",Venta,TAAA4HVKQEF,Mastercard - Crédito,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"31 jul 2026, 16:07",Venta,TAAA4HVKQEF,Mastercard - Crédito,1,Montblanc,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"31 jul 2026, 16:07",Venta,TAAA4HVKQEF,Mastercard - Crédito,1,Xocolata,Cafes,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"31 jul 2026, 16:09",Venta,TAAA4HVLZPM,Visa - Débito,1,Propina,,,EUR,"0,15",,"0,15","0,15","0,00",,treballador1@olo.com
+"31 jul 2026, 16:09",Venta,TAAA4HVLZPM,Visa - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"31 jul 2026, 16:14",Venta,TAAA4HVPFG2,Mastercard - Débito,1,Propina,,,EUR,"0,61",,"0,61","0,61","0,00",,treballador1@olo.com
+"31 jul 2026, 16:14",Venta,TAAA4HVPFG2,Mastercard - Débito,1,Dirty Chai Latte,Cafes,,EUR,"4,50","0,00","4,50","4,09","0,41",10 %,Caixer
+"31 jul 2026, 16:14",Venta,TAAA4HVPFG2,Mastercard - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,Caixer
+"31 jul 2026, 16:19",Venta,TAAA4HVR7NK,Visa - Crédito,1,Propina,,,EUR,"0,44",,"0,44","0,44","0,00",,treballador1@olo.com
+"31 jul 2026, 16:19",Venta,TAAA4HVR7NK,Visa - Crédito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"31 jul 2026, 16:26",Venta,TAAA4HVVQKN,Visa - Débito,1,V60 Extra,Filtrats,,EUR,"8,00","0,00","8,00","7,27","0,73",10 %,Caixer
+"31 jul 2026, 16:26",Venta,TAAA4HVVQKN,Visa - Débito,1,V60 Extra,Filtrats,,EUR,"8,00","0,00","8,00","7,27","0,73",10 %,Caixer
+"31 jul 2026, 17:18",Venta,TAAA4HXU7XS,Mastercard - Débito,1,La Tribu,Granel,,EUR,"12,50","0,00","12,50","11,36","1,14",10 %,Caixer
+"31 jul 2026, 17:25",Venta,TAAA4HXZLUC,Efectivo,3,Croissant Estandard,Menjar,48,EUR,"6,00","0,00","6,00","5,45","0,55",10 %,Caixer
+"31 jul 2026, 17:30",Venta,TAAA4HX4DQQ,Mastercard - Débito,1,Carrot Cake,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 17:30",Venta,TAAA4HX4DQQ,Mastercard - Débito,1,Coco Matcha Cloud,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"31 jul 2026, 17:30",Venta,TAAA4HX4DQQ,Mastercard - Débito,1,Cold Brew,Filtrats,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"31 jul 2026, 17:30",Venta,TAAA4HX4DQQ,Mastercard - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 17:30",Venta,TAAA4HX4DQQ,Mastercard - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 17:31",Venta,TAAA4HX4VLA,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 17:41",Venta,TAAA4HYCCUG,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,Caixer
+"31 jul 2026, 17:41",Venta,TAAA4HYCCUG,Visa - Débito,1,Latte,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,Caixer
+"31 jul 2026, 17:46",Venta,TAAA4HYERM6,Visa - Crédito,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
+"31 jul 2026, 17:46",Venta,TAAA4HYERM6,Visa - Crédito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,Caixer
+"31 jul 2026, 18:03",Venta,TAAA4HYQYRP,Mastercard - Débito,1,Seweda 250,Granel,,EUR,"16,00","0,00","16,00","14,55","1,45",10 %,holo@olo.cafe
+"31 jul 2026, 18:05",Venta,TAAA4HYRSHS,Visa - Débito,1,Banana Bread,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 18:05",Venta,TAAA4HYRSHS,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"31 jul 2026, 18:05",Venta,TAAA4HYRSHS,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"31 jul 2026, 18:05",Venta,TAAA4HYRSHS,Visa - Débito,1,Lemon Pie,Menjar,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,holo@olo.cafe
+"31 jul 2026, 18:12",Venta,TAAA4HYVQYM,Visa - Débito,1,Cafè amb llet,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"31 jul 2026, 18:12",Venta,TAAA4HYVQYM,Visa - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"31 jul 2026, 18:12",Venta,TAAA4HYVQYM,Visa - Débito,1,Tallat,Cafes,,EUR,"2,20","0,00","2,20","2,00","0,20",10 %,holo@olo.cafe
+"31 jul 2026, 18:15",Venta,TAAA4HYXTPS,Visa,1,Pilates i OLO,,,EUR,"25,00","0,00","25,00","25,00","0,00",,holo@olo.cafe
+"31 jul 2026, 18:28",Venta,TAAA4HY7ZEB,Mastercard - Débito,1,Propina,,,EUR,"0,62",,"0,62","0,62","0,00",,holo@olo.cafe
+"31 jul 2026, 18:28",Venta,TAAA4HY7ZEB,Mastercard - Débito,2,Tallat,Cafes,,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,holo@olo.cafe
+"31 jul 2026, 18:28",Venta,TAAA4HY7ZEB,Mastercard - Débito,1,V60 Extra,Filtrats,,EUR,"8,00","0,00","8,00","7,27","0,73",10 %,holo@olo.cafe
+"31 jul 2026, 18:30",Venta,TAAA4HY9726,Mastercard - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"31 jul 2026, 18:30",Venta,TAAA4HY9726,Mastercard - Débito,1,Flat white,Cafes,,EUR,"2,90","0,00","2,90","2,64","0,26",10 %,holo@olo.cafe
+"31 jul 2026, 18:42",Venta,TAAA4HZGGFQ,Visa - Débito,1,Propina,,,EUR,"0,22",,"0,22","0,22","0,00",,holo@olo.cafe
+"31 jul 2026, 18:42",Venta,TAAA4HZGGFQ,Visa - Débito,2,Tallat,Cafes,,EUR,"4,40","0,00","4,40","4,00","0,40",10 %,holo@olo.cafe
+"31 jul 2026, 18:59",Venta,TAAA4HZSG3A,Visa - Débito,1,Propina,,,EUR,"0,29",,"0,29","0,29","0,00",,holo@olo.cafe
+"31 jul 2026, 18:59",Venta,TAAA4HZSG3A,Visa - Débito,2,Flat white,Cafes,,EUR,"5,80","0,00","5,80","5,27","0,53",10 %,holo@olo.cafe
+"31 jul 2026, 19:02",Venta,TAAA4HZT6ZC,Visa - Débito,1,Propina,,,EUR,"0,38",,"0,38","0,38","0,00",,holo@olo.cafe
+"31 jul 2026, 19:02",Venta,TAAA4HZT6ZC,Visa - Débito,2,Ice Latte,Cafes,,EUR,"7,60","0,00","7,60","6,91","0,69",10 %,holo@olo.cafe
+"31 jul 2026, 19:05",Venta,TAAA4HZVZAK,Efectivo,1,Capuccino,Cafes,,EUR,"2,50","0,00","2,50","2,27","0,23",10 %,holo@olo.cafe
+"31 jul 2026, 19:05",Venta,TAAA4HZVZAK,Efectivo,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,holo@olo.cafe
+"31 jul 2026, 19:09",Venta,TAAA4HZZCRP,Mastercard - Débito,1,Propina,,,EUR,"2,85",,"2,85","2,85","0,00",,holo@olo.cafe
+"31 jul 2026, 19:10",Venta,TAAA4HZZCRP,Mastercard - Débito,1,Amaroza,Granel,,EUR,"16,00","0,00","16,00","14,55","1,45",10 %,holo@olo.cafe
+"31 jul 2026, 19:10",Venta,TAAA4HZZCRP,Mastercard - Débito,1,La Tribu,Granel,,EUR,"12,50","0,00","12,50","11,36","1,14",10 %,holo@olo.cafe
+"31 jul 2026, 19:35",Venta,TAAA4H2HK2A,Visa - Débito,1,Ice Latte,Cafes,,EUR,"3,80","0,00","3,80","3,45","0,35",10 %,Caixer
+"31 jul 2026, 19:35",Venta,TAAA4H2HK2A,Visa - Débito,1,Limonada Menta,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 19:39",Venta,TAAA4H2LPEK,Visa - Débito,1,Ice Matcha Latte,Te,,EUR,"4,80","0,00","4,80","4,36","0,44",10 %,Caixer
+"31 jul 2026, 19:39",Venta,TAAA4H2LPEK,Visa - Débito,1,Limonada Menta,Begudes,,EUR,"3,50","0,00","3,50","3,18","0,32",10 %,Caixer
+"31 jul 2026, 19:41",Venta,TAAA4H2MVBA,Efectivo,1,Fritz Kola,Begudes Envasades,,EUR,"3,00","0,00","3,00","2,73","0,27",10 %,Caixer
+"31 jul 2026, 19:41",Venta,TAAA4H2MVBA,Efectivo,1,Ice Strawberry Matcha Latte,Especials,,EUR,"5,50","0,00","5,50","5,00","0,50",10 %,Caixer
+"31 jul 2026, 20:06",Venta,TAAA4H24ZBM,Efectivo,1,Espresso,Cafes,,EUR,"1,80","0,00","1,80","1,64","0,16",10 %,Caixer
